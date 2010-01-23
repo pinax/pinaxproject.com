@@ -127,14 +127,17 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
     "django.contrib.webdesign",
     
+    # admin
+    "django.contrib.admin",
+    
     # pinax
     "staticfiles",
     "biblion",
     
     # local
-    
-    # admin
-    "django.contrib.admin",
+    "events",
+    "example_sites",
+    "quotes",
 ]
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"

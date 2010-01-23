@@ -34,6 +34,10 @@ urlpatterns = patterns("",
     # stubbed out for reverse (webserver maps this to static file serving)
     url(r"^docs/$", None, name="documentation"),
     
+    url(r"^sites/", include("example_sites.urls")),
+    url(r"^quotes/", include("quotes.urls")),
+    url(r"^events/", include("events.urls")),
+    
     url(r"^admin/(.*)", admin.site.root),
 )
 
