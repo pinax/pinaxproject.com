@@ -154,6 +154,9 @@ MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 CONTACT_EMAIL = ""
 SITE_NAME = ""
 
+EVENT_TYPES = [
+]
+
 DEBUG_TOOLBAR_CONFIG = {
     "INTERCEPT_REDIRECTS": False,
 }
