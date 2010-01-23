@@ -19,4 +19,4 @@ def submit_site(request):
     ctx = RequestContext(request, {
         "form": form,
     })
-    return render_to_reponse(template_name, ctx)
+    return render_to_response(template_name, ctx)
