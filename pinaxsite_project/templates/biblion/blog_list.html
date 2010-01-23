@@ -5,6 +5,9 @@
 {% block head_title %}Blog{% endblock %}
 
 {% block blog_content %}
+    
+    <h2>Blog</h2>
+    
     {% if posts %}
         {% for post in posts %}
             <h2><a href="{{ post.get_absolute_url }}" class="post-link">{{ post.title }}</a></h2>
