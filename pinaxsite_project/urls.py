@@ -24,6 +24,10 @@ def static_view(request, path):
     return render_to_response(template_name, RequestContext(request))
 
 
+def noop(request):
+    pass
+
+
 urlpatterns = patterns("",
     url(r"^$", direct_to_template, {"template": "homepage.html"}, name="home"),
     
@@ -32,7 +36,7 @@ urlpatterns = patterns("",
     url(r"^feed/(?P<section>[-\w]+)/$", "biblion.views.blog_feed", name="blog_feed"),
     
     # stubbed out for reverse (webserver maps this to static file serving)
-    url(r"^docs/$", None, name="documentation"),
+    url(r"^docs/$", noop, name="documentation"),
     
     url(r"^sites/", include("example_sites.urls")),
     url(r"^quotes/", include("quotes.urls")),
