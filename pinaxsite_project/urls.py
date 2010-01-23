@@ -1,5 +1,7 @@
 from django.conf import settings
 from django.conf.urls.defaults import *
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 from django.views.generic.simple import direct_to_template
 
 from django.contrib import admin
@@ -10,6 +12,16 @@ admin.autodiscover()
 # override the default handler500 so i can pass MEDIA_URL
 handler500 = "company_project.views.server_error"
 
+
+def static_view(request, path):
+    """
+    serve pages directly from the templates directories.
+    """
+    if not path or path.endswith("/"):
+        template_name = path + "index.html"
+    else:
+        template_name = path
+    return render_to_response(template_name, RequestContext(request))
 
 
 urlpatterns = patterns("",
@@ -27,3 +39,8 @@ if settings.SERVE_MEDIA:
     urlpatterns += patterns("",
         (r"", include("staticfiles.urls")),
     )
+
+
+urlpatterns += patterns("",
+    (r"^(.*)$", static_view),
+)
