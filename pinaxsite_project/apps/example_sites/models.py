@@ -6,7 +6,10 @@ from django.db import models
 
 class Site(models.Model):
     
-    name = models.CharField(max_length=100)
+    name = models.CharField(
+        verbose_name = "Site Name",
+        max_length = 100
+    )
     description = models.TextField()
     image = models.ImageField(upload_to="sites")
     url = models.URLField(verify_exists=False)
