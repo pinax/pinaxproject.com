@@ -12,6 +12,6 @@ class Site(models.Model):
     url = models.URLField(verify_exists=False)
     approved = models.BooleanField()
     created = models.DateTimeField(default=datetime.now)
-    when_approved = models.DateTimeField()
+    when_approved = models.DateTimeField(null=True)
     contact_name = models.CharField(max_length=100, blank=True)
     contact_email = models.EmailField(blank=True)
