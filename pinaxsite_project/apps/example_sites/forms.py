@@ -1,6 +1,6 @@
 from django import forms
 
-from example_sties.models import Site
+from example_sites.models import Site
 
 
 
