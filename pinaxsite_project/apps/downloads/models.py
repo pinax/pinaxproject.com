@@ -13,6 +13,7 @@ class Release(models.Model):
 
 class ReleaseFile(models.Model):
     
+    release = models.ForeignKey(Release)
     # @@@ needs to work with existing download system
     file = models.FileField(upload_to="downloads")
     md5_hash = models.CharField(max_length=32)
