@@ -15,4 +15,4 @@ class ReleaseAdmin(admin.ModelAdmin):
 
 
 
-admin.site.register(ReleaseAdmin)
+admin.site.register(Release, ReleaseAdmin)
