@@ -1,11 +1,10 @@
-{% extends "blog_base.html" %}
+{% extends "biblion/blog_base.html" %}
 
 {% load webdesign %}
 
 {% block head_title %}Blog{% endblock %}
 
 {% block blog_content %}
-    
     {% if posts %}
         {% for post in posts %}
             <h2><a href="{{ post.get_absolute_url }}" class="post-link">{{ post.title }}</a></h2>
