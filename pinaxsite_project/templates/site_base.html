@@ -9,6 +9,8 @@
     
     <body id="{% block body_id %}default{% endblock %}">
         
+        {% include "_nav.html" %}
+        
         {% block main_content %}{% endblock %}
         
         {# @@@ google analytics #}
