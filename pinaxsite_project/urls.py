@@ -22,6 +22,7 @@ urlpatterns = patterns("",
     # stubbed out for reverse (webserver maps this to static file serving)
     url(r"^docs/$", "pinax.views.noop", name="documentation"),
     
+    url(r"^downloads/", include("downloads.urls")),
     url(r"^sites/", include("example_sites.urls")),
     url(r"^quotes/", include("quotes.urls")),
     url(r"^events/", include("events.urls")),

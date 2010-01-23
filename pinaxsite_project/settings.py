@@ -135,6 +135,7 @@ INSTALLED_APPS = [
     "biblion",
     
     # local
+    "downloads",
     "events",
     "example_sites",
     "quotes",
