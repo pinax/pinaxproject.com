@@ -1,8 +1,9 @@
 {% extends "blog_base.html" %}
 
-{% block head_title %}{{ post.title }} &mdash; ACME Blog{% endblock %}
+{% block head_title %}{{ post.title }}{% endblock %}
 
-{% block primary %}
+{% block blog_content %}
+    
     <h2>{{ post.title }}</h2>
     {% include "dateline.html" %}
     
@@ -16,5 +17,4 @@
         <h2>{{ post.title }}</h2>
         {% include "dateline.html" %}
     </div>
-    
 {% endblock %}

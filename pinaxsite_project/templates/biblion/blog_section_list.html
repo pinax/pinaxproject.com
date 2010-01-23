@@ -2,9 +2,9 @@
 
 {% load webdesign %}
 
-{% block head_title %}ACME Blog{% endblock %}
+{% block head_title %}Blog ({{ section }}){% endblock %}
 
-{% block primary %}
+{% block blog_content %}
     
     {% if posts %}
         {% for post in posts %}
@@ -14,7 +14,7 @@
             <p class="more"><a href="{{ post.get_absolute_url }}" class="post-link">read more...</a></p>
         {% endfor %}
     {% else %}
-        <p>No blog posts have been published.</p>
+        <p>No blog posts have been published in this section.</p>
     {% endif %}
     
 {% endblock %}

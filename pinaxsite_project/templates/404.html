@@ -1,13 +1,12 @@
 {% extends "site_base.html" %}
 
-{% block body_id %}homepage{% endblock %}
+{% block body_id %}error-404{% endblock %}
 
-{% block content %}
-    <div class="primary">
-        <h2>Not Found</h2>
-        
-        <p>We tried really hard, but couldn't find a regex that matches that path.
-            Maybe you came here for the view, but there isn't one at this URL.</p>
-        
-    </div>
+{% block main_content %}
+    <h2>Not Found</h2>
+    
+    <p>
+        We tried really hard, but couldn't find a regex that matches that path.
+        Maybe you came here for the view, but there isn't one at this URL.
+    </p>
 {% endblock %}
