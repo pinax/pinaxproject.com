@@ -12,7 +12,10 @@ class Site(models.Model):
     )
     description = models.TextField()
     image = models.ImageField(upload_to="sites")
-    url = models.URLField(verify_exists=False)
+    url = models.URLField(
+        verbose_name = "URL",
+        verify_exists = False
+    )
     approved = models.BooleanField(default=False)
     created = models.DateTimeField(default=datetime.now)
     when_approved = models.DateTimeField(null=True)
