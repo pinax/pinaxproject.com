@@ -139,7 +139,6 @@ INSTALLED_APPS = [
     
     # local
     "downloads",
-    "events",
     "example_sites",
     "quotes",
 ]
