@@ -134,6 +134,9 @@ INSTALLED_APPS = [
     "staticfiles",
     "biblion",
     
+    # external
+    "dregni",
+    
     # local
     "downloads",
     "events",
