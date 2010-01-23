@@ -31,6 +31,9 @@ urlpatterns = patterns("",
     url(r"^feed/$", "biblion.views.blog_feed", name="blog_feed_combined"),
     url(r"^feed/(?P<section>[-\w]+)/$", "biblion.views.blog_feed", name="blog_feed"),
     
+    # stubbed out for reverse (webserver maps this to static file serving)
+    url(r"^docs/$", None, name="documentation"),
+    
     url(r"^admin/(.*)", admin.site.root),
 )
 
