@@ -1,0 +1,16 @@
+{% extends "site_base.html" %}
+
+{% block head_title %}Sites : Submit{% endblock %}
+{% block body_id %}sites{% endblock %}
+
+{% block main_content %}
+    
+    <h2>Submit A Site</h2>
+    
+    <form method="POST" action="{% url sites_submit_site %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="submit" />
+    </form>
+
+{% endblock %}
