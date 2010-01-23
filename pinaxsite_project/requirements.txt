@@ -7,4 +7,4 @@ biblion>0.1.dev0
 creole==1.0.1
 django-atomformat==0.1.1dev
 django-staticfiles==0.2.0
-drengi>0.1.dev0
+dregni>0.1.dev0
