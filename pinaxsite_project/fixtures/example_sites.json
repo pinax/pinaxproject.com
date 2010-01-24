@@ -1,0 +1,402 @@
+[
+  {
+    "pk": 1, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://cloud27.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:00:32", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": true, 
+      "when_approved": "2010-01-24 09:00:00", 
+      "name": "Cloud27"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://foodsel.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:00:42", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "foodsel"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://trailmapping.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:00:54", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "TrailMapping"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://tuttivisti.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:01:37", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "TuttiVisti"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://girlgamer.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:01:55", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "GirlGamer"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://coathangr.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:03:53", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "coathangr"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://corpu.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:04:17", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "CorpU"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://we20.org/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:04:30", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "we20"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://earth.burningman.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:04:41", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "Burning Man"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://trackmytrophies.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:04:54", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "Track My Trophies"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://carposse.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:05:13", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "CarPosse"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://sequencemed.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:05:23", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "SequenceMed"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://badlist.co.uk/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:05:33", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "badlist"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://goodlist.co.uk/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:06:17", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "goodlist"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://www.pinaxcn.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:06:26", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "pinaxcn"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://www.dooplan.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:06:41", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "dooplan"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://faircompanies.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:06:51", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "Fair Companies"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://drinktale.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:07:06", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "DrinkTale"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://aletale.com/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:07:51", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "AleTale"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://gameocracy.org/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:08:10", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "gameocracy.org"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://mftransparency.org/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:08:58", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "mftransparency.org"
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://lifelist.net/", 
+      "contact_name": "", 
+      "created": "2009-04-01 23:09:15", 
+      "contact_email": "", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "lifelist.net"
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://www.otakupri.de/", 
+      "contact_name": "Jim Robert", 
+      "created": "2009-06-23 12:05:49", 
+      "contact_email": "jim.mixtake@gmail.com", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "Otaku Pride"
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://www.lifegoround.com/", 
+      "contact_name": "Jim Robert", 
+      "created": "2009-08-20 14:32:53", 
+      "contact_email": "jim.mixtake@gmail.com", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "Life Go Round"
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "example_sites.site", 
+    "fields": {
+      "url": "http://mycogia.com/", 
+      "contact_name": "Skylar Saveland", 
+      "created": "2009-08-20 14:33:16", 
+      "contact_email": "skylar.saveland@gmail.com", 
+      "description": "", 
+      "image": "", 
+      "approved": true, 
+      "featured": false, 
+      "when_approved": "2010-01-24 09:00:00",
+      "name": "Mycogia"
+    }
+  }
+]
