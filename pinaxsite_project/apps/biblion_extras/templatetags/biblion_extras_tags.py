@@ -14,7 +14,7 @@ class FeaturedBlogPostNode(AsNode):
     
     def render(self, context):
         try:
-            post = FeaturedPost.objects.all()[0]
+            post = FeaturedPost.objects.select_related("post")[0].post
         except IndexError:
             post = None
         context[self.context_var] = post
