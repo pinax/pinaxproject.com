@@ -19,10 +19,12 @@
 }
 
 ul.nav {
+    margin: 0 auto;
+    width: 900px;
     list-style: none;
 }
 ul.nav li {
-    padding: 10px;
+    padding: 10px 10px 10px 0;
     float: left;
 }
 
