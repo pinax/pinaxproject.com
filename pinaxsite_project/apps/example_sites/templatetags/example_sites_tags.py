@@ -14,7 +14,7 @@ class FeaturedSiteNode(AsNode):
     
     def render(self, context):
         try:
-            site = Site.objects.get(featured=True)
+            site = Site.objects.filter(approved=True).get(featured=True)
         except Site.DoesNotExist:
             site = None
         context[self.context_var] = site
