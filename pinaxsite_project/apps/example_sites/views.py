@@ -2,6 +2,18 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 from example_sites.forms import SiteSubmissionForm
+from example_sites.models import Site
+
+
+
+def home(request):
+    
+    sites = Site.objects.filter(approved=True).order_by("-when_approved")
+    
+    ctx = RequestContext(request, {
+        "sites": sites,
+    })
+    return render_to_response("example_sites/home.html", ctx)
 
 
 
