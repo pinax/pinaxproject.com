@@ -18,6 +18,7 @@ class FeaturedSiteNode(AsNode):
         except Site.DoesNotExist:
             site = None
         context[self.context_var] = site
+        return u""
 
 
 @register.tag
