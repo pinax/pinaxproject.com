@@ -55,7 +55,7 @@ class OlderReleasesNode(BaseReleaseNode):
     
     def render(self, context):
         
-        latest_releases = Release.objects..order_by("-timestamp")[:2]
+        latest_releases = Release.objects.order_by("-timestamp")[:2]
         context[self.context_var] = Release.objects.exclude(
             id__in = lastest_releases
         ).order_by("-timestamp")
