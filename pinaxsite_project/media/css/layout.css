@@ -1,0 +1,28 @@
+#header {
+    text-align: center;
+}
+#main_content {
+    width: 900px;
+    margin: 0 auto;
+}
+#footer {
+    text-align: center;
+}
+.clear {
+    clear: both;
+}
+
+.box {
+    margin: 20px 0;
+    padding: 5px 10px;
+    border: 1px solid #000;
+}
+
+ul.nav {
+    list-style: none;
+}
+ul.nav li {
+    padding: 10px;
+    float: left;
+}
+
