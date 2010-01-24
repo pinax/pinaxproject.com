@@ -9,6 +9,12 @@ class Release(models.Model):
     version = models.CharField(max_length=10)
     stable = models.BooleanField(default=False)
     timestamp = models.DateTimeField(default=datetime.now)
+    
+    class Meta:
+        ordering = ["-timestamp"]
+    
+    def __unicode__(self):
+        return self.version
 
 
 class ReleaseFile(models.Model):

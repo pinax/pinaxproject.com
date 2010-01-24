@@ -9,6 +9,7 @@ class ReleaseFileInline(admin.StackedInline):
 
 
 class ReleaseAdmin(admin.ModelAdmin):
+    list_display = ["version", "timestamp", "stable"]
     inlines = [
         ReleaseFileInline,
     ]
