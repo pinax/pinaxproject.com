@@ -1,6 +1,6 @@
 {% extends "site_base.html" %}
 
-{% load webdesign %}
+{% load downloads_tags %}
 
 {% block head_title %}Downloads{% endblock %}
 {% block body_id %}downloads{% endblock %}
@@ -14,7 +14,17 @@
         Python 2.4 or higher.
     </p>
     
-    {# link to installation docs? #}
+    <h3>Option 1. Get the latest official release</h3>
+    
+    {% latest_stable_release as release %}
+    {% include "downloads/_release.html" %}
+    
+    <h3>Option 2. Get the latest development release</h3>
+    
+    {% latest_development_release as release %}
+    {% include "downloads/_release.html" %}
+    
+    <p>@@@ link to installation docs?</p>
     
     <p>
         If you need any help, don't hesitate to ask on the IRC channel
@@ -23,4 +33,11 @@
         <a href="http://groups.google.com/group/pinax-users">pinax-users</a>
         mailing list on Google Groups.
     </p>
+    
+    <h3>Older Releases</h3>
+    
+    {% older_releases as releases %}
+    {% for release in releases %}
+        {% include "downloads/_release.html" %}
+    {% endfor %}
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends "site_base.html" %}
 
-{% load webdesign %}
+{% load downloads_tags %}
 
 {% block head_title_base %}Pinax{% endblock %}
 
@@ -27,10 +27,12 @@
     </div>
     
     <div class="box">
+        {% latest_stable_release as release %}
         <p>
-            The latest stable release is
-            0.7.1
+            The latest stable release is {{ release.version }}
         </p>
+        
+        <p><a href="{% url downloads_home %}">more downloads...</a></p>
     </div>
     
     <div class="box">
