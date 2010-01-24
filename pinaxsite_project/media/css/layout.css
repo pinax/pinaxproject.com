@@ -5,7 +5,7 @@
     padding: 20px 0 0;
 }
 #main_content {
-    width: 900px;
+    width: 960px;
     margin: 40px auto;
 }
 #footer {
@@ -33,4 +33,25 @@ ul.nav li a {
     display: block;
     height: 20px;
     padding: 30px 20px 5px 10px;
+}
+
+.left1 {
+    float: left;
+    width: 300px;
+    margin-right: 10px;
+}
+.left2 {
+    float: left;
+    width: 600px;
+    margin-right: 10px;
+}
+.right1 {
+    float: left;
+    width: 300px;
+    margin-left: 5px;
+}
+.right2 {
+    float: left;
+    width: 600px;
+    margin-left: 5px;
 }
