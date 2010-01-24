@@ -10,7 +10,7 @@ register = template.Library()
 
 
 
-class FeaturedBlogPostNode(AsNode):
+class FeaturedPostNode(AsNode):
     
     def render(self, context):
         try:
@@ -23,4 +23,4 @@ class FeaturedBlogPostNode(AsNode):
 
 @register.tag
 def featured_post(parser, token):
-    return FeaturedBlogPostNode.handle_token(parser, token)
+    return FeaturedPostNode.handle_token(parser, token)
