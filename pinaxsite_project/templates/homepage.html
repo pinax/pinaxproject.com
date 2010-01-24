@@ -28,9 +28,13 @@
     
     <div class="box">
         {% latest_stable_release as release %}
-        <p>
-            The latest stable release is {{ release.version }}
-        </p>
+        {% if release %}
+            <p>
+                The latest stable release is {{ release.version }}
+            </p>
+        {% else %}
+            <p>There are currently no stable releases.</p>
+        {% endif %}
         
         <p><a href="{% url downloads_home %}">more downloads...</a></p>
     </div>

@@ -14,15 +14,23 @@
         Python 2.4 or higher.
     </p>
     
-    <h3>Option 1. Get the latest official release</h3>
+    <h3>Option 1. Get the latest stable release</h3>
     
     {% latest_stable_release as release %}
-    {% include "downloads/_release.html" %}
+    {% if release %}
+        {% include "downloads/_release.html" %}
+    {% else %}
+        <p>There is currently no stable release.</p>
+    {% endif %}
     
     <h3>Option 2. Get the latest development release</h3>
     
     {% latest_development_release as release %}
-    {% include "downloads/_release.html" %}
+    {% if release %}
+        {% include "downloads/_release.html" %}
+    {% else %}
+        <p>There is currently no recent development release.</p>
+    {% endif %}
     
     <p>@@@ link to installation docs?</p>
     
@@ -39,5 +47,7 @@
     {% older_releases as releases %}
     {% for release in releases %}
         {% include "downloads/_release.html" %}
+    {% empty %}
+        <p>There are currently no earlier releases.</p>
     {% endfor %}
 {% endblock %}
