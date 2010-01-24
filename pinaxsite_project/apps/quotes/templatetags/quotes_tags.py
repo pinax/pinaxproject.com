@@ -18,6 +18,7 @@ class FeaturedQuoteNode(AsNode):
         except Quote.DoesNotExist:
             quote = None
         context[self.context_var] = quote
+        return u""
 
 
 @register.tag
