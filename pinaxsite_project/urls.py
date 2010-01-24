@@ -26,7 +26,7 @@ urlpatterns = patterns("",
     url(r"^sites/", include("example_sites.urls")),
     url(r"^quotes/", include("quotes.urls")),
     url(r"^events/$", direct_to_template, {
-        "template": "events.html",
+        "template": "events/home.html",
     }, name="events_home"),
     
     url(r"^admin/(.*)", admin.site.root),
