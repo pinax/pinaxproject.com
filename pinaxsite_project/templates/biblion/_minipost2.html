@@ -3,4 +3,3 @@
     <span class="date">{% if post.published %}{{ post.published|date:"jS F Y" }}{% else %}Not published yet{% endif %}</span>
 </p>
 <p class="teaser">{{ post.teaser_html|safe }}</p>
-<p class="more"><a href="{{ post.get_absolute_url }}" class="post-link">read more...</a></p>

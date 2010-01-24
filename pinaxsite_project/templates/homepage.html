@@ -79,7 +79,12 @@
     <div class="box">
         <h2>The Pinax Blog</h2>
         
-        <p>recent entries</p>
+        {% latest_blog_posts as posts %}
+        {% for post in posts %}
+            {% include "biblion/_minipost.html" %}
+        {% empty %}
+            <p>No blog posts.</p>
+        {% endfor %}
         
         <p><a href="{% url blog %}">more blog posts...</a></>
     </div>
