@@ -23,5 +23,3 @@ class FeaturedSiteNode(AsNode):
 @register.tag
 def featured_site(parser, token):
     return FeaturedSiteNode.handle_token(parser, token)
-
-

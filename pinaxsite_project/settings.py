@@ -136,6 +136,7 @@ INSTALLED_APPS = [
     
     # external
     "dregni",
+    "template_utils",
     
     # local
     "downloads",
