@@ -1,5 +1,14 @@
 [
   {
+    "pk": 11, 
+    "model": "downloads.release", 
+    "fields": {
+      "timestamp": "2009-10-09 21:32:00", 
+      "version": "0.7.1", 
+      "stable": true
+    }
+  }, 
+  {
     "pk": 10, 
     "model": "downloads.release", 
     "fields": {
