@@ -19,3 +19,8 @@ class FeaturedBlogPostNode(AsNode):
             post = None
         context[self.context_var] = post
         return u""
+
+
+@register.tag
+def featured_post(parser, token):
+    return FeaturedBlogPostNode.handle_token(parser, token)
