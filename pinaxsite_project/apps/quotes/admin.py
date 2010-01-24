@@ -5,7 +5,7 @@ from quotes.models import Quote
 
 
 class QuoteAdmin(admin.ModelAdmin):
-    list_display = ["id", "text", "added"]
+    list_display = ["id", "text", "added", "featured"]
 
 
 admin.site.register(Quote, QuoteAdmin)
