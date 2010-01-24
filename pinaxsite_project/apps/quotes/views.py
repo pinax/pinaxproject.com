@@ -7,7 +7,7 @@ from quotes.models import Quote
 
 def home(request):
     
-    quotes = Quotes.objects.all()
+    quotes = Quote.objects.all()
     
     ctx = RequestContext(request, {
         "quotes": quotes,
