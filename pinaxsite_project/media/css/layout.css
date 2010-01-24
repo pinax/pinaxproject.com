@@ -35,23 +35,39 @@ ul.nav li a {
     padding: 30px 20px 5px 10px;
 }
 
-.left1 {
-    float: left;
-    width: 300px;
-    margin-right: 10px;
-}
 .left2 {
     float: left;
-    width: 600px;
-    margin-right: 10px;
+    width: 290px;
+    margin-right: 5px;
 }
-.right1 {
+.left3 {
     float: left;
-    width: 300px;
-    margin-left: 5px;
+    width: 450px;
+    margin-right: 5px;
+}
+.left4 {
+    float: left;
+    width: 600px;
+    margin-right: 5px;
 }
 .right2 {
     float: left;
+    width: 290px;
+    margin-left: 5px;
+}
+.right3 {
+    float: left;
+    width: 450px;
+    margin-left: 5px;
+}
+.right4 {
+    float: left;
     width: 600px;
     margin-left: 5px;
+}
+.center2 {
+    float: left;
+    width: 290px;
+    margin-left: 5px;
+    margin-right: 5px;
 }

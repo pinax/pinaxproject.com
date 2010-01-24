@@ -30,7 +30,25 @@
         <p>@@@ features</p>
     </div>
     
-    <div class="box left1">
+    <div class="box left2">
+        <h2>Announcements</h2>
+        
+        {% latest_section_post "announcements" as post %}
+        {% include "biblion/_minipost2.html" %}
+        
+        <p><a href="{% url blog_section "announcements" %}">more announcements...</a></p>
+    </div>
+    
+    <div class="box center2">
+        {% featured_post as post %}
+        {% if post %}
+            {% include "biblion/_minipost.html" %}
+        {% else %}
+            <p>No featured post.</p>
+        {% endif %}
+    </div>
+    
+    <div class="box right2">
         {% latest_stable_release as release %}
         {% if release %}
             <p>
@@ -42,8 +60,9 @@
         
         <p><a href="{% url downloads_home %}">more downloads...</a></p>
     </div>
+    <div class="clear"></div>
     
-    <div class="box right2">
+    <div class="box left3">
         <h2>Developer Information</h2>
         
         <p>
@@ -64,9 +83,8 @@
             mailing list on Google Groups.
         </p>
     </div>
-    <div class="clear"></div>
     
-    <div class="box left2">
+    <div class="box right3">
         <h2>The Pinax Blog</h2>
         
         {% latest_blog_posts as posts %}
@@ -78,36 +96,17 @@
         
         <p><a href="{% url blog %}">more blog posts...</a></>
     </div>
-    
-    <div class="box right1">
-        <h2>Announcements</h2>
-        
-        {% latest_section_post "announcements" as post %}
-        {% include "biblion/_minipost2.html" %}
-        
-        <p><a href="{% url blog_section "announcements" %}">more announcements...</a></p>
-    </div>
     <div class="clear"></div>
     
-    <div class="box left1">
-        {% featured_post as post %}
-        {% if post %}
-            {% include "biblion/_minipost.html" %}
-        {% else %}
-            <p>No featured post.</p>
-        {% endif %}
-    </div>
-    
-    <div class="box right2">
+    <div class="box left2">
         <h2>Events</h2>
         
         <p>@@@ featured event / rotating events</p>
         
         <p><a href="{% url events_home %}">more events...</a></p>
     </div>
-    <div class="clear"></div>
     
-    <div class="box left2">
+    <div class="box center2">
         <h2>Sites Built With Pinax</h2>
         
         {% featured_site as site %}
@@ -125,7 +124,7 @@
         <p><a href="{% url sites_home %}">more sites built on Pinax...</a></p>
     </div>
     
-    <div class="box right1">
+    <div class="box right2">
         {% featured_quote as quote %}
         {% if quote %}
         <div>
