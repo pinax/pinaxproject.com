@@ -1,9 +1,12 @@
 #header {
     text-align: center;
+    height: 180px;
+    margin: 0 auto;
+    padding: 20px 0 0;
 }
 #main_content {
     width: 900px;
-    margin: 0 auto;
+    margin: 40px auto;
 }
 #footer {
     text-align: center;
