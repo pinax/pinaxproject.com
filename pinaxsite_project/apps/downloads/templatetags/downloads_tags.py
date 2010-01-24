@@ -1,5 +1,7 @@
 from django import template
 
+from downloads.models import Release
+
 
 
 register = template.Library()
