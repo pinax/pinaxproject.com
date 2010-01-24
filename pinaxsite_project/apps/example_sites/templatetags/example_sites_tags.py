@@ -24,3 +24,37 @@ class FeaturedSiteNode(AsNode):
 @register.tag
 def featured_site(parser, token):
     return FeaturedSiteNode.handle_token(parser, token)
+
+
+class RandomSitesNode(template.Node):
+    
+    @classmethod
+    def handle_token(cls, parser, token, **kwargs):
+        bits = token.split_contents()
+        
+        if len(bits) != 3:
+            raise template.TemplateSyntaxError("%r takes exactly two arguments "
+                "(first argument must be 'as')" % bits[0])
+        if bits[1] != "as":
+            raise template.TemplateSyntaxError("Second argument to %r must be "
+                "'as'" % bits[0])
+        
+        return cls(bits[2], **kwargs)
+    
+    def __init__(self, limit, context_var):
+        self.limit = template.Variable(limit)
+        self.context_var = context_var
+    
+    def render(self, context):
+        limit = self.resolve(context)
+        sites = Site.objects.exclude(featured=True).order_by("?")[:limit]
+        context[self.context_var] = sites
+        return u""
+
+
+@register.tag
+def random_sites(parser, token):
+    """
+        {% random_sites 5 as random_sites %}
+    """
+    return RandomSitesNode.handle_token(parser, token)
