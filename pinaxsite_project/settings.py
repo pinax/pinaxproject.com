@@ -145,6 +145,10 @@ INSTALLED_APPS = [
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
+FIXTURE_DIRS = [
+    os.path.join(PROJECT_ROOT, "fixtures"),
+]
+
 #TWITTER_USERNAME = ""
 #TWITTER_PASSWORD = ""
 #TWITTER_TWEET_PREFIX = "New Post:" # NOTE: space will be appended
