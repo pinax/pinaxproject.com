@@ -67,6 +67,47 @@
     <div class="clear"></div>
     
     <div class="box left2">
+        <h2>The Pinax Blog</h2>
+        
+        {% latest_blog_posts as posts %}
+        {% for post in posts %}
+            {% include "biblion/_minipost.html" %}
+        {% empty %}
+            <p>No blog posts.</p>
+        {% endfor %}
+        
+        <p><a href="{% url blog %}">more blog posts...</a></>
+    </div>
+    
+    <div class="box right1">
+        <h2>Announcements</h2>
+        
+        {% latest_section_post "announcements" as post %}
+        {% include "biblion/_minipost2.html" %}
+        
+        <p><a href="{% url blog_section "announcements" %}">more announcements...</a></p>
+    </div>
+    <div class="clear"></div>
+    
+    <div class="box left1">
+        {% featured_post as post %}
+        {% if post %}
+            {% include "biblion/_minipost.html" %}
+        {% else %}
+            <p>No featured post.</p>
+        {% endif %}
+    </div>
+    
+    <div class="box right2">
+        <h2>Events</h2>
+        
+        <p>@@@ featured event / rotating events</p>
+        
+        <p><a href="{% url events_home %}">more events...</a></p>
+    </div>
+    <div class="clear"></div>
+    
+    <div class="box left2">
         <h2>Sites Built With Pinax</h2>
         
         {% featured_site as site %}
@@ -95,47 +136,6 @@
         {% endif %}
         
         <p><a href="{% url quotes_home %}">more quotes about Pinax...</a></p>
-    </div>
-    <div class="clear"></div>
-    
-    <div class="box left1">
-        <h2>The Pinax Blog</h2>
-        
-        {% latest_blog_posts as posts %}
-        {% for post in posts %}
-            {% include "biblion/_minipost.html" %}
-        {% empty %}
-            <p>No blog posts.</p>
-        {% endfor %}
-        
-        <p><a href="{% url blog %}">more blog posts...</a></>
-    </div>
-    
-    <div class="box right2">
-        <h2>Announcements</h2>
-        
-        {% latest_section_post "announcements" as post %}
-        {% include "biblion/_minipost2.html" %}
-        
-        <p><a href="{% url blog_section "announcements" %}">more announcements...</a></p>
-    </div>
-    <div class="clear"></div>
-    
-    <div class="box left2">
-        {% featured_post as post %}
-        {% if post %}
-            {% include "biblion/_minipost.html" %}
-        {% else %}
-            <p>No featured post.</p>
-        {% endif %}
-    </div>
-    
-    <div class="box right1">
-        <h2>Events</h2>
-        
-        <p>@@@ featured event / rotating events</p>
-        
-        <p><a href="{% url events_home %}">more events...</a></p>
     </div>
     <div class="clear"></div>
     
