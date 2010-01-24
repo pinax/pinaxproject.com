@@ -1,2 +1,8 @@
-Release {{ release.version }}
-@@@ files
+<div>
+Release {{ release.version }}:
+{% for file in release.releasefile_set.all %}
+    {{ file.file_type }}
+{% empty %}
+    No files.
+{% endfor %}
+</div>
