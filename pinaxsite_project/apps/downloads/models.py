@@ -18,3 +18,6 @@ class ReleaseFile(models.Model):
     file = models.FileField(upload_to="downloads")
     md5_hash = models.CharField(max_length=32)
     sha1_hash = models.CharField(max_length=40)
+    
+    def file_type(self):
+        return self.file.name.rsplit(".")[-1]
