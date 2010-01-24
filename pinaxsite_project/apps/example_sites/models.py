@@ -22,3 +22,6 @@ class Site(models.Model):
     when_approved = models.DateTimeField(null=True)
     contact_name = models.CharField(max_length=100, blank=True)
     contact_email = models.EmailField(blank=True)
+    
+    def __unicode__(self):
+        return "%s [%s]" % (self.name, self.url)
