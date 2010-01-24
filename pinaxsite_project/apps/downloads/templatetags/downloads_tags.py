@@ -2,29 +2,15 @@ from django import template
 
 from downloads.models import Release
 
+from pinaxsite_project.utils import AsNode
+
 
 
 register = template.Library()
 
 
 
-class BaseReleaseNode(template.Node):
-    
-    @classmethod
-    def handle_token(cls, parser, token, **kwargs):
-        bits = token.split_contents()
-        
-        if len(bits) != 3:
-            raise template.TemplateSyntaxError("%r takes exactly two arguments "
-                "(first argument must be 'as')" % bits[0])
-        if bits[1] != "as":
-            raise template.TemplateSyntaxError("Second argument to %r must be "
-                "'as'" % bits[0])
-        
-        return cls(bits[2], **kwargs)
-
-
-class LatestReleaseNode(BaseReleaseNode):
+class LatestReleaseNode(AsNode):
     
     def __init__(self, context_var, kind):
         self.context_var = context_var
@@ -42,10 +28,7 @@ class LatestReleaseNode(BaseReleaseNode):
         return u""
 
 
-class OlderReleasesNode(BaseReleaseNode):
-    
-    def __init__(self, context_var):
-        self.context_var = context_var
+class OlderReleasesNode(AsNode):
     
     def render(self, context):
         
