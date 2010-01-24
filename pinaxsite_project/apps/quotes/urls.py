@@ -4,7 +4,5 @@ from django.views.generic.simple import direct_to_template
 
 
 urlpatterns = patterns("",
-    url(r"^$", direct_to_template, {
-        "template": "quotes.html",
-    }, name="quotes_home")
+    url(r"^$", "quotes.views.home", name="quotes_home")
 )
