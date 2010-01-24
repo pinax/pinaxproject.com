@@ -7,7 +7,7 @@ from django.db import models
 class Release(models.Model):
     
     version = models.CharField(max_length=10)
-    stable = models.BooleanField()
+    stable = models.BooleanField(default=False)
     timestamp = models.DateTimeField(default=datetime.now)
 
 
