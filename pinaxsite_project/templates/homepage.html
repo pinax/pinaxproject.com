@@ -31,6 +31,8 @@
     </div>
     
     <div class="box left2">
+        <h2>Release</h2>
+        
         {% latest_stable_release as release %}
         {% if release %}
             <p>
@@ -44,6 +46,8 @@
     </div>
     
     <div class="box center2">
+        <h2>Featured Post</h2>
+        
         {% featured_post as post %}
         {% if post %}
             {% include "biblion/_minipost.html" %}
@@ -117,6 +121,8 @@
     </div>
     
     <div class="box center2">
+        <h2>Quotes</h2>
+        
         {% featured_quote as quote %}
         {% if quote %}
         <div>
