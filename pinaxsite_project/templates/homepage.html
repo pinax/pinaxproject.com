@@ -31,12 +31,16 @@
     </div>
     
     <div class="box left2">
-        <h2>Announcements</h2>
+        {% latest_stable_release as release %}
+        {% if release %}
+            <p>
+                The latest stable release is {{ release.version }}
+            </p>
+        {% else %}
+            <p>There are currently no stable releases.</p>
+        {% endif %}
         
-        {% latest_section_post "announcements" as post %}
-        {% include "biblion/_minipost2.html" %}
-        
-        <p><a href="{% url blog_section "announcements" %}">more announcements...</a></p>
+        <p><a href="{% url downloads_home %}">more downloads...</a></p>
     </div>
     
     <div class="box center2">
@@ -49,16 +53,12 @@
     </div>
     
     <div class="box right2">
-        {% latest_stable_release as release %}
-        {% if release %}
-            <p>
-                The latest stable release is {{ release.version }}
-            </p>
-        {% else %}
-            <p>There are currently no stable releases.</p>
-        {% endif %}
+        <h2>Announcements</h2>
         
-        <p><a href="{% url downloads_home %}">more downloads...</a></p>
+        {% latest_section_post "announcements" as post %}
+        {% include "biblion/_minipost2.html" %}
+        
+        <p><a href="{% url blog_section "announcements" %}">more announcements...</a></p>
     </div>
     <div class="clear"></div>
     
@@ -99,14 +99,6 @@
     <div class="clear"></div>
     
     <div class="box left2">
-        <h2>Events</h2>
-        
-        <p>@@@ featured event / rotating events</p>
-        
-        <p><a href="{% url events_home %}">more events...</a></p>
-    </div>
-    
-    <div class="box center2">
         <h2>Sites Built With Pinax</h2>
         
         {% featured_site as site %}
@@ -124,7 +116,7 @@
         <p><a href="{% url sites_home %}">more sites built on Pinax...</a></p>
     </div>
     
-    <div class="box right2">
+    <div class="box center2">
         {% featured_quote as quote %}
         {% if quote %}
         <div>
@@ -136,6 +128,16 @@
         
         <p><a href="{% url quotes_home %}">more quotes about Pinax...</a></p>
     </div>
+    
+    <div class="box right2">
+        <h2>Events</h2>
+        
+        <p>@@@ featured event / rotating events</p>
+        
+        <p><a href="{% url events_home %}">more events...</a></p>
+    </div>
+    
     <div class="clear"></div>
+
     
 {% endblock %}
