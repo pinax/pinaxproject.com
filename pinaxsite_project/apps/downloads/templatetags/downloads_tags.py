@@ -39,7 +39,6 @@ class LatestReleaseNode(BaseReleaseNode):
         else:
             raise ValueError("Unknown kind in LatestReleaseNode.render")
         
-        queryset = queryset.order_by("-timestamp")
         try:
             context[self.context_var] = queryset[0]
         except IndexError:
@@ -55,10 +54,9 @@ class OlderReleasesNode(BaseReleaseNode):
     
     def render(self, context):
         
-        latest_releases = Release.objects.order_by("-timestamp")[:2]
-        context[self.context_var] = Release.objects.exclude(
-            id__in = latest_releases
-        ).order_by("-timestamp")
+        latest_releases = Release.objects.all()[:2]
+        older_releases = Release.objects.exclude(id__in=latest_releases)
+        context[self.context_var] = older_releases
         
         return u""
 
