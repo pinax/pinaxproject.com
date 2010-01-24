@@ -4,6 +4,7 @@
 {% load biblion_tags %}
 {% load biblion_extras_tags %}
 {% load example_sites_tags %}
+{% load quotes_tags %}
 
 {% block head_title_base %}Pinax{% endblock %}
 
@@ -83,7 +84,14 @@
     </div>
     
     <div class="box">
-        <p>@@@ featured quote / rotating quotes</p>
+        {% featured_quote as quote %}
+        {% if quote %}
+        <div>
+            &ldquo; {{ quote.text }} &rdquo; &mdash; {{ quote.author }}
+        </div>
+        {% else %}
+            <p>No featured quote.</p>
+        {% endif %}
         
         <p><a href="{% url quotes_home %}">more quotes about Pinax...</a></p>
     </div>

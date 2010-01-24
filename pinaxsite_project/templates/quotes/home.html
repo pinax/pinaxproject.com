@@ -9,6 +9,12 @@
     
     <h2>Quotes</h2>
     
-    {# @@@ #}
+    {% for quote in quotes %}
+        <div>
+            &ldquo; {{ quote.text }} &rdquo; &mdash; {{ quote.author }}
+        </div>
+    {% empty %}
+        <p>No quotes.</p>
+    {% endfor %}
     
 {% endblock %}
