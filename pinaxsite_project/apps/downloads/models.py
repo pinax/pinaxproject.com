@@ -2,6 +2,8 @@ from datetime import datetime
 
 from django.db import models
 
+from downloads.verlib import NormalizedVersion as V
+
 
 
 class Release(models.Model):
@@ -15,6 +17,19 @@ class Release(models.Model):
     
     def __unicode__(self):
         return self.version
+    
+    @classmethod
+    def latest_stable(cls):
+        return cls._default_manager.filter(stable=True)[0]
+    
+    @classmethod
+    def latest_development(cls):
+        stable = cls.latest_stable()
+        dev = cls._default_manager.filter(stable=False)[0]
+        if V(dev.version) > V(stable.version):
+            return dev
+        else:
+            return None
 
 
 class ReleaseFile(models.Model):

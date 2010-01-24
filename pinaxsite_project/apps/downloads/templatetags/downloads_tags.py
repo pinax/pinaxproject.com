@@ -33,16 +33,11 @@ class LatestReleaseNode(BaseReleaseNode):
     def render(self, context):
         
         if self.kind == "stable":
-            queryset = Release.objects.filter(stable=True)
+            context[self.context_var] = Release.latest_stable()
         elif self.kind == "development":
-            queryset = Release.objects.filter(stable=False)
+            context[self.context_var] = Release.latest_development()
         else:
             raise ValueError("Unknown kind in LatestReleaseNode.render")
-        
-        try:
-            context[self.context_var] = queryset[0]
-        except IndexError:
-            context[self.context_var] = None
         
         return u""
 
@@ -54,7 +49,12 @@ class OlderReleasesNode(BaseReleaseNode):
     
     def render(self, context):
         
-        latest_releases = Release.objects.all()[:2]
+        latest_releases = [
+            Release.latest_stable().id,
+        ]
+        latest_dev = Release.latest_development()
+        if latest_dev:
+            latest_releases.append(latest_dev.id)
         older_releases = Release.objects.exclude(id__in=latest_releases)
         context[self.context_var] = older_releases
         
