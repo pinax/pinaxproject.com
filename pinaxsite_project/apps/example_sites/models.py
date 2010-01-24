@@ -25,3 +25,8 @@ class Site(models.Model):
     
     def __unicode__(self):
         return "%s [%s]" % (self.name, self.url)
+    
+    def save(self, **kwargs):
+        if self.featured:
+            Site.objects.filter(featured=True).update(featured=False)
+        super(Site, self).save(**kwargs)

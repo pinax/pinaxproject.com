@@ -39,7 +39,7 @@ class RandomSitesNode(template.Node):
             raise template.TemplateSyntaxError("Second argument to %r must be "
                 "'as'" % bits[0])
         
-        return cls(bits[1], bits[3] **kwargs)
+        return cls(bits[1], bits[3], **kwargs)
     
     def __init__(self, limit, context_var, **kwargs):
         self.limit = template.Variable(limit)
