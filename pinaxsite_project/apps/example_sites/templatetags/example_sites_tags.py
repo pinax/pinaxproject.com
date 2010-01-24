@@ -46,7 +46,7 @@ class RandomSitesNode(template.Node):
         self.context_var = context_var
     
     def render(self, context):
-        limit = self.resolve(context)
+        limit = self.limit.resolve(context)
         sites = Site.objects.exclude(featured=True).order_by("?")[:limit]
         context[self.context_var] = sites
         return u""
