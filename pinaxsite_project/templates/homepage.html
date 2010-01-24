@@ -2,6 +2,7 @@
 
 {% load downloads_tags %}
 {% load biblion_tags %}
+{% load biblion_extras_tags %}
 
 {% block head_title_base %}Pinax{% endblock %}
 
@@ -99,7 +100,12 @@
     </div>
     
     <div class="box">
-        @@@ featured blog entry
+        {% featured_post as post %}
+        {% if post %}
+            {% include "biblion/_minipost.html" %}
+        {% else %}
+            <p>No featured post.</p>
+        {% endif %}
     </div>
     
     <div class="box">
