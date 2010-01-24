@@ -4,4 +4,8 @@ from example_sites.models import Site
 
 
 
-admin.site.register(Site)
+class SiteAdmin(admin.ModelAdmin):
+    list_display = ["name", "url", "approved", "featured", "contact_name"]
+
+
+admin.site.register(Site, SiteAdmin)
