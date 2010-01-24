@@ -27,7 +27,10 @@ ul.nav {
     list-style: none;
 }
 ul.nav li {
-    padding: 10px 10px 10px 0;
     float: left;
 }
-
+ul.nav li a {
+    display: block;
+    height: 20px;
+    padding: 30px 20px 5px 10px;
+}
