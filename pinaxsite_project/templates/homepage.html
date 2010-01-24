@@ -1,6 +1,7 @@
 {% extends "site_base.html" %}
 
 {% load downloads_tags %}
+{% load biblion_tags %}
 
 {% block head_title_base %}Pinax{% endblock %}
 
@@ -86,9 +87,10 @@
     <div class="box">
         <h2>Announcements</h2>
         
-        <p>@@@ most recent announcement blog entry</p>
+        {% latest_section_post "announcements" as post %}
+        {% include "biblion/_minipost2.html" %}
         
-        <p><a href="{% url blog %}">more announcements...</a></p>
+        <p><a href="{% url blog_section "announcements" %}">more announcements...</a></p>
     </div>
     
     <div class="box">
