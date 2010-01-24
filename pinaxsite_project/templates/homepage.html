@@ -3,6 +3,7 @@
 {% load downloads_tags %}
 {% load biblion_tags %}
 {% load biblion_extras_tags %}
+{% load example_sites_tags %}
 
 {% block head_title_base %}Pinax{% endblock %}
 
@@ -66,7 +67,17 @@
     <div class="box">
         <h2>Sites Built With Pinax</h2>
         
-        <p>@@@ featured site / rotating sites</p>
+        {% featured_site as site %}
+        {{ site }}
+        
+        {% random_sites 5 as sites %}
+        {% if sites %}
+        <ul>
+            {% for site in sites %}
+                <li>{{ site}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
         
         <p><a href="{% url sites_home %}">more sites built on Pinax...</a></p>
     </div>
