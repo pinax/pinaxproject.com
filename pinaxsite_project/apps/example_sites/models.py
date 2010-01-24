@@ -17,6 +17,7 @@ class Site(models.Model):
         verify_exists = False
     )
     approved = models.BooleanField(default=False)
+    featured = models.BooleanField(default=False)
     created = models.DateTimeField(default=datetime.now)
     when_approved = models.DateTimeField(null=True)
     contact_name = models.CharField(max_length=100, blank=True)
