@@ -11,9 +11,17 @@
         
         {% include "_nav.html" %}
         
-        <h1><a href="/">Pinax</a></h1>
+        <div id="header">
+            <h1><a href="/">Pinax</a></h1>
+        </div>
         
-        {% block main_content %}{% endblock %}
+        <div id="main_content">
+            {% block main_content %}{% endblock %}
+        </div>
+        
+        <div id="footer">
+            @@@ footer
+        </div>
         
         {# @@@ google analytics #}
         {% block extra_body %}{% endblock %}
