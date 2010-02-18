@@ -10,8 +10,10 @@
     <h2>Quotes</h2>
     
     {% for quote in quotes %}
-        <div>
-            &ldquo; {{ quote.text }} &rdquo; &mdash; {{ quote.author }}
+        <div class="quote">
+            <span class="marks">&ldquo;</span>{{ quote.text }}<span class="marks">&rdquo;</span>
+            <br />
+            <span class="attribution">&mdash; {{ quote.author }}</span>
         </div>
     {% empty %}
         <p>No quotes.</p>

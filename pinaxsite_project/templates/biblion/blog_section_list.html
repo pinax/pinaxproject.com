@@ -2,9 +2,11 @@
 
 {% load webdesign %}
 
-{% block head_title %}Blog ({{ section }}){% endblock %}
+{% block head_title %}Blog ({{ section|capfirst }}){% endblock %}
 
 {% block blog_content %}
+    
+    <h2>{{ section|capfirst }}</h2>
     
     {% if posts %}
         {% for post in posts %}

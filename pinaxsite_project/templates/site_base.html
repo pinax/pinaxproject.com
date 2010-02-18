@@ -5,6 +5,7 @@
         
         <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/layout.css" />
+        {# <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" /> #}
         {# @@@ atom feeds #}
     </head>
     
@@ -13,7 +14,7 @@
         {% include "_nav.html" %}
         
         <div id="header">
-            <h1><a href="/">Pinax</a></h1>
+            <h1><a href="/"><img src="{{ STATIC_URL }}img/pinax_logo.png" alt="Pinax" /></a></h1>
             <h2>a platform for rapidly developing websites</h2>
         </div>
         
@@ -22,8 +23,8 @@
         </div>
         
         <div id="footer">
-            <p>This site built using Pinax and hosted by <a href="http://eldarion.com/">Eldarion</a>.</p>
-            <p>
+            <p>This site was built using Pinax and is hosted by <a href="http://eldarion.com/">Eldarion</a>.</p>
+            <p class="legal">
                 &copy; 2008&ndash;2010 James Tauber and contributors.
                 Pinax is a trademark of James Tauber.
                 Django is a registered trademark of the Django Software Foundation.

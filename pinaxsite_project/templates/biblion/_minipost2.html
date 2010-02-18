@@ -1,4 +1,4 @@
-<h2><a href="{{ post.get_absolute_url }}" class="post-link">{{ post.title }}</a></h2>
+<h3><a href="{{ post.get_absolute_url }}" class="post-link">{{ post.title }}</a></h3>
 <p class="post_dateline">
     <span class="date">{% if post.published %}{{ post.published|date:"jS F Y" }}{% else %}Not published yet{% endif %}</span>
 </p>

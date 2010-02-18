@@ -12,138 +12,155 @@
 
 {% block main_content %}
     
-    <div class="box">
-        <p>
-            Pinax is an open-source platform built on the
-            <a href="http://djangoproject.com">Django Web Framework</a>.
-        </p>
-        
-        <p>
-            By integrating numerous reusable Django apps and providing starter
-            projects and infrastructure tools, Pinax takes care of the things
-            that many sites have in common so you can focus on what makes your
-            site different.
-        </p>
-    </div>
-    
-    <div class="box">
-        <p>@@@ features</p>
-    </div>
-    
-    <div class="box left2">
-        <h2>Release</h2>
-        
-        {% latest_stable_release as release %}
-        {% if release %}
-            <p>
-                The latest stable release is {{ release.version }}
+    <div class="row">
+        <div class="box">
+            <p class="main">
+                Pinax is an open-source platform built on the
+                <a href="http://djangoproject.com">Django Web Framework</a>.
             </p>
-        {% else %}
-            <p>There are currently no stable releases.</p>
-        {% endif %}
-        
-        <p><a href="{% url downloads_home %}">more downloads...</a></p>
-    </div>
-    
-    <div class="box center2">
-        <h2>Featured Post</h2>
-        
-        {% featured_post as post %}
-        {% if post %}
-            {% include "biblion/_minipost.html" %}
-        {% else %}
-            <p>No featured post.</p>
-        {% endif %}
-    </div>
-    
-    <div class="box right2">
-        <h2>Announcements</h2>
-        
-        {% latest_section_post "announcements" as post %}
-        {% include "biblion/_minipost2.html" %}
-        
-        <p><a href="{% url blog_section "announcements" %}">more announcements...</a></p>
-    </div>
-    <div class="clear"></div>
-    
-    <div class="box left3">
-        <h2>Developer Information</h2>
-        
-        <p>
-            Pinax is available under an MIT license. The source code is
-            available from <a href="http://github.com/pinax/pinax">GitHub</a>.
-        </p>
-        
-        <p>
-            Tickets and Wiki are at
-            <a href="http://code.pinaxproject.com">code.pinaxproject.com</a>
-        </p>
-        
-        <p>
-            Most discussion about Pinax takes place on the IRC channel
-            <a href="irc://irc.freenode.net/pinax">#pinax</a>
-            on Freenode or the
-            <a href="http://groups.google.com/group/pinax-users">pinax-users</a>
-            mailing list on Google Groups.
-        </p>
-    </div>
-    
-    <div class="box right3">
-        <h2>The Pinax Blog</h2>
-        
-        {% latest_blog_posts as posts %}
-        {% for post in posts %}
-            {% include "biblion/_minipost.html" %}
-        {% empty %}
-            <p>No blog posts.</p>
-        {% endfor %}
-        
-        <p><a href="{% url blog %}">more blog posts...</a></>
-    </div>
-    <div class="clear"></div>
-    
-    <div class="box left2">
-        <h2>Sites Built With Pinax</h2>
-        
-        {% featured_site as site %}
-        {{ site }}
-        
-        {% random_sites 5 as sites %}
-        {% if sites %}
-        <ul>
-            {% for site in sites %}
-                <li>{{ site}}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        
-        <p><a href="{% url sites_home %}">more sites built on Pinax...</a></p>
-    </div>
-    
-    <div class="box center2">
-        <h2>Quotes</h2>
-        
-        {% featured_quote as quote %}
-        {% if quote %}
-        <div>
-            &ldquo; {{ quote.text }} &rdquo; &mdash; {{ quote.author }}
+            
+            <p class="main">
+                By integrating numerous reusable Django apps and providing starter
+                projects and infrastructure tools, Pinax takes care of the things
+                that many sites have in common so you can focus on what makes your
+                site different.
+            </p>
+            
+            <p class="main">
+                Pinax has been used for everything from social networks to
+                corporate websites and from intranets to online games.
+            </p>
         </div>
-        {% else %}
-            <p>No featured quote.</p>
-        {% endif %}
-        
-        <p><a href="{% url quotes_home %}">more quotes about Pinax...</a></p>
     </div>
     
-    <div class="box right2">
-        <h2>Events</h2>
-        
-        <p>@@@ featured event / rotating events</p>
-        
-        <p><a href="{% url events_home %}">more events...</a></p>
+    <div class="row">
+        <div class="box">
+            <p>@@@ features (multi-column list)</p>
+        </div>
     </div>
     
-    <div class="clear"></div>
-
+    <div class="row">
+        <div class="box left2">
+            <h2>Release</h2>
+            
+            {% latest_stable_release as release %}
+            {% if release %}
+                <p class="main">
+                    The latest stable release is {{ release.version }}
+                </p>
+            {% else %}
+                <p class="main">
+                    There are currently no stable releases.
+                </p>
+            {% endif %}
+            
+            <p><a href="{% url downloads_home %}">more downloads...</a></p>
+        </div>
+        
+        <div class="box center2">
+            <h2>Featured Post</h2>
+            
+            {% featured_post as post %}
+            {% if post %}
+                {% include "biblion/_minipost.html" %}
+            {% else %}
+                <p>No featured post.</p>
+            {% endif %}
+        </div>
+        
+        <div class="box right2">
+            <h2>Announcements</h2>
+            
+            {% latest_section_post "announcements" as post %}
+            {% include "biblion/_minipost2.html" %}
+            
+            <p><a href="{% url blog_section "announcements" %}">more announcements...</a></p>
+        </div>
+        <div class="clear"></div>
+    </div>
     
+    <div class="row">
+        <div class="box left3">
+            <h2>Developer Information</h2>
+            
+            <p>
+                Pinax is available under an MIT license. The source code is
+                available from <a href="http://github.com/pinax/pinax">GitHub</a>.
+            </p>
+            
+            <p>
+                Tickets and Wiki are at
+                <a href="http://code.pinaxproject.com">code.pinaxproject.com</a>
+            </p>
+            
+            <p>
+                Most discussion about Pinax takes place on the IRC channel
+                <a href="irc://irc.freenode.net/pinax">#pinax</a>
+                on Freenode or the
+                <a href="http://groups.google.com/group/pinax-users">pinax-users</a>
+                mailing list on Google Groups.
+            </p>
+        </div>
+        
+        <div class="box right3">
+            <h2>The Pinax Blog</h2>
+            
+            {% latest_blog_posts as posts %}
+            {% for post in posts %}
+                {% include "biblion/_minipost.html" %}
+            {% empty %}
+                <p>No blog posts.</p>
+            {% endfor %}
+            
+            <p><a href="{% url blog %}">more blog posts...</a></>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="row">
+        <div class="box left2">
+            <h2>Sites built with Pinax</h2>
+            
+            {% featured_site as site %}
+            {{ site }}
+            
+            {% random_sites 5 as sites %}
+            {% if sites %}
+            <ul class="sites">
+                {% for site in sites %}
+                    <li><a href="{{ site.url }}">{{ site.name }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            
+            <p><a href="{% url sites_home %}">more sites built on Pinax...</a></p>
+        </div>
+        
+        <div class="box center2">
+            <h2>Quotes about Pinax</h2>
+            
+            {% featured_quote as quote %}
+            {% if quote %}
+            <div class="quote">
+                <span class="marks">&ldquo;</span>{{ quote.text }}<span class="marks">&rdquo;</span>
+                <br />
+                <span class="attribution">&mdash; {{ quote.author }}<span>
+            </div>
+            {% else %}
+                <p>No featured quote.</p>
+            {% endif %}
+            
+            <p><a href="{% url quotes_home %}">more quotes about Pinax...</a></p>
+        </div>
+        
+        <div class="box right2">
+            <h2>Events</h2>
+            
+            <p>@@@ featured event / rotating events</p>
+            
+            <p><a href="{% url events_home %}">more events...</a></p>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
 {% endblock %}

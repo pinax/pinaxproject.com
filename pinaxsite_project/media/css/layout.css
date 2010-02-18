@@ -10,6 +10,10 @@
 }
 #footer {
     text-align: center;
+    padding: 10px 5px 20px;
+}
+#footer p {
+    margin: 1em 0;
 }
 .clear {
     clear: both;
@@ -21,8 +25,8 @@
 }
 
 ul.nav {
-    margin: 0 auto;
-    width: 900px;
+    xmargin: 0 auto;
+    xwidth: 900px;
     list-style: none;
 }
 ul.nav li {
@@ -69,4 +73,11 @@ ul.nav li a {
     width: 290px;
     margin-left: 5px;
     margin-right: 5px;
+}
+
+p {
+    margin-top: 10px;
+}
+.box h2 {
+    margin-bottom: 10px;
 }

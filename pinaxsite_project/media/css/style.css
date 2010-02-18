@@ -1,0 +1,122 @@
+body {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Helvetica Neue", Arial, Helvetica, sans-serif;;
+    background: #DADADA;
+    color: #000000;
+}
+
+#header {
+    background: url(/site_media/static/img/heading.png) repeat-x;
+    color: #DEF;
+}
+#header a {
+    text-decoration: none;
+    color: #DEF;
+}
+
+#main_content {
+    margin-top: 40px;
+    text-shadow: #FFFFFF 0px 1px;
+}
+
+#blog #blog-nav,
+#downloads #download-nav {
+    background: url(/site_media/static/img/nav.png) repeat-x #333;
+    color: #FFF;
+    text-shadow: #000 0px 1px;
+}
+ul.nav li a {
+    border-right: 1px solid #999;
+}
+ul.nav li a.first {
+    border-left: 1px solid #999;
+}
+
+ul.nav li a {
+    text-decoration: none;
+    background: url(/site_media/static/img/box2.png) repeat-x #EEE;
+    text-shadow: #FFF 0px 1px;
+    color: #000;
+    font-size: 10pt;
+}
+ul.nav li a:hover {
+    color: #666;
+}
+.row {
+    xbackground: url(/site_media/static/img/box1.png) repeat-x;
+    xtext-shadow: #EEE 0px 1px;
+    font-size: 10pt;
+}
+a {
+    color: #000;
+}
+
+#footer {
+    background: url(/site_media/static/img/footer.png) repeat-x #000;
+    color: #FFF;
+}
+#footer p {
+    color: #CCC;
+    font-size: 12pt;
+}
+#footer p.legal {
+    color: #AAA;
+    font-size: 8pt;
+}
+#footer a {
+    color: #FFF;
+    text-decoration: none;
+}
+#footer a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+h1 {
+    font-size: 20pt;
+}
+h2 {
+    font-weight: normal;
+    color: #003355;
+    font-size: 16pt;
+}
+#header h2 {
+    color: #DEF;
+}
+h3 {
+    font-size: 14pt;
+}
+
+p.main {
+    margin: 1em 0.5em;
+    font-size: 12pt;
+}
+ul.sites {
+    margin: 1em 0;
+    list-style: disc;
+}
+ul.sites li {
+    margin: 0.5em 2em;
+}
+.quote {
+    font-size: 11pt;
+}
+.quote .marks {
+    font-weight: bold;
+}
+.quote .attribution {
+    font-size: 9pt;
+    font-style: italic;
+}
+
+body#quotes .quote {
+    margin: 20pt;
+    font-size: 14pt;
+}
+
+body#downloads h3 {
+    margin-top: 20pt;
+    font-weight: normal;
+}
+body#downloads .release {
+    margin-top: 0.5em;
+    font-size: 10pt;
+}
