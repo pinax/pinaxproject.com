@@ -160,9 +160,9 @@ CONTACT_EMAIL = ""
 SITE_NAME = ""
 
 BIBLION_SECTIONS = [
-    "announcements",
-    "articles",
-    "community",
+    ("announcements", "Announcements"),
+    ("articles", "Articles"),
+    ("community", "Community"),
 ]
 
 
