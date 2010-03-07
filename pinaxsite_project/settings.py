@@ -136,6 +136,7 @@ INSTALLED_APPS = [
     
     # external
     "dregni",
+    "tagging",
     "template_utils",
     
     # local
