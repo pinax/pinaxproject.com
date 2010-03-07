@@ -39,6 +39,7 @@ if settings.SERVE_MEDIA:
     )
 
 
-urlpatterns += patterns("",
-    (r"^(.*)$", "pinax.views.static_view"),
-)
+if settings.DEBUG:
+    urlpatterns += patterns("",
+        (r"^(.*)$", "pinax.views.static_view"),
+    )
