@@ -1,101 +1,251 @@
 [
-  {
-    "pk": 11, 
-    "model": "downloads.release", 
-    "fields": {
-      "timestamp": "2009-10-09 21:32:00", 
-      "version": "0.7.1", 
-      "stable": true
+    {
+        "pk": 11, 
+        "model": "downloads.release", 
+        "fields": {
+            "timestamp": "2009-10-09 21:32:00", 
+            "version": "0.7.1", 
+            "stable": true
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "downloads.release", 
+        "fields": {
+            "timestamp": "2009-09-12 20:23:00", 
+            "version": "0.7", 
+            "stable": true
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "downloads.release", 
+        "fields": {
+            "timestamp": "2009-09-03 00:15:00", 
+            "version": "0.7rc1", 
+            "stable": false
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "downloads.release", 
+        "fields": {
+            "timestamp": "2009-07-31 14:40:00", 
+            "version": "0.7beta3", 
+            "stable": false
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "downloads.release", 
+        "fields": {
+            "timestamp": "2009-04-23 23:22:00", 
+            "version": "0.7beta2", 
+            "stable": false
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "downloads.release", 
+        "fields": {
+            "timestamp": "2009-04-13 22:55:00", 
+            "version": "0.7beta1", 
+            "stable": false
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "downloads.release", 
+        "fields": {
+            "timestamp": "2009-01-10 15:49:00", 
+            "version": "0.5.1", 
+            "stable": true
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "downloads.release", 
+        "fields": {
+            "timestamp": "2008-12-30 07:34:00", 
+            "version": "0.5.1rc1", 
+            "stable": false
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "downloads.release", 
+        "fields": {
+            "timestamp": "2008-10-28 14:57:00", 
+            "version": "0.5.0", 
+            "stable": true
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "downloads.release", 
+        "fields": {
+            "timestamp": "2008-10-23 15:17:00", 
+            "version": "0.5.0rc2", 
+            "stable": false
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "downloads.release", 
+        "fields": {
+            "timestamp": "2008-10-20 22:07:00", 
+            "version": "0.5.0rc1", 
+            "stable": false
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "downloads.releasefile", 
+        "fields": {
+            "release": 11, 
+            "sha1_hash": "9ac4e2ae14d30d25445efb00bcb4af5a7daea167", 
+            "file": "downloads/Pinax-0.7-bundle.tar.gz", 
+            "md5_hash": "59ba0940bc30597694f0e21d8197e401"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "downloads.releasefile", 
+        "fields": {
+            "release": 11, 
+            "sha1_hash": "678011d67005bebd6354fff57fbd2337ac8fe538", 
+            "file": "downloads/Pinax-0.7.1-bundle.zip", 
+            "md5_hash": "c190aa76fcd23635dcf6f8c39c2cb1f6"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "downloads.releasefile", 
+        "fields": {
+            "release": 10, 
+            "sha1_hash": "65680e8f85d8955a978f40ca056ed7bbb5021582", 
+            "file": "downloads/Pinax-0.7-bundle.tar_1.gz", 
+            "md5_hash": "14006de90e514900866044223b909210"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "downloads.releasefile", 
+        "fields": {
+            "release": 10, 
+            "sha1_hash": "5771b2fde261efed089840b90e0f9f41e41b9a78", 
+            "file": "downloads/Pinax-0.7-bundle.zip", 
+            "md5_hash": "145dc69211108cb3555481aab5a9b69d"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "downloads.releasefile", 
+        "fields": {
+            "release": 9, 
+            "sha1_hash": "c0f04764c17eef88cf5aafed9ce94f1db27c94fd", 
+            "file": "downloads/Pinax-0.7rc1-bundle.tar.gz", 
+            "md5_hash": "1b7c4d31e52da755afb66209e34897af"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "downloads.releasefile", 
+        "fields": {
+            "release": 9, 
+            "sha1_hash": "89f11d4f03f10b261b75217c846d937c52616d64", 
+            "file": "downloads/Pinax-0.7rc1-bundle.zip", 
+            "md5_hash": "daf122f8592ca5b49e7d3a4fcdbca9a6"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "downloads.releasefile", 
+        "fields": {
+            "release": 8, 
+            "sha1_hash": "a0ac084731bf2d33c1ecc3bace9120a1", 
+            "file": "downloads/pinax-0.7beta3.tar.gz", 
+            "md5_hash": "0fc36b3bb6b7ddc309088ada6bb1b1eb"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "downloads.releasefile", 
+        "fields": {
+            "release": 8, 
+            "sha1_hash": "b6b79e85be12c8a44acb10fbd8dc909c", 
+            "file": "downloads/pinax-0.7beta3.zip", 
+            "md5_hash": "fac49753f940f98b035f84f3c4f15f6a"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "downloads.releasefile", 
+        "fields": {
+            "release": 7, 
+            "sha1_hash": "a104a87e48975971703fe0702c09cf12b6518fcd", 
+            "file": "downloads/pinax-0.7beta2.tar.gz", 
+            "md5_hash": "b55b52b5b86ff2bdb2aca51b5c2dea6c"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "downloads.releasefile", 
+        "fields": {
+            "release": 6, 
+            "sha1_hash": "078e8cc6fb495435157d447c38fd93cfad8c6cf7", 
+            "file": "downloads/pinax-0.7beta1.tar.gz", 
+            "md5_hash": "d7ea51667a432d884f24b4d19c17908e"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "downloads.releasefile", 
+        "fields": {
+            "release": 5, 
+            "sha1_hash": "e892e2486c2b9d99d7e42f3a97ee0d2dc9def9a9", 
+            "file": "downloads/pinax-0.5.1.tar.gz", 
+            "md5_hash": "873b7e7e892a37407164f2d43302fe7b"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "downloads.releasefile", 
+        "fields": {
+            "release": 4, 
+            "sha1_hash": "c7868a900b1eec0f79e8037f4249a38f30d7948a", 
+            "file": "downloads/pinax-0.5.1rc1.tar.gz", 
+            "md5_hash": "5044850a0d42f2cae3b37f5761db32ea"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "downloads.releasefile", 
+        "fields": {
+            "release": 3, 
+            "sha1_hash": "6852e3d5f5b77059336f761df8c4a7059e603c9b", 
+            "file": "downloads/pinax-0.5.0.tar.gz", 
+            "md5_hash": "57e7f2ae60248d31d7d1bba22f442fe4"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "downloads.releasefile", 
+        "fields": {
+            "release": 2, 
+            "sha1_hash": "c0ac9ea38ab4a385ef795693936a6ccd0bb5636c", 
+            "file": "downloads/pinax-0.5.0rc2.tar.gz", 
+            "md5_hash": "f481144dab6cd5804c788ce23b7fb34c"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "downloads.releasefile", 
+        "fields": {
+            "release": 1, 
+            "sha1_hash": "19c4045c4fe7a54d9bb43dbde2df7ce0ab83f06b", 
+            "file": "downloads/pinax-0.5.0rc1.tar.gz", 
+            "md5_hash": "035c7dad9364bc1b3db0398ffbd9bd1e"
+        }
     }
-  }, 
-  {
-    "pk": 10, 
-    "model": "downloads.release", 
-    "fields": {
-      "timestamp": "2009-09-12 20:23:00", 
-      "version": "0.7", 
-      "stable": true
-    }
-  }, 
-  {
-    "pk": 9, 
-    "model": "downloads.release", 
-    "fields": {
-      "timestamp": "2009-09-03 00:15:00", 
-      "version": "0.7rc1", 
-      "stable": false
-    }
-  }, 
-  {
-    "pk": 8, 
-    "model": "downloads.release", 
-    "fields": {
-      "timestamp": "2009-07-31 14:40:00", 
-      "version": "0.7beta3", 
-      "stable": false
-    }
-  }, 
-  {
-    "pk": 7, 
-    "model": "downloads.release", 
-    "fields": {
-      "timestamp": "2009-04-23 23:22:00", 
-      "version": "0.7beta2", 
-      "stable": false
-    }
-  }, 
-  {
-    "pk": 6, 
-    "model": "downloads.release", 
-    "fields": {
-      "timestamp": "2009-04-13 22:55:00", 
-      "version": "0.7beta1", 
-      "stable": false
-    }
-  }, 
-  {
-    "pk": 5, 
-    "model": "downloads.release", 
-    "fields": {
-      "timestamp": "2009-01-10 15:49:00", 
-      "version": "0.5.1", 
-      "stable": true
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "downloads.release", 
-    "fields": {
-      "timestamp": "2008-12-30 07:34:00", 
-      "version": "0.5.1rc1", 
-      "stable": false
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "downloads.release", 
-    "fields": {
-      "timestamp": "2008-10-28 14:57:00", 
-      "version": "0.5.0", 
-      "stable": true
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "downloads.release", 
-    "fields": {
-      "timestamp": "2008-10-23 15:17:00", 
-      "version": "0.5.0rc2", 
-      "stable": false
-    }
-  }, 
-  {
-    "pk": 1, 
-    "model": "downloads.release", 
-    "fields": {
-      "timestamp": "2008-10-20 22:07:00", 
-      "version": "0.5.0rc1", 
-      "stable": false
-    }
-  }
 ]
