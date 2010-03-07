@@ -14,4 +14,4 @@ class Quote(models.Model):
     def save(self, **kwargs):
         if self.featured:
             Quote.objects.filter(featured=True).update(featured=False)
-        super(Site, self).save(**kwargs)
+        super(Quote, self).save(**kwargs)
