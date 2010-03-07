@@ -104,7 +104,7 @@
         "fields": {
             "release": 11, 
             "sha1_hash": "9ac4e2ae14d30d25445efb00bcb4af5a7daea167", 
-            "file": "downloads/Pinax-0.7-bundle.tar.gz", 
+            "file": "downloads/Pinax-0.7.1-bundle.tar.gz", 
             "md5_hash": "59ba0940bc30597694f0e21d8197e401"
         }
     }, 
@@ -124,7 +124,7 @@
         "fields": {
             "release": 10, 
             "sha1_hash": "65680e8f85d8955a978f40ca056ed7bbb5021582", 
-            "file": "downloads/Pinax-0.7-bundle.tar_1.gz", 
+            "file": "downloads/Pinax-0.7-bundle.tar.gz", 
             "md5_hash": "14006de90e514900866044223b909210"
         }
     }, 
