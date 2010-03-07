@@ -1,3 +1,5 @@
+import os
+
 from datetime import datetime
 
 from django.db import models
@@ -42,3 +44,7 @@ class ReleaseFile(models.Model):
     
     def file_type(self):
         return self.file.name.rsplit(".")[-1]
+    
+    def download_url(self):
+        filename = os.path.basename(self.file.name)
+        return "http://downloads.pinaxproject.com/%s" % filename
