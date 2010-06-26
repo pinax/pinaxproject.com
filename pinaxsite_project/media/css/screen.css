@@ -1,0 +1,194 @@
+/*
+Theme Name: Pinax Project
+Date: 2010.06
+Author: Greg Newman
+*/
+
+/* `Block Level Elements
+----------------------------------------------------------------------------------------------------*/
+
+body {
+    background: #3b3e3f url(../img/body_bg.png) no-repeat top center;
+}
+
+header {
+    width: 960px;
+    height: 175px;
+    margin: 0 auto;
+    position: relative;
+}
+
+section {
+    width: 960px;
+    margin: 20px auto;
+    color: #ffffff;
+    min-height: 300px;
+}
+
+footer {
+    background: #8caa4e;
+    border-top: 1px solid #d8e2c3;
+}
+
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+/*
+	The following zoom:1 rule is specifically for IE6 + IE7.
+	Move to separate stylesheet if invalid CSS is a problem.
+*/
+* html .clearfix,
+*:first-child+html .clearfix {
+	zoom: 1;
+}
+
+/* `Header Elements
+----------------------------------------------------------------------------------------------------*/
+
+.pinax-logo {
+    position: absolute;
+    top: 53px;
+    left: 40px;
+}
+
+.navbar {
+
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0 0 0 430px;
+    padding: 0;
+}
+
+.navbar ul li {
+    float: left;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 40px;
+    padding: 5px 10px;
+    margin: 0 5px;
+}
+
+.buttons-tag {
+    position: absolute;
+    top: 63px;
+    right: 60px;
+    text-align: center;
+}
+
+.buttons-tag img {
+    margin: 0 10px;
+}
+
+.buttons-tag p {
+    color: #ffffff;
+    font-size: 16px;
+    font-family: FontinSansBold;
+    padding: 10px 0;
+    letter-spacing: 1px;
+}
+
+/* `Footer Elements
+----------------------------------------------------------------------------------------------------*/
+
+.footer-blocks {
+    width: 960px;
+    margin: 20px auto;
+}
+
+.col1, .col2, .col3 {
+    width: 270px;
+    padding: 0 20px;
+    float: left;
+    min-height: 275px;
+}
+
+.col1, .col2 {
+    margin-right: 10px;
+}
+
+.col1 h3, .col2 h3, .col3 h3 {
+    font-family: FontinSansBold;
+    font-size: 1.2em;
+    padding-left: 24px;
+    border-bottom: 1px solid #3b3e3f;
+    margin-bottom: 10px;
+}
+
+.col1 {
+    background: url(../img/events_bg.png) no-repeat top left;
+}
+
+.col2 {
+    background: url(../img/changes_bg.png) no-repeat top left;
+}
+
+.col3 {
+    background: url(../img/news_bg.png) no-repeat top left;
+}
+
+.col1 h3 {
+    background: url(../img/events_icon_sm.png) no-repeat top left;
+}
+
+.col2 h3 {
+    background: url(../img/changes_icon_sm.png) no-repeat top left;
+}
+
+.col3 h3 {
+    background: url(../img/news_icon_sm.png) no-repeat top left;
+}
+
+.credits {
+    background: #181e22;
+}
+
+.credits-block {
+    padding: 5px 0;
+    width: 960px;
+    margin: 0 auto;
+}
+
+.credits-block ul {
+    padding: 0;
+    margin: 12px 0 0 0;
+    list-style: none;
+    width: 500px;
+    float: right;
+}
+
+.credits-block ul li,
+.credits-block ul li a {
+    color: #ffffff;
+}
+
+.credits-block ul li {
+    display: inline;
+}
