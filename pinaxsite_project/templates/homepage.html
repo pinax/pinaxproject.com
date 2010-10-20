@@ -10,29 +10,28 @@
 
 {% block body_id %}homepage{% endblock %}
 
-{% block main_content %}
+{% block header_block %}
+    <div class="intro">
+        <p class="main">
+            Pinax is an open-source platform built on the
+            <a href="http://djangoproject.com">Django Web Framework</a>.
+        </p>
 
-    <div class="row intro">
-        <div class="box">
-            <p class="main">
-                Pinax is an open-source platform built on the
-                <a href="http://djangoproject.com">Django Web Framework</a>.
-            </p>
+        <p class="main">
+            By integrating numerous reusable Django apps and providing starter
+            projects and infrastructure tools, Pinax takes care of the things
+            that many sites have in common so you can focus on what makes your
+            site different.
+        </p>
 
-            <p class="main">
-                By integrating numerous reusable Django apps and providing starter
-                projects and infrastructure tools, Pinax takes care of the things
-                that many sites have in common so you can focus on what makes your
-                site different.
-            </p>
-
-            <p class="main">
-                Pinax has been used for everything from social networks to
-                corporate websites and from intranets to online games.
-            </p>
-        </div>
+        <p class="main">
+            Pinax has been used for everything from social networks to
+            corporate websites and from intranets to online games.
+        </p>
     </div>
+{% endblock %}
 
+{% block main_content %}
     <div class="row">
         <div class="box">
             <p>@@@ features (multi-column list)</p>

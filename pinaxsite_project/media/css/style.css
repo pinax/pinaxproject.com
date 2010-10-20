@@ -32,12 +32,14 @@ hr {
 
 #blog #blog-nav,
 #downloads #download-nav {
-    background: url(/site_media/static/img/nav.png) repeat-x #333;
-    color: #FFF;
-    text-shadow: #000 0px 1px;
+    background: url(/site_media/static/img/nav-over.png) repeat-x 0 0;
+/*    color: #FFF;
+    text-shadow: #000 0px 1px;*/
+    border-right:1px solid transparent;
+    border-left:1px solid transparent;
 }
 #nav-holder {
-  background: url(/site_media/static/img/box1.png) repeat-x;
+  background: url(/site_media/static/img/box1.png) repeat-x 0 -10px;
 }
 
 ul.nav {
@@ -56,13 +58,14 @@ ul.nav li a.first {
 
 ul.nav li a {
     text-decoration: none;
-    background: url(/site_media/static/img/box2.png) repeat-x #EEE;
     text-shadow: #FFF 0px 1px;
     color: #000;
     font-size: 10pt;
+    margin-right:3px;
 }
 ul.nav li a:hover {
-    color: #666;
+    background: url(/site_media/static/img/nav-over.png) repeat-x 0 0;
+
 }
 .row {
     xbackground: url(/site_media/static/img/box1.png) repeat-x;
@@ -75,7 +78,7 @@ a {
 }
 
 #footer {
-    background: url(/site_media/static/img/footer.png) repeat-x #000;
+    background: url(/site_media/static/img/ft.png) repeat-x #222;
     color: #FFF;
 }
 #footer p {
@@ -96,6 +99,7 @@ a {
 }
 h1 {
     font-size: 20pt;
+    margin-top:20px;
 }
 h2 {
     font-weight: normal;
@@ -107,16 +111,14 @@ h2 {
 }
 #header h2 {
     color: #DEF;
+    font-size:12pt;
+    margin-left:7px;
 }
 h3 {
     font-size: 11pt;
     margin-bottom:0;
 }
 
-p.main {
-    margin: 1em 0.5em;
-    font-size: 12pt;
-}
 ul.sites {
     margin: 1em 0;
     list-style: disc;
@@ -153,10 +155,14 @@ body#downloads .release {
 
 /*** homepage ***/
 .intro {
-  font-size:30pt;
-  color:#555;
-  font-weight:bold;
-  line-height:0.5em;
+  font-size:15px;
+  color:#dee0df;
+  line-height:1.55em;
+  margin:0;
+}
+
+.intro p {
+  margin-bottom:15px;
 }
 
 h3.post-title a {
@@ -214,18 +220,21 @@ a#btn-release {
   display:block;
   padding:7px 10px;
   font-size:11pt;
-  background:#a1bc50;
-  border:3px solid #fff;
+  background:#c1db42;
+  border:3px solid #a0b636;
+  border-radius:6px;
   -moz-border-radius:6px;
-  color:#fff;
+  -webkit-border-radius:6px;
+  color:#404040;
   text-align:center;
-  text-shadow:none;
+  text-shadow:0px 1px 0px #dbea91;
   float:left;
   margin:5px 0 0 -10px;
 }
 
 a#btn-release:hover {
-  background:#aed244;
+  color:#222;
+  background:#c5e529;
 }
 
 ul.sites {
@@ -255,6 +264,6 @@ ul.sites li {
 
 .left-border {
   float:left;
-  border:2px solid #fff;
+  border:2px solid #a0b636;
   margin:0 10px 0 0;
 }

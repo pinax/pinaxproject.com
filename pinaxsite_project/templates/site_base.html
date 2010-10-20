@@ -1,74 +1,42 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{% block head_title_base %}Pinax : {% block head_title %}{% endblock %}{% endblock %}</title>
-    <link href="{{ STATIC_URL }}css/reset.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="{{ STATIC_URL }}css/text.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="{{ STATIC_URL }}css/screen.css" media="screen" rel="stylesheet" type="text/css" />
-    
-    <script src="{{ STATIC_URL }}js/modernizr-1.1.min.js" type="text/javascript"></script>
-    {# @@@ atom feeds #}
-  </head>
-  <body id="{% block body_id %}default{% endblock %}">
-    <header>
-      <div class="pinax-logo"><img src="{{ STATIC_URL }}img/pinax_logo.png" border="0" /></div>
-        <div class="navbar">
-          {% include "_nav.html" %}
-        </div>
-        <div class="buttons-tag">
-            <img src="{{ STATIC_URL }}img/download_button.png" class="download" />
-            <img src="{{ STATIC_URL }}img/get_started_button.png" class="get-started" />
-            <p>A platform for rapidly developing websites</p>
-        </div>
-    </header>
-        
-    <section>
-      <div id="main_content">
-        {% block main_content %}{% endblock %}
-      </div>
-    </section>
-      <footer>
-          <div class="footer-blocks">
-              <div class="col1">
-                  <h3>Events</h3>
-                  <ul>
-                      <li>Lorem ipsum dolor sit amet, consectetuer adipisc.</li>
-                      <li>Aliquam tincidunt mauris eu risus.</li>
-                      <li>Vestibulum auctor dapibus neque.</li>
-                      <li>Nunc dignissim risus id metus.</li>
-                      <li>Cras ornare tristique elit.</li>
-                      <li>Vivamus vestibulum nulla nec ante.</li>
-                      <li>Praesent placerat risus quis eros.</li>
-                      <li>Fusce pellentesque suscipit nibh.</li>
-                  </ul>
-              </div>
-              <div class="col2">
-                  <h3>Latest Changes</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>{% block head_title_base %}Pinax : {% block head_title %}{% endblock %}{% endblock %}</title>
 
-<p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
-              </div>
-              <div class="col3">
-                  <h3>News</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/layout.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
+        {# @@@ atom feeds #}
+    </head>
 
-<p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
-              </div>
-              <div class="clearfix"></div>
-          </div>
-          <div class="credits">
-              <div class="credits-block">
-                  <img src="{{ STATIC_URL }}img/python_logo.png" border="0" />
-                  <img src="{{ STATIC_URL }}img/django_logo.png" border="0" />
-                  <ul>
-                      <li>Hosted by Eldarion</li>
-                      <li>Designed by Greg Newman</li>
-                      <li>Legal Mumbo-Jumbo</li>
-                  </ul>
-              </div>
-          </div>
-      </footer>
-      {# @@@ google analytics #}
-      {% block extra_body %}{% endblock %}
-  </body>
+    <body id="{% block body_id %}default{% endblock %}">
+
+        {% include "_nav.html" %}
+
+        <div id="header">
+            <div id="header-content">
+                <div class="block-left">
+                    <h1><a href="/"><img src="{{ STATIC_URL }}img/pinax_logo.png" alt="Pinax" /></a></h1>
+                    <h2>a platform for rapidly developing websites</h2>
+                </div>
+                <div class="block-right">{% block header_block %}{% endblock %}</div>
+            </div>
+        </div>
+
+        <div id="main_content">
+            {% block main_content %}{% endblock %}
+        </div>
+
+        <div id="footer">
+            <p>This site was built using Pinax and is hosted by <a href="http://eldarion.com/">Eldarion</a>.</p>
+            <p class="legal">
+                &copy; 2008&ndash;2010 James Tauber and contributors.
+                Pinax is a trademark of James Tauber.
+                Django is a registered trademark of the Django Software Foundation.
+            </p>
+        </div>
+
+        {# @@@ google analytics #}
+        {% block extra_body %}{% endblock %}
+    </body>
 </html>
