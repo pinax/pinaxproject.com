@@ -1,7 +1,19 @@
 body {
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Helvetica Neue", Arial, Helvetica, sans-serif;;
-    background: #DADADA;
-    color: #000000;
+    background: #ebebeb;
+    color: #555;
+    line-height:1.25em;
+}
+
+hr {
+  height: 1px;
+  background-color: #fff;
+  border-top: solid 1px #ccc;
+  border-bottom: solid 1px #fff;
+  border-left:0;
+  border-right:0;
+  clear: both;
+  margin:0 0 3px 0;
 }
 
 #header {
@@ -24,12 +36,23 @@ body {
     color: #FFF;
     text-shadow: #000 0px 1px;
 }
-ul.nav li a {
+#nav-holder {
+  background: url(/site_media/static/img/box1.png) repeat-x;
+}
+
+ul.nav {
+  overflow:hidden;
+  width: 960px;
+  margin:0 auto;
+}
+
+/*ul.nav li a {
     border-right: 1px solid #999;
 }
+
 ul.nav li a.first {
     border-left: 1px solid #999;
-}
+} */
 
 ul.nav li a {
     text-decoration: none;
@@ -47,7 +70,8 @@ ul.nav li a:hover {
     font-size: 10pt;
 }
 a {
-    color: #000;
+    color: #90b630;
+    text-decoration:none;
 }
 
 #footer {
@@ -75,14 +99,18 @@ h1 {
 }
 h2 {
     font-weight: normal;
-    color: #003355;
-    font-size: 16pt;
+    color: #336699; /*003355;*/
+    font-weight:bold;
+    font-size: 14pt;
+    margin-bottom:0;
+    padding-bottom:0;
 }
 #header h2 {
     color: #DEF;
 }
 h3 {
-    font-size: 14pt;
+    font-size: 11pt;
+    margin-bottom:0;
 }
 
 p.main {
@@ -97,7 +125,9 @@ ul.sites li {
     margin: 0.5em 2em;
 }
 .quote {
-    font-size: 11pt;
+    font-size: 10pt;
+    margin-top:10px;
+    line-height:1.7em;
 }
 .quote .marks {
     font-weight: bold;
@@ -119,4 +149,112 @@ body#downloads h3 {
 body#downloads .release {
     margin-top: 0.5em;
     font-size: 10pt;
+}
+
+/*** homepage ***/
+.intro {
+  font-size:30pt;
+  color:#555;
+  font-weight:bold;
+  line-height:0.5em;
+}
+
+h3.post-title a {
+  color:#666;
+}
+
+p.post_dateline {
+  font-size:8.5pt;
+  color:#888;
+  margin:0;
+}
+
+div.teaser {
+  margin:0 0 7px 0;
+  padding:0 0 7px 0;
+}
+
+.pinax-blog div.teaser {
+  border-bottom:1px dotted #fff;
+}
+
+div.teaser p {
+  margin:0;
+}
+
+a.more {
+  color:#666;
+  font-style:italic;
+}
+
+.columns, .columns2 {
+  position:relative;
+  padding-bottom:20px;
+}
+
+.columns a.more, .columns2 a.more {
+  position:absolute;
+  bottom:5px;
+  left:10px;
+}
+
+.dev-info p {
+  margin-bottom:15px;
+  line-height:1.7em;
+}
+
+.marks {
+  font-size:16pt;
+  font-weight:bold;
+  color:#bbb;
+  line-height:0.2em;
+}
+
+a#btn-release {
+  display:block;
+  padding:7px 10px;
+  font-size:11pt;
+  background:#a1bc50;
+  border:3px solid #fff;
+  -moz-border-radius:6px;
+  color:#fff;
+  text-align:center;
+  text-shadow:none;
+  float:left;
+  margin:5px 0 0 -10px;
+}
+
+a#btn-release:hover {
+  background:#aed244;
+}
+
+ul.sites {
+  width:100%;
+  overflow:hidden;
+}
+
+ul.sites, ul.sites li {
+  list-style-type:none;
+  margin:0 0 10px 0;
+  padding:0;
+}
+
+ul.sites li {
+  display:block;
+  float:left;
+  width:145px;
+  margin:0 0 3px 0;
+}
+
+.featured-site-box {
+  margin:10px 0 10px 0;
+  padding-bottom:12px;
+  border-bottom:1px dotted #ccc;
+  overflow:hidden;
+}
+
+.left-border {
+  float:left;
+  border:2px solid #fff;
+  margin:0 10px 0 0;
 }

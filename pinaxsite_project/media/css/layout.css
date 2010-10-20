@@ -45,7 +45,7 @@ ul.nav li a {
 }
 .left3 {
     float: left;
-    width: 450px;
+    width: 610px;
     margin-right: 5px;
 }
 .left4 {
@@ -60,7 +60,7 @@ ul.nav li a {
 }
 .right3 {
     float: left;
-    width: 450px;
+    width: 290px;
     margin-left: 5px;
 }
 .right4 {
@@ -79,5 +79,5 @@ p {
     margin-top: 10px;
 }
 .box h2 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
