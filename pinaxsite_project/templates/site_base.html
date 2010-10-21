@@ -14,11 +14,9 @@
 
         <div id="header">
             <div id="header-content">
-                <div class="block-left">
+                {% block header_content %}
                     <h1><a href="/"><img src="{{ STATIC_URL }}img/pinax_logo.png" alt="Pinax" /></a></h1>
-                    <h2>a platform for rapidly developing websites</h2>
-                </div>
-                <div class="block-right">{% block header_block %}{% endblock %}</div>
+                {% endblock %}
             </div>
         </div>
 

@@ -59,11 +59,11 @@ p {
 /***************************************************************************** general layout styles ***/
 /*** header ***/
 #header {
-  background: url(/site_media/static/img/banner-home.png) repeat-x;
+  background: url(/site_media/static/img/banner.png) repeat-x;
   color: #DEF;
-  height: 235px;
+  height: 100px;
   margin: 0 auto;
-  padding: 0;
+  padding: 5px 0;
 }
 
 #header .block-left {
@@ -91,7 +91,11 @@ p {
 #header #header-content {
   width: 960px;
   margin: 0 auto;
-  padding:20px 0;
+  padding:0;
+}
+
+#header #header-content h1 {
+  padding:0;
 }
 
 /*** main content ***/
@@ -228,6 +232,15 @@ ul.nav li a:hover {
 /***************************************************************************** page specific styles */
 /*** homepage ***/
 /* banner */
+body#homepage #header {
+  background: url(/site_media/static/img/banner-home.png) repeat-x;
+  height: 235px;
+}
+
+body#homepage #header #header-content {
+  padding:20px 0;
+}
+
 .columns, .columns2 {
   position:relative;
   padding-bottom:20px;
