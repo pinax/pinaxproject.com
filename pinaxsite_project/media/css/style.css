@@ -1,8 +1,9 @@
+/***************************************************************************** universal styles ***/
 body {
-    font-family: "Lucida Grande", "Lucida Sans Unicode", "Helvetica Neue", Arial, Helvetica, sans-serif;;
-    background: #ebebeb;
-    color: #555;
-    line-height:1.25em;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Helvetica Neue", Arial, Helvetica, sans-serif;;
+  background: #ebebeb;
+  color: #555;
+  line-height:1.25em;
 }
 
 hr {
@@ -13,31 +14,187 @@ hr {
   border-left:0;
   border-right:0;
   clear: both;
-  margin:0 0 3px 0;
+  margin:0 0 6px 0;
 }
 
+a {
+  color: #90b630;
+  text-decoration:none;
+}
+
+h1 {
+  font-size: 20pt;
+  margin-top:20px;
+}
+
+h2 {
+  font-weight: normal;
+  color: #336699;
+  font-weight:bold;
+  font-size: 14pt;
+  margin-bottom:0;
+  padding-bottom:0;
+}
+
+h3 {
+  font-size: 11pt;
+  margin-bottom:0;
+}
+
+p {
+  margin-bottom:10px;
+}
+
+/***************************************************************************** library styles ***/
+.clear {
+  clear: both;
+}
+
+.left-border {
+  float:left;
+  border:2px solid #a0b636;
+  margin:0 10px 0 0;
+}
+
+/***************************************************************************** general layout styles ***/
+/*** header ***/
 #header {
-    background: url(/site_media/static/img/banner-home.png) repeat-x;
-    color: #DEF;
+  background: url(/site_media/static/img/banner-home.png) repeat-x;
+  color: #DEF;
+  height: 235px;
+  margin: 0 auto;
+  padding: 0;
 }
+
+#header .block-left {
+  float:left;
+  width:400px;
+  margin-right:15px;
+}
+
+#header .block-right {
+  float:left;
+  width:545px;
+}
+
+#header h2 {
+  color: #DEF;
+  font-size:12pt;
+  margin-left:7px;
+}
+
 #header a {
-    text-decoration: none;
-    color: #DEF;
+  text-decoration: none;
+  color: #DEF;
 }
 
+#header #header-content {
+  width: 960px;
+  margin: 0 auto;
+  padding:20px 0;
+}
+
+/*** main content ***/
 #main_content {
-    margin-top: 40px;
-    text-shadow: #FFFFFF 0px 1px;
+  text-shadow: #FFFFFF 0px 1px;
+  width: 960px;
+  margin: 40px auto;
 }
 
+/*** footer ***/
+#footer {
+  background: url(/site_media/static/img/ft.png) repeat-x #333;
+  color: #FFF;
+  text-align: center;
+  padding: 10px 5px 20px;
+}
+
+#footer p {
+  color: #CCC;
+  font-size: 12pt;
+  margin: 1em 0;
+}
+
+#footer p.legal {
+  color: #AAA;
+  font-size: 8pt;
+}
+
+#footer a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+/***************************************************************************** elements ***/
+.row {
+  xbackground: url(/site_media/static/img/box1.png) repeat-x;
+  xtext-shadow: #EEE 0px 1px;
+  font-size: 10pt;
+}
+
+.left2 {
+  float: left;
+  width: 290px;
+  margin-right: 5px;
+}
+
+.left3 {
+  float: left;
+  width: 610px;
+  margin-right: 5px;
+}
+
+.left4 {
+  float: left;
+  width: 600px;
+  margin-right: 5px;
+}
+
+.right2 {
+  float: left;
+  width: 290px;
+  margin-left: 5px;
+}
+
+.right3 {
+  float: left;
+  width: 290px;
+  margin-left: 5px;
+}
+
+.right4 {
+  float: left;
+  width: 600px;
+  margin-left: 5px;
+}
+
+.center2 {
+  float: left;
+  width: 290px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.box {
+  margin: 20px 0;
+  padding: 5px 10px;
+}
+
+.box h2 {
+  margin-bottom: 5px;
+}
+
+/*** main nav ***/
 #blog #blog-nav,
 #downloads #download-nav {
-    background: url(/site_media/static/img/nav-over.png) repeat-x 0 0;
-/*    color: #FFF;
-    text-shadow: #000 0px 1px;*/
-    border-right:1px solid transparent;
-    border-left:1px solid transparent;
+  background: url(/site_media/static/img/nav-over.png) repeat-x 0 0;
 }
+
 #nav-holder {
   background: url(/site_media/static/img/box1.png) repeat-x 0 -10px;
 }
@@ -46,123 +203,58 @@ ul.nav {
   overflow:hidden;
   width: 960px;
   margin:0 auto;
+  list-style: none;
 }
 
-/*ul.nav li a {
-    border-right: 1px solid #999;
+ul.nav li {
+  float: left;
 }
-
-ul.nav li a.first {
-    border-left: 1px solid #999;
-} */
 
 ul.nav li a {
-    text-decoration: none;
-    text-shadow: #FFF 0px 1px;
-    color: #000;
-    font-size: 10pt;
-    margin-right:3px;
+  text-decoration: none;
+  text-shadow: #FFF 0px 1px;
+  color: #000;
+  font-size: 10pt;
+  margin-right:3px;
+  display: block;
+  height: 20px;
+  padding: 20px 20px 15px 20px;
 }
+
 ul.nav li a:hover {
-    background: url(/site_media/static/img/nav-over.png) repeat-x 0 0;
-
-}
-.row {
-    xbackground: url(/site_media/static/img/box1.png) repeat-x;
-    xtext-shadow: #EEE 0px 1px;
-    font-size: 10pt;
-}
-a {
-    color: #90b630;
-    text-decoration:none;
+  background: url(/site_media/static/img/nav-over.png) repeat-x 0 0;
 }
 
-#footer {
-    background: url(/site_media/static/img/ft.png) repeat-x #333;
-    color: #FFF;
-}
-#footer p {
-    color: #CCC;
-    font-size: 12pt;
-}
-#footer p.legal {
-    color: #AAA;
-    font-size: 8pt;
-}
-#footer a {
-    color: #FFF;
-    text-decoration: none;
-}
-#footer a:hover {
-    color: #FFF;
-    text-decoration: underline;
-}
-h1 {
-    font-size: 20pt;
-    margin-top:20px;
-}
-h2 {
-    font-weight: normal;
-    color: #336699; /*003355;*/
-    font-weight:bold;
-    font-size: 14pt;
-    margin-bottom:0;
-    padding-bottom:0;
-}
-#header h2 {
-    color: #DEF;
-    font-size:12pt;
-    margin-left:7px;
-}
-h3 {
-    font-size: 11pt;
-    margin-bottom:0;
-}
-
-ul.sites {
-    margin: 1em 0;
-    list-style: disc;
-}
-ul.sites li {
-    margin: 0.5em 2em;
-}
-.quote {
-    font-size: 10pt;
-    margin-top:10px;
-    line-height:1.7em;
-}
-.quote .marks {
-    font-weight: bold;
-}
-.quote .attribution {
-    font-size: 9pt;
-    font-style: italic;
-}
-
-body#quotes .quote {
-    margin: 20pt;
-    font-size: 14pt;
-}
-
-body#downloads h3 {
-    margin-top: 20pt;
-    font-weight: normal;
-}
-body#downloads .release {
-    margin-top: 0.5em;
-    font-size: 10pt;
-}
-
+/***************************************************************************** page specific styles */
 /*** homepage ***/
+/* banner */
+.columns, .columns2 {
+  position:relative;
+  padding-bottom:20px;
+}
+
+.columns a.more, .columns2 a.more {
+  position:absolute;
+  bottom:5px;
+  left:10px;
+}
+
 .intro {
   font-size:15px;
   color:#dee0df;
   line-height:1.55em;
-  margin:0;
+  margin:12px 0 0 0;
 }
 
 .intro p {
   margin-bottom:15px;
+}
+
+/* blog */
+h3.post-title {
+  margin:0 0 2px 0;
+  padding:0;
+  line-height:1.2em;
 }
 
 h3.post-title a {
@@ -176,7 +268,9 @@ h3.post-title a:hover {
 p.post_dateline {
   font-size:8.5pt;
   color:#888;
-  margin:0;
+  margin:0 0 5px 0;
+  padding:0;
+  line-height:1.2em;
 }
 
 div.teaser {
@@ -185,45 +279,14 @@ div.teaser {
 }
 
 .pinax-blog div.teaser {
-  border-bottom:1px dotted #fff;
+  border-bottom:1px dotted #c6c6c6;
 }
 
 div.teaser p {
   margin:0;
 }
 
-a.more {
-  color:#666;
-  font-style:italic;
-}
-
-a.more:hover {
-  color:#333;
-}
-
-.columns, .columns2 {
-  position:relative;
-  padding-bottom:20px;
-}
-
-.columns a.more, .columns2 a.more {
-  position:absolute;
-  bottom:5px;
-  left:10px;
-}
-
-.dev-info p {
-  margin-bottom:15px;
-  line-height:1.7em;
-}
-
-.marks {
-  font-size:16pt;
-  font-weight:bold;
-  color:#bbb;
-  line-height:0.2em;
-}
-
+/* download / release */
 a#btn-release {
   display:block;
   padding:7px 10px;
@@ -237,7 +300,7 @@ a#btn-release {
   text-align:center;
   text-shadow:0px 1px 0px #dbea91;
   float:left;
-  margin:5px 0 0 -10px;
+  margin:20px 0 0 0;
 }
 
 a#btn-release:hover {
@@ -245,14 +308,22 @@ a#btn-release:hover {
   background:#c5e529;
 }
 
+/* develoepr info */
+.dev-info p {
+  margin-bottom:15px;
+  line-height:1.7em;
+}
+
+/* sites */
 ul.sites {
   width:100%;
   overflow:hidden;
+  margin: 1em 0;
 }
 
 ul.sites, ul.sites li {
   list-style-type:none;
-  margin:0 0 10px 0;
+  margin:0 0 20px 0;
   padding:0;
 }
 
@@ -260,18 +331,59 @@ ul.sites li {
   display:block;
   float:left;
   width:145px;
-  margin:0 0 3px 0;
+  margin: 0;
 }
 
 .featured-site-box {
   margin:10px 0 10px 0;
   padding-bottom:12px;
-  border-bottom:1px dotted #ccc;
+  border-bottom:1px dotted #c6c6c6;
   overflow:hidden;
 }
 
-.left-border {
-  float:left;
-  border:2px solid #a0b636;
-  margin:0 10px 0 0;
+/* quotes */
+.quote {
+  font-size: 10pt;
+  margin-top:10px;
+  line-height:1.7em;
 }
+
+.quote .marks {
+  font-weight: bold;
+  font-size:16pt;
+  color:#bbb;
+  line-height:0.2em;
+}
+
+.quote .attribution {
+  font-size: 9pt;
+  font-style: italic;
+}
+
+/* more links */
+a.more {
+  color:#666;
+  font-style:italic;
+}
+
+a.more:hover {
+  color:#333;
+}
+
+/*** quotes ***/
+body#quotes .quote {
+  margin: 20pt;
+  font-size: 14pt;
+}
+
+/*** downloads ***/
+body#downloads h3 {
+  margin-top: 20pt;
+  font-weight: normal;
+}
+
+body#downloads .release {
+  margin-top: 0.5em;
+  font-size: 10pt;
+}
+
