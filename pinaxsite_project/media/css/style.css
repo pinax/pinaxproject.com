@@ -17,7 +17,7 @@ hr {
 }
 
 #header {
-    background: url(/site_media/static/img/heading.png) repeat-x;
+    background: url(/site_media/static/img/banner-home.png) repeat-x;
     color: #DEF;
 }
 #header a {
@@ -78,7 +78,7 @@ a {
 }
 
 #footer {
-    background: url(/site_media/static/img/ft.png) repeat-x #222;
+    background: url(/site_media/static/img/ft.png) repeat-x #333;
     color: #FFF;
 }
 #footer p {
@@ -169,6 +169,10 @@ h3.post-title a {
   color:#666;
 }
 
+h3.post-title a:hover {
+  color:#333;
+}
+
 p.post_dateline {
   font-size:8.5pt;
   color:#888;
@@ -191,6 +195,10 @@ div.teaser p {
 a.more {
   color:#666;
   font-style:italic;
+}
+
+a.more:hover {
+  color:#333;
 }
 
 .columns, .columns2 {
