@@ -15,10 +15,7 @@
     <h1><a href="/"><img src="{{ STATIC_URL }}img/pinax_logo_lg.png" alt="Pinax" /></a></h1>
     <h2>a platform for rapidly developing websites</h2>
 </div>
-<div class="block-right">{% block header_block %}{% endblock %}</div>
-{% endblock %}
-
-{% block header_block %}
+<div class="block-right">
     <div class="intro">
         <p class="main">
             Pinax is an open-source platform built on the
@@ -37,6 +34,7 @@
             corporate websites and from intranets to online games.
         </p>
     </div>
+</div>
 {% endblock %}
 
 {% block main_content %}
