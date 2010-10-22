@@ -6,48 +6,61 @@
 {% block body_id %}downloads{% endblock %}
 
 {% block main_content %}
-    
     <h2>Downloads</h2>
-    
-    <p>
-        Pinax is open source software under an MIT license. It requires
-        Python 2.4 or higher.
-    </p>
-    
-    <h3>Option 1. Get the latest stable release</h3>
-    
-    {% latest_stable_release as release %}
-    {% if release %}
-        {% include "downloads/_release.html" %}
-    {% else %}
-        <p>There is currently no stable release.</p>
-    {% endif %}
-    
-    <h3>Option 2. Get the latest development release</h3>
-    
-    {% latest_development_release as release %}
-    {% if release %}
-        {% include "downloads/_release.html" %}
-    {% else %}
-        <p>There is currently no recent development release.</p>
-    {% endif %}
-    
-    <p>@@@ link to installation docs?</p>
-    
-    <p>
-        If you need any help, don't hesitate to ask on the IRC channel
-        <a href="irc://irc.freenode.net/pinax">#pinax</a>
-        on Freenode or the
-        <a href="http://groups.google.com/group/pinax-users">pinax-users</a>
-        mailing list on Google Groups.
-    </p>
-    
-    <h3>Older Releases</h3>
-    
-    {% older_releases as releases %}
-    {% for release in releases %}
-        {% include "downloads/_release.html" %}
-    {% empty %}
-        <p>There are currently no earlier releases.</p>
-    {% endfor %}
+    <hr />
+    <div class="col-wrapper">
+        <div class="col1">
+            <p>
+                Pinax is open source software under an MIT license. It requires
+                Python 2.4 or higher.
+            </p>
+
+             <h3>Option 1. Get the latest stable release</h3>
+
+            {% latest_stable_release as release %}
+            {% if release %}
+                <div class="featured-release">
+                    {% include "downloads/_release.html" %}
+                </div>
+            {% else %}
+                <p>There is currently no stable release.</p>
+            {% endif %}
+
+            <h3>Option 2. Get the latest development release</h3>
+
+            {% latest_development_release as release %}
+            {% if release %}
+                <div class="featured-release">
+                    {% include "downloads/_release.html" %}
+                </div>
+            {% else %}
+                <p>There is currently no recent development release.</p>
+            {% endif %}
+
+            {# <p>@@@ link to installation docs?</p> #}
+
+            <h3>Older Releases</h3>
+
+            {% older_releases as releases %}
+            {% for release in releases %}
+                {% include "downloads/_release.html" %}
+            {% empty %}
+                <p>There are currently no earlier releases.</p>
+            {% endfor %}
+        </div>
+        <div class="col2">
+            <p>For more information about installation see our <a href="#">Getting Started</a> documentation.</p>
+
+            <p>
+                If you need any help, don't hesitate to ask on the IRC channel
+                <a href="irc://irc.freenode.net/pinax">#pinax</a>
+                on Freenode or the
+                <a href="http://groups.google.com/group/pinax-users">pinax-users</a>
+                mailing list on Google Groups.
+            </p>
+
+
+        </div>
+    </div>
+    <div class="clear"></div>
 {% endblock %}

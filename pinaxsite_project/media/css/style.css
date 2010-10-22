@@ -42,8 +42,10 @@ h2 {
 }
 
 h3 {
-  font-size: 11pt;
-  margin-bottom:0;
+  font-size: 12pt;
+  margin-bottom:10px;
+  color:#666;
+  font-weight:bold;
 }
 
 p {
@@ -102,13 +104,22 @@ p {
 
 #header #header-content h1 {
   padding:0;
+  margin:0 0 0 -4px;
 }
 
 /*** main content ***/
 #main_content {
   text-shadow: #FFFFFF 0px 1px;
   width: 960px;
-  margin: 40px auto;
+  margin: 10px auto 30px;
+}
+
+#main_content h2 {
+  margin-bottom:15px;
+}
+
+#main_content hr {
+  margin-bottom:20px;
 }
 
 /*** footer ***/
@@ -142,6 +153,28 @@ p {
 }
 
 /***************************************************************************** elements ***/
+/* columns */
+.col-wrapper {
+  clear:both;
+  width:960px;
+  position: relative;
+}
+
+/* 2 columns */
+.col-wrapper .col1 {
+  float:left;
+  width:600px;
+  display:inline;
+  margin-right:20px;
+}
+
+.col-wrapper .col2 {
+  float:left;
+  width:340px;
+  display:inline;
+  font-size:11pt;
+}
+
 .row {
   xbackground: url(/site_media/static/img/box1.png) repeat-x;
   xtext-shadow: #EEE 0px 1px;
@@ -243,6 +276,14 @@ ul.nav li a:hover {
 
 /***************************************************************************** page specific styles */
 /*** homepage ***/
+body#homepage #main_content h2 {
+  margin-bottom:8px;
+}
+
+body#homepage #main_content hr {
+  margin-bottom:6px;
+}
+
 /* banner */
 body#homepage #header {
   background: url(/site_media/static/img/banner-home.png) repeat-x;
@@ -250,9 +291,13 @@ body#homepage #header {
   padding:0;
 }
 
-body#homepage #header-content {
+body#homepage #header #header-content {
   padding:40px 0 0 0;
   overflow:hidden;
+}
+
+body#homepage #header #header-content h1 {
+  margin:0;
 }
 
 #header .block-left {
@@ -388,7 +433,7 @@ ul.sites li {
 /* quotes */
 .quote {
   font-size: 10pt;
-  margin-top:10px;
+  margin-top:6px;
   line-height:1.7em;
 }
 
@@ -421,13 +466,32 @@ body#quotes .quote {
 }
 
 /*** downloads ***/
-body#downloads h3 {
-  margin-top: 20pt;
-  font-weight: normal;
-}
-
 body#downloads .release {
-  margin-top: 0.5em;
+  margin: 0 0 10px;
+  padding:10px 20px;
   font-size: 10pt;
+  background: #eee;
+  border:1px solid #ddd;
+  width:550px;
+  box-shadow:1px 1px 0 #fff;
+  -moz-box-shadow:1px 1px 0 #fff;
+  -webkit-box-shadow:1px 1px 0 #fff;
+  text-shadow:0 1px 0 #f6f6f6;
 }
 
+body#downloads .featured-release .release  {
+  background: #f8f8f8;
+  border:1px solid #ccc;
+  padding:20px;
+  margin: 0 0 15px;
+  font-weight:bold;
+}
+
+body#downloads .release:hover,
+body#downloads .featured-release .release:hover {
+  background:#fff;
+}
+
+body#downloads h3 {
+  margin-top:25px;
+}
