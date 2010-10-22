@@ -1,5 +1,11 @@
 /***************************************************************************** universal styles ***/
+html {
+  height: 100%;
+  overflow-y:scroll;
+}
+
 body {
+  height: 100%;
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Helvetica Neue", Arial, Helvetica, sans-serif;;
   background: #ebebeb;
   color: #555;
@@ -56,6 +62,18 @@ p {
 }
 
 /***************************************************************************** general layout styles ***/
+/*** sticky footer ***/
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -110px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.push {
+  height: 110px; /* .push must be the same height as #footer */
+}
+
 /*** header ***/
 #header {
   background: url(/site_media/static/img/banner.png) repeat-x;
@@ -99,6 +117,7 @@ p {
   color: #FFF;
   text-align: center;
   padding: 10px 5px 20px;
+  height:80px;
 }
 
 #footer p {

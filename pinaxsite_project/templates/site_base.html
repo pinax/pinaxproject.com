@@ -9,21 +9,23 @@
     </head>
 
     <body id="{% block body_id %}default{% endblock %}">
+        <div class="wrapper">
 
-        {% include "_nav.html" %}
+            {% include "_nav.html" %}
 
-        <div id="header">
-            <div id="header-content">
-                {% block header_content %}
-                    <h1><a href="/"><img src="{{ STATIC_URL }}img/pinax_logo.png" alt="Pinax" /></a></h1>
-                {% endblock %}
+            <div id="header">
+                <div id="header-content">
+                    {% block header_content %}
+                        <h1><a href="/"><img src="{{ STATIC_URL }}img/pinax_logo.png" alt="Pinax" /></a></h1>
+                    {% endblock %}
+                </div>
             </div>
-        </div>
 
-        <div id="main_content">
-            {% block main_content %}{% endblock %}
+            <div id="main_content">
+                {% block main_content %}{% endblock %}
+            </div>
+            <div class="push"></div>
         </div>
-
         <div id="footer">
             <p>This site was built using Pinax and is hosted by <a href="http://eldarion.com/">Eldarion</a>.</p>
             <p class="legal">
