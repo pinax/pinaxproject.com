@@ -7,7 +7,7 @@ body {
 }
 
 hr {
-  height: 1px;
+  height: 0px;
   background-color: #fff;
   border-top: solid 1px #ccc;
   border-bottom: solid 1px #fff;
@@ -24,7 +24,6 @@ a {
 
 h1 {
   font-size: 20pt;
-  margin-top:20px;
 }
 
 h2 {
@@ -64,17 +63,6 @@ p {
   height: 100px;
   margin: 0 auto;
   padding: 5px 0;
-}
-
-#header .block-left {
-  float:left;
-  width:400px;
-  margin-right:15px;
-}
-
-#header .block-right {
-  float:left;
-  width:545px;
 }
 
 #header h2 {
@@ -193,6 +181,11 @@ p {
   margin-bottom: 5px;
 }
 
+.box2 {
+  margin: -20px 0 0 0;
+  padding: 0 10px;
+}
+
 /*** main nav ***/
 #blog #blog-nav,
 #downloads #download-nav {
@@ -235,28 +228,47 @@ ul.nav li a:hover {
 body#homepage #header {
   background: url(/site_media/static/img/banner-home.png) repeat-x;
   height: 235px;
+  padding:0;
 }
 
-body#homepage #header #header-content {
-  padding:20px 0;
+body#homepage #header-content {
+  padding:40px 0 0 0;
+  overflow:hidden;
+}
+
+#header .block-left {
+  float:left;
+  width:400px;
+  margin-right:10px;
+}
+
+#header .block-right {
+  float:left;
+  width:545px;
 }
 
 .columns, .columns2 {
   position:relative;
-  padding-bottom:20px;
+}
+
+.column-content {
+  position:relative;
+  padding-bottom:10px;
+  overflow:hidden;
 }
 
 .columns a.more, .columns2 a.more {
   position:absolute;
-  bottom:5px;
+  bottom:10px;
   left:10px;
+  line-height:10px;
 }
 
 .intro {
-  font-size:15px;
+  font-size:14px;
   color:#dee0df;
   line-height:1.55em;
-  margin:12px 0 0 0;
+  margin:0;
 }
 
 .intro p {

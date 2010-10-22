@@ -48,10 +48,10 @@
         <div class="box left2 columns">
             <h2>Announcements</h2>
             <hr />
-
-            {% latest_section_post "announcements" as post %}
-            {% include "biblion/_minipost2.html" %}
-
+            <div class="column-content">
+                {% latest_section_post "announcements" as post %}
+                {% include "biblion/_minipost2.html" %}
+            </div>
             <p><a href="{% url blog_section "announcements" %}" class="more">more announcements &rarr;</a></p>
         </div>
 
@@ -61,7 +61,9 @@
 
             {% featured_post as post %}
             {% if post %}
-                {% include "biblion/_minipost.html" %}
+                <div class="column-content">
+                    {% include "biblion/_minipost.html" %}
+                </div>
                 <p><a href="{% url blog_section "announcements" %}" class="more">read this post &rarr;</a></p>
             {% else %}
                 <p>No featured post.</p>
@@ -74,18 +76,19 @@
 
             {% latest_stable_release as release %}
             {% if release %}
-                <p class="main">
-                    <a href="{% url downloads_home %}" id="btn-release">
-                        Latest stable release: {{ release.version }}
-                    </a>
-                </p>
+                <div class="column-content">
+                    <p class="main">
+                        <a href="{% url downloads_home %}" id="btn-release">
+                            Latest stable release: {{ release.version }}
+                        </a>
+                    </p>
+                </div>
+                <p><a href="{% url downloads_home %}" class="more">more downloads &rarr;</a></p>
             {% else %}
                 <p class="main">
                     There are currently no stable releases.
                 </p>
             {% endif %}
-
-            <p><a href="{% url downloads_home %}" class="more">more downloads &rarr;</a></p>
         </div>
         <div class="clear"></div>
     </div>
@@ -146,14 +149,17 @@
             <div class="clear"></div>
             {% random_sites 6 as sites %}
             {% if sites %}
-            <ul class="sites">
-                {% for site in sites %}
-                    <li><a href="{{ site.url }}">{{ site.name }}</a></li>
-                {% endfor %}
-            </ul>
+                <div class="column-content">
+                    <ul class="sites">
+                        {% for site in sites %}
+                            <li><a href="{{ site.url }}">{{ site.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <p><a href="{% url sites_home %}" class="more">more sites built on Pinax &rarr;</a></p>
+            {% else %}
+                <p>Coming Soon!</p>
             {% endif %}
-
-            <p><a href="{% url sites_home %}" class="more">more sites built on Pinax &rarr;</a></p>
         </div>
 
         <div class="box center2 columns2">
@@ -162,24 +168,25 @@
 
             {% featured_quote as quote %}
             {% if quote %}
-            <div class="quote">
-                <span class="marks">&ldquo;</span>{{ quote.text }}<span class="marks">&rdquo;</span>
-                <br />
-                <span class="attribution">&mdash; {{ quote.author }}<span>
-            </div>
+                <div class="column-content">
+                    <div class="quote">
+                        <span class="marks">&ldquo;</span>{{ quote.text }}<span class="marks">&rdquo;</span>
+                        <br />
+                        <span class="attribution">&mdash; {{ quote.author }}<span>
+                    </div>
+                </div>
+                <p><a href="{% url quotes_home %}" class="more">more quotes about Pinax &rarr;</a></p>
             {% else %}
                 <p>No featured quote.</p>
             {% endif %}
-
-            <p><a href="{% url quotes_home %}" class="more">more quotes about Pinax &rarr;</a></p>
         </div>
 
         <div class="box right2 columns2">
             <h2>Events</h2>
             <hr />
-
-            <p>@@@ featured event / rotating events</p>
-
+            <div class="column-content">
+                <p>@@@ featured event / rotating events</p>
+            </div>
             <p><a href="{% url events_home %}" class="more">more events &rarr;</a></p>
         </div>
 
