@@ -138,28 +138,28 @@
             <h2>Sites Built with Pinax</h2>
             <hr />
 
-            {% featured_site as site %}
-            <div class="featured-site-box">
-                <a href="{{ site.url }}">
-                    <img src="{{ MEDIA_URL }}{{ site.image }}" alt="{{ site.name }}" width="100px" class="left-border" />
-                </a>
-                <div><b>{{ site.name }}</b><br />
-                <a href="{{ site.url }}">{{ site.url }}</a></div>
-            </div>
-            <div class="clear"></div>
-            {% random_sites 6 as sites %}
-            {% if sites %}
-                <div class="column-content">
-                    <ul class="sites">
-                        {% for site in sites %}
-                            <li><a href="{{ site.url }}">{{ site.name }}</a></li>
-                        {% endfor %}
-                    </ul>
+                {% featured_site as site %}
+                <div class="featured-site-box">
+                    <a href="{{ site.url }}">
+                        <img src="{{ MEDIA_URL }}{{ site.image }}" alt="{{ site.name }}" width="100px" class="left-border" />
+                    </a>
+                    <div><b>{{ site.name }}</b><br />
+                    <a href="{{ site.url }}">{{ site.url }}</a></div>
                 </div>
-                <p><a href="{% url sites_home %}" class="more">more sites built on Pinax &rarr;</a></p>
-            {% else %}
-                <p>Coming Soon!</p>
-            {% endif %}
+                {% random_sites 6 as sites %}
+                {% if sites %}
+                <div class="column-content">
+                        <div class="sites">
+                            {% for site in sites %}
+                                <span><a href="{{ site.url }}">{{ site.name }}</a></span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <p><a href="{% url sites_home %}" class="more">more sites built on Pinax &rarr;</a></p>
+                {% else %}
+                    <p>Coming Soon!</p>
+                {% endif %}
+
         </div>
 
         <div class="box center2 columns2">

@@ -28,6 +28,10 @@ a {
   text-decoration:none;
 }
 
+a:hover {
+  color:#0677b8;
+}
+
 h1 {
   font-size: 20pt;
 }
@@ -48,7 +52,7 @@ h3 {
   font-weight:bold;
 }
 
-p {
+p, ul {
   margin-bottom:10px;
 }
 
@@ -61,6 +65,11 @@ p {
   float:left;
   border:2px solid #a0b636;
   margin:0 10px 0 0;
+}
+
+.spacer {
+  height:15px;
+  clear:both;
 }
 
 /***************************************************************************** general layout styles ***/
@@ -264,7 +273,7 @@ ul.nav li a {
   text-shadow: #FFF 0px 1px;
   color: #000;
   font-size: 10pt;
-  margin-right:3px;
+  margin-right:4px;
   display: block;
   height: 20px;
   padding: 20px 20px 15px 20px;
@@ -325,7 +334,6 @@ body#homepage #header #header-content h1 {
   position:absolute;
   bottom:10px;
   left:10px;
-  line-height:10px;
 }
 
 .intro {
@@ -404,36 +412,43 @@ a#btn-release:hover {
 }
 
 /* sites */
-ul.sites {
+.sites {
   width:100%;
   overflow:hidden;
   margin: 1em 0;
+  padding-bottom:15px;
+  width: 310px;
 }
 
-ul.sites, ul.sites li {
-  list-style-type:none;
-  margin:0 0 20px 0;
-  padding:0;
-}
-
-ul.sites li {
+.sites a {
   display:block;
   float:left;
-  width:145px;
-  margin: 0;
+  width:130px;
+  margin: 0 5px 6px 0;
+  background: #eee;
+  border:1px solid #ddd;
+  padding:3px 5px;
+  box-shadow:1px 1px 0 #fff;
+  -moz-box-shadow:1px 1px 0 #fff;
+  -webkit-box-shadow:1px 1px 0 #fff;
+  text-shadow:0 1px 0 #f6f6f6;
+}
+
+.sites a:hover {
+  background:#fff;
 }
 
 .featured-site-box {
-  margin:10px 0 10px 0;
-  padding-bottom:12px;
-  border-bottom:1px dotted #c6c6c6;
+  margin:0;
+  padding:3px 0 0 0;
+  position:relative;
   overflow:hidden;
 }
 
 /* quotes */
 .quote {
   font-size: 10pt;
-  margin-top:6px;
+  margin-top:3px;
   line-height:1.7em;
 }
 
@@ -447,6 +462,7 @@ ul.sites li {
 .quote .attribution {
   font-size: 9pt;
   font-style: italic;
+  padding-bottom:15px;
 }
 
 /* more links */
