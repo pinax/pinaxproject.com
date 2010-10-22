@@ -35,7 +35,7 @@ urlpatterns = patterns("",
 
 if settings.SERVE_MEDIA:
     urlpatterns += patterns("",
-        (r"", include("staticfiles.urls")),
+        url(r"", include("staticfiles.urls")),
     )
 
 
