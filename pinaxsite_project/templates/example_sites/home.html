@@ -6,17 +6,19 @@
 {% block body_id %}sites{% endblock %}
 
 {% block main_content %}
-    
-    <h2>Sites</h2>
-    
-    <p><a href="{% url sites_submit_site %}">submit a site</a></p>
-    
+
+    <h2>Sites Built with Pinax</h2>
+    <hr />
+
+    <a href="{% url sites_submit_site %}" class="submit">submit a site</a>
+
     {% for site in sites %}
-        <div>
-            {{ site }}
+        <div class="container">
+            <a href="{{ site.url }}" alt="{{ site.name }}" {% if forloop.counter|divisibleby:"3" %}class="last"{% endif %}>{{ site.name }}</a>
         </div>
     {% empty %}
         <p>No sites.</p>
     {% endfor %}
-    
+    <div class="clear"></div>
+
 {% endblock %}

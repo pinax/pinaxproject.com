@@ -121,6 +121,7 @@ p, ul {
   text-shadow: #FFFFFF 0px 1px;
   width: 960px;
   margin: 10px auto 30px;
+  position:relative;
 }
 
 #main_content h2 {
@@ -477,8 +478,14 @@ a.more:hover {
 
 /*** quotes ***/
 body#quotes .quote {
-  margin: 20pt;
-  font-size: 14pt;
+  margin: 0 0 10px;
+  padding:10px 20px;
+  background: #eee;
+  border:1px solid #ddd;
+  box-shadow:1px 1px 0 #fff;
+  -moz-box-shadow:1px 1px 0 #fff;
+  -webkit-box-shadow:1px 1px 0 #fff;
+  text-shadow:0 1px 0 #f6f6f6;
 }
 
 /*** downloads ***/
@@ -510,4 +517,59 @@ body#downloads .featured-release .release:hover {
 
 body#downloads h3 {
   margin-top:25px;
+}
+
+/*** sites ***/
+body#sites .container a {
+  display:block;
+  margin: 0 19px 10px 0;
+  padding:6px 15px;
+  background: #eee;
+  border:1px solid #ddd;
+  box-shadow:1px 1px 0 #fff;
+  -moz-box-shadow:1px 1px 0 #fff;
+  -webkit-box-shadow:1px 1px 0 #fff;
+  text-shadow:0 1px 0 #f6f6f6;
+  width:275px;
+  float:left;
+  color:#666;
+}
+
+body#sites .container a:hover {
+  background:#fff;
+  color:#0677b8;
+}
+
+body#sites .container a.last {
+  margin-right:0;
+}
+
+a.submit {
+  display:block;
+  padding:5px 10px;
+  font-size:9pt;
+  background: #eee url(/site_media/static/img/box2.png) repeat-x bottom left;
+  border:1px solid #ccc;
+  border-right: 1px solid #bbb;
+  border-bottom:1px solid #bbb;
+  border-radius:6px;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  color:#404040;
+  text-align:center;
+  text-shadow:0px 1px 0px #fff;
+  float:left;
+  position:absolute;
+  top:-8px;
+  right:0;
+  text-transform:uppercase;
+  font-weight:bold;
+  letter-spacing:0.03em;
+}
+
+a.submit:hover {
+  background-position:top left;
+  border:1px solid #ccc;
+  border-top: 1px solid #bbb;
+  border-left:1px solid #bbb;
 }
