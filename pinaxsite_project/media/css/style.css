@@ -7,16 +7,16 @@ html {
 body {
   height: 100%;
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Helvetica Neue", Arial, Helvetica, sans-serif;;
-  background: #ebebeb;
+  background: #ebebeb url(/site_media/static/img/bg.png) repeat;
   color: #555;
   line-height:1.25em;
 }
 
 hr {
   height: 0px;
-  background-color: #fff;
+  background-color: #f9f9f9;
   border-top: solid 1px #ccc;
-  border-bottom: solid 1px #fff;
+  border-bottom: solid 1px #f4f4f4;
   border-left:0;
   border-right:0;
   clear: both;
@@ -186,9 +186,30 @@ p, ul {
 }
 
 .row {
-  xbackground: url(/site_media/static/img/box1.png) repeat-x;
-  xtext-shadow: #EEE 0px 1px;
   font-size: 10pt;
+}
+
+.row-grey {
+  font-size: 10pt;
+  background: url(/site_media/static/img/row-bg-grey.png) repeat;
+}
+
+.row-grey hr {
+  background-color: #eee;
+  border-top: solid 1px #bbb;
+  border-bottom: solid 1px #eee;
+}
+
+.ribbon-top {
+  width:100%;
+  height:12px;
+  background: url(/site_media/static/img/ribbon-top.png) repeat-x;
+}
+
+.ribbon-btm {
+  width:100%;
+  height:12px;
+  background: url(/site_media/static/img/ribbon-btm.png) repeat-x;
 }
 
 .left2 {
@@ -321,6 +342,15 @@ body#homepage #header #header-content h1 {
   width:545px;
 }
 
+body#homepage #main_content {
+  width: 100%;
+}
+
+body#homepage #main_content .row-content {
+  width:960px;
+  margin:0 auto;
+}
+
 .columns, .columns2 {
   position:relative;
 }
@@ -377,7 +407,7 @@ div.teaser {
 }
 
 .pinax-blog div.teaser {
-  border-bottom:1px dotted #c6c6c6;
+  border-bottom:1px dotted #bbb;
 }
 
 div.teaser p {
@@ -429,9 +459,9 @@ a#btn-release:hover {
   background: #eee;
   border:1px solid #ddd;
   padding:3px 5px;
-  box-shadow:1px 1px 0 #fff;
-  -moz-box-shadow:1px 1px 0 #fff;
-  -webkit-box-shadow:1px 1px 0 #fff;
+  box-shadow:1px 1px 0 #f4f4f4;
+  -moz-box-shadow:1px 1px 0 #f4f4f4;
+  -webkit-box-shadow:1px 1px 0 #f4f4f4;
   text-shadow:0 1px 0 #f6f6f6;
 }
 
@@ -482,9 +512,9 @@ body#quotes .quote {
   padding:10px 20px;
   background: #eee;
   border:1px solid #ddd;
-  box-shadow:1px 1px 0 #fff;
-  -moz-box-shadow:1px 1px 0 #fff;
-  -webkit-box-shadow:1px 1px 0 #fff;
+  box-shadow:1px 1px 0 #f4f4f4;
+  -moz-box-shadow:1px 1px 0 #f4f4f4;
+  -webkit-box-shadow:1px 1px 0 #f4f4f4;
   text-shadow:0 1px 0 #f6f6f6;
 }
 
@@ -496,9 +526,9 @@ body#downloads .release {
   background: #eee;
   border:1px solid #ddd;
   width:550px;
-  box-shadow:1px 1px 0 #fff;
-  -moz-box-shadow:1px 1px 0 #fff;
-  -webkit-box-shadow:1px 1px 0 #fff;
+  box-shadow:1px 1px 0 #f4f4f4;
+  -moz-box-shadow:1px 1px 0 #f4f4f4;
+  -webkit-box-shadow:1px 1px 0 #f4f4f4;
   text-shadow:0 1px 0 #f6f6f6;
 }
 
@@ -526,9 +556,9 @@ body#sites .container a {
   padding:6px 15px;
   background: #eee;
   border:1px solid #ddd;
-  box-shadow:1px 1px 0 #fff;
-  -moz-box-shadow:1px 1px 0 #fff;
-  -webkit-box-shadow:1px 1px 0 #fff;
+  box-shadow:1px 1px 0 #f4f4f4;
+  -moz-box-shadow:1px 1px 0 #f4f4f4;
+  -webkit-box-shadow:1px 1px 0 #f4f4f4;
   text-shadow:0 1px 0 #f6f6f6;
   width:275px;
   float:left;
