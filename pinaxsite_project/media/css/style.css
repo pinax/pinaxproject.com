@@ -615,5 +615,5 @@ body#blog .post-container {
   box-shadow:1px 1px 0 #f4f4f4;
   -moz-box-shadow:1px 1px 0 #f4f4f4;
   -webkit-box-shadow:1px 1px 0 #f4f4f4;
-  text-shadow:0 1px 0 #f6f6f6;
+  text-shadow:0 1px 0 #fff;
 }
