@@ -122,6 +122,7 @@ p, ul {
   width: 960px;
   margin: 10px auto 30px;
   position:relative;
+  font-size:10pt;
 }
 
 #main_content h2 {
@@ -182,7 +183,6 @@ p, ul {
   float:left;
   width:340px;
   display:inline;
-  font-size:11pt;
 }
 
 .row {
@@ -647,4 +647,8 @@ body#blog .post-container {
   -moz-box-shadow:1px 1px 0 #f4f4f4;
   -webkit-box-shadow:1px 1px 0 #f4f4f4;
   text-shadow:0 1px 0 #fff;
+}
+
+.form_block {
+  padding-top:10px;
 }

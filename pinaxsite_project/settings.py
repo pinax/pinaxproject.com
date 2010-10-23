@@ -113,9 +113,9 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "django.core.context_processors.media",
     "django.core.context_processors.request",
     "django.contrib.messages.context_processors.messages",
-    
+
     "staticfiles.context_processors.static_url",
-    
+
     "pinax.core.context_processors.pinax_settings",
 ]
 
@@ -128,19 +128,20 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.humanize",
     "django.contrib.webdesign",
-    
+
     # admin
     "django.contrib.admin",
-    
+
     # pinax
     "staticfiles",
     "biblion",
-    
+
     # external
     "dregni",
     "tagging",
     "template_utils",
-    
+    "uni_form",
+
     # local
     "downloads",
     "example_sites",
