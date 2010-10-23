@@ -604,3 +604,16 @@ a.submit:hover {
   border-top: 1px solid #bbb;
   border-left:1px solid #bbb;
 }
+
+/*** blog : list ***/
+body#blog .post-container {
+  display:block;
+  margin: 0 0 10px 0;
+  padding:6px 15px;
+  background: #eee;
+  border:1px solid #ddd;
+  box-shadow:1px 1px 0 #f4f4f4;
+  -moz-box-shadow:1px 1px 0 #f4f4f4;
+  -webkit-box-shadow:1px 1px 0 #f4f4f4;
+  text-shadow:0 1px 0 #f6f6f6;
+}

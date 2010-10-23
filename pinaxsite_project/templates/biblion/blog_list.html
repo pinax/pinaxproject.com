@@ -11,7 +11,9 @@
 
     {% if posts %}
         {% for post in posts %}
-            {% include "biblion/_minipost.html" %}
+            <div class="post-container">
+                {% include "biblion/_minipost.html" %}
+            </div>
         {% endfor %}
     {% else %}
         <p>No blog posts have been published.</p>
