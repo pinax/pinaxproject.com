@@ -189,9 +189,10 @@ p, ul {
   font-size: 10pt;
 }
 
-.row-grey {
+#main_content .row-grey {
   font-size: 10pt;
   background: url(/site_media/static/img/row-bg-grey.png) repeat;
+  text-shadow:0 1px 0 #f6f6f6;
 }
 
 .row-grey hr {
