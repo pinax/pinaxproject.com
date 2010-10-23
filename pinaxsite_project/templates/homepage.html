@@ -49,7 +49,7 @@
     <div class="row">
         <div class="row-content">
             <div class="box left2 columns">
-                <h2>Announcements</h2>
+                <h2><a href="{% url blog_section "announcements" %}">Announcements</a></h2>
                 <hr />
                 <div class="column-content">
                     {% latest_section_post "announcements" as post %}
@@ -59,7 +59,7 @@
             </div>
 
             <div class="box center2 columns">
-                <h2>Featured Post</h2>
+                <h2><a href="{{ post.get_absolute_url }}">Featured Post</a></h2>
                 <hr />
 
                 {% featured_post as post %}
@@ -67,14 +67,14 @@
                     <div class="column-content">
                         {% include "biblion/_minipost.html" %}
                     </div>
-                    <p><a href="{% url blog_section "announcements" %}" class="more">read this post &rarr;</a></p>
+                    <p><a href="{{ post.get_absolute_url }}" class="more">read this post &rarr;</a></p>
                 {% else %}
                     <p>No featured post.</p>
                 {% endif %}
             </div>
 
             <div class="box right2 columns">
-                <h2>Download</h2>
+                <h2><a href="{% url downloads_home %}">Download</a></h2>
                 <hr />
 
                 {% latest_stable_release as release %}
@@ -100,7 +100,7 @@
     <div class="row-grey">
         <div class="row-content">
             <div class="box left3 pinax-blog">
-                <h2>The Pinax Blog</h2>
+                <h2><a href="{% url blog %}">The Pinax Blog</a></h2>
                 <hr />
 
                 {% latest_blog_posts as posts %}
@@ -142,7 +142,7 @@
     <div class="row">
         <div class="row-content">
             <div class="box left2 columns2">
-                <h2>Sites Built with Pinax</h2>
+                <h2><a href="{% url sites_home %}">Sites Built with Pinax</a></h2>
                 <hr />
 
                     {% featured_site as site %}
@@ -170,7 +170,7 @@
             </div>
 
             <div class="box center2 columns2">
-                <h2>Quotes about Pinax</h2>
+                <h2><a href="{% url quotes_home %}">Quotes about Pinax</a></h2>
                 <hr />
 
                 {% featured_quote as quote %}
@@ -189,7 +189,7 @@
             </div>
 
             <div class="box right2 columns2">
-                <h2>Events</h2>
+                <h2><a href="{% url events_home %}">Events</a></h2>
                 <hr />
                 <div class="column-content">
                     <p>@@@ featured event / rotating events</p>

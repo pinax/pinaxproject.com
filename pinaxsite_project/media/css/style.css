@@ -312,6 +312,14 @@ body#homepage #main_content h2 {
   margin-bottom:8px;
 }
 
+body#homepage #main_content h2 a {
+  color: #336699;
+}
+
+body#homepage #main_content h2 a:hover {
+  color:#0677b8;
+}
+
 body#homepage #main_content hr {
   margin-bottom:6px;
 }
@@ -481,15 +489,7 @@ a#btn-release:hover {
 /* quotes */
 .quote {
   font-size: 10pt;
-  margin-top:3px;
   line-height:1.7em;
-}
-
-.quote .marks {
-  font-weight: bold;
-  font-size:16pt;
-  color:#bbb;
-  line-height:0.2em;
 }
 
 .quote .attribution {
