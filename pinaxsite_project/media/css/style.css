@@ -345,6 +345,7 @@ body#homepage #header #header-content h1 {
 
 body#homepage #main_content {
   width: 100%;
+  margin: 10px auto 10px;
 }
 
 body#homepage #main_content .row-content {
@@ -495,6 +496,36 @@ a#btn-release:hover {
   font-size: 9pt;
   font-style: italic;
   padding-bottom:15px;
+}
+
+/* extra-line */
+#extra-line {
+  width:100%;
+  padding:10px 0 0 0;
+  background: url(/site_media/static/img/dot.png) repeat-x top left;
+  font-size:11pt;
+  color:#888;
+  letter-spacing:0.07em;
+  line-height:58px;
+}
+
+#extra-line .content {
+  width:600px;
+  margin:0 auto;
+}
+
+#extra-line img {
+  float:left;
+  margin:0 10px 0 0;
+}
+
+#extra-line a {
+  color:#00a1e2;
+  font-weight:bold;
+}
+
+#extra-line a:hover {
+  color:#1389b6;
 }
 
 /* more links */
