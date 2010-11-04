@@ -8,7 +8,7 @@ body {
   height: 100%;
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Helvetica Neue", Arial, Helvetica, sans-serif;;
   background: #ebebeb url(/site_media/static/img/bg.png) repeat;
-  color: #555;
+  color: #444;
   line-height:1.25em;
 }
 
@@ -24,7 +24,7 @@ hr {
 }
 
 a {
-  color: #90b630;
+  color: #699c06;
   text-decoration:none;
 }
 
@@ -402,7 +402,7 @@ h3.post-title {
 }
 
 h3.post-title a {
-  color:#666;
+  color:#555;
 }
 
 h3.post-title a:hover {
@@ -411,7 +411,7 @@ h3.post-title a:hover {
 
 p.post_dateline {
   font-size:8.5pt;
-  color:#888;
+  color:#777;
   margin:0 0 5px 0;
   padding:0;
   line-height:1.2em;
@@ -433,23 +433,23 @@ div.teaser p {
 /* download / release */
 a#btn-release {
   display:block;
-  padding:7px 10px;
-  font-size:11pt;
-  background:#c1db42;
-  border:3px solid #a0b636;
-  border-radius:6px;
-  -moz-border-radius:6px;
-  -webkit-border-radius:6px;
+  font-size:10pt;
   color:#404040;
   text-align:center;
   text-shadow:0px 1px 0px #dbea91;
   float:left;
   margin:20px 0 0 0;
+  background: url(/site_media/static/img/btn-release.png) no-repeat top left;
+  line-height:40px;
+  width:251px;
+  height:49px;
+  line-height:50px;
+  padding:0 0 0 17px;
 }
 
 a#btn-release:hover {
   color:#222;
-  background:#c5e529;
+  background-position:0 -49px;
 }
 
 /* develoepr info */
