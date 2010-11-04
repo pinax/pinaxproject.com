@@ -69,7 +69,7 @@ aside, nav, article, figure {
 
 .left-border {
   float:left;
-  border:2px solid #a0b636;
+  border:3px solid #a0b636;
   margin:0 10px 0 0;
 }
 
@@ -264,7 +264,7 @@ footer a:hover {
 
 .box {
   margin: 20px 0;
-  padding: 5px 10px;
+  padding: 10px 10px;
 }
 
 .box h2 {
@@ -490,6 +490,19 @@ a#btn-release:hover {
   padding:3px 0 0 0;
   position:relative;
   overflow:hidden;
+}
+
+.featured-site-box img {
+  padding:1px;
+  background:#d3e577;
+  float:left;
+  border:3px solid #a0b636;
+  margin:0 10px 0 0;
+}
+
+
+.featured-site-box a:hover img {
+  background:#fff;
 }
 
 /* quotes */
