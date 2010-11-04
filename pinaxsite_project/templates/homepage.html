@@ -16,7 +16,7 @@
     <h2>a platform for rapidly developing websites</h2>
 </div>
 <div class="block-right">
-    <div class="intro">
+    <article class="intro">
         <p class="main">
             Pinax is an open-source platform built on the
             <a href="http://djangoproject.com">Django Web Framework</a>.
@@ -33,22 +33,22 @@
             Pinax has been used for everything from social networks to
             corporate websites and from intranets to online games.
         </p>
-    </div>
+    </article>
 </div>
 {% endblock %}
 
 {% block main_content %}
-    <div class="row">
+    <section class="row">
         <div class="row-content">
-            <div class="box">
+            <article class="box">
                 <p>@@@ features (multi-column list)</p>
-            </div>
+            </article>
         </div>
-    </div>
+    </section>
 
-    <div class="row">
+    <section class="row">
         <div class="row-content">
-            <div class="box left2 columns">
+            <article class="box left2 columns">
                 <h2><a href="{% url blog_section "announcements" %}">Announcements</a></h2>
                 <hr />
                 <div class="column-content">
@@ -56,9 +56,9 @@
                     {% include "biblion/_minipost2.html" %}
                 </div>
                 <p><a href="{% url blog_section "announcements" %}" class="more">more announcements &rarr;</a></p>
-            </div>
+            </article>
 
-            <div class="box center2 columns">
+            <article class="box center2 columns">
                 <h2><a href="{{ post.get_absolute_url }}">Featured Post</a></h2>
                 <hr />
 
@@ -71,9 +71,9 @@
                 {% else %}
                     <p>No featured post.</p>
                 {% endif %}
-            </div>
+            </article>
 
-            <div class="box right2 columns">
+            <article class="box right2 columns">
                 <h2><a href="{% url downloads_home %}">Download</a></h2>
                 <hr />
 
@@ -92,14 +92,14 @@
                         There are currently no stable releases.
                     </p>
                 {% endif %}
-            </div>
+            </article>
             <div class="clear"></div>
         </div>
-    </div>
+    </section>
     <div class="ribbon-top"></div>
-    <div class="row-grey">
+    <section class="row-grey">
         <div class="row-content">
-            <div class="box left3 pinax-blog">
+            <article class="box left3 pinax-blog">
                 <h2><a href="{% url blog %}">The Pinax Blog</a></h2>
                 <hr />
 
@@ -111,9 +111,9 @@
                 {% endfor %}
 
                 <p><a href="{% url blog %}" class="more">more blog posts &rarr;</a></p>
-            </div>
+            </article>
 
-            <div class="box right3 dev-info">
+            <article class="box right3 dev-info">
                 <h2>Developer Information</h2>
                 <hr />
 
@@ -134,14 +134,14 @@
                     <a href="http://groups.google.com/group/pinax-users">pinax-users</a>
                     mailing list on Google Groups.
                 </p>
-            </div>
+            </article>
             <div class="clear"></div>
         </div>
-    </div>
+    </section>
     <div class="ribbon-btm"></div>
-    <div class="row">
+    <section class="row">
         <div class="row-content">
-            <div class="box left2 columns2">
+            <article class="box left2 columns2">
                 <h2><a href="{% url sites_home %}">Sites Built with Pinax</a></h2>
                 <hr />
 
@@ -167,9 +167,9 @@
                         <p>Coming Soon!</p>
                     {% endif %}
 
-            </div>
+            </article>
 
-            <div class="box center2 columns2">
+            <article class="box center2 columns2">
                 <h2><a href="{% url quotes_home %}">Quotes about Pinax</a></h2>
                 <hr />
 
@@ -186,16 +186,16 @@
                 {% else %}
                     <p>No featured quote.</p>
                 {% endif %}
-            </div>
+            </article>
 
-            <div class="box right2 columns2">
+            <article class="box right2 columns2">
                 <h2><a href="{% url events_home %}">Events</a></h2>
                 <hr />
                 <div class="column-content">
                     <p>@@@ featured event / rotating events</p>
                 </div>
                 <p><a href="{% url events_home %}" class="more">more events &rarr;</a></p>
-            </div>
+            </article>
 
             <div class="clear"></div>
         </div>
@@ -207,7 +207,7 @@
             </div>
         </div>
 
-    </div>
+    </section>
 {% endblock %}
 
 {% block extra_body %}

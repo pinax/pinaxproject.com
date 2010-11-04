@@ -56,6 +56,12 @@ p, ul {
   margin-bottom:10px;
 }
 
+/* HTML5 tags */
+header, section, footer,
+aside, nav, article, figure {
+  display: block;
+}
+
 /***************************************************************************** library styles ***/
 .clear {
   clear: both;
@@ -82,11 +88,11 @@ p, ul {
 }
 
 .push {
-  height: 110px; /* .push must be the same height as #footer */
+  height: 110px; /* .push must be the same height as footer */
 }
 
 /*** header ***/
-#header {
+header {
   background: url(/site_media/static/img/banner.png) repeat-x;
   color: #DEF;
   height: 100px;
@@ -94,24 +100,24 @@ p, ul {
   padding: 5px 0;
 }
 
-#header h2 {
+header h2 {
   color: #DEF;
   font-size:12pt;
   margin-left:7px;
 }
 
-#header a {
+header a {
   text-decoration: none;
   color: #DEF;
 }
 
-#header #header-content {
+header #header-content {
   width: 960px;
   margin: 0 auto;
   padding:0;
 }
 
-#header #header-content h1 {
+header #header-content h1 {
   padding:0;
   margin:0 0 0 -4px;
 }
@@ -134,7 +140,7 @@ p, ul {
 }
 
 /*** footer ***/
-#footer {
+footer {
   background: url(/site_media/static/img/ft.png) repeat-x #333;
   color: #FFF;
   text-align: center;
@@ -142,23 +148,23 @@ p, ul {
   height:80px;
 }
 
-#footer p {
+footer p {
   color: #CCC;
   font-size: 12pt;
   margin: 1em 0;
 }
 
-#footer p.legal {
+footer p.legal {
   color: #AAA;
   font-size: 8pt;
 }
 
-#footer a {
+footer a {
   color: #FFF;
   text-decoration: none;
 }
 
-#footer a:hover {
+footer a:hover {
   color: #FFF;
   text-decoration: underline;
 }
@@ -276,22 +282,22 @@ p, ul {
   background: url(/site_media/static/img/nav-over.png) repeat-x 0 0;
 }
 
-#nav-holder {
+nav {
   background: url(/site_media/static/img/box1.png) repeat-x 0 -10px;
 }
 
-ul.nav {
+nav ul {
   overflow:hidden;
   width: 960px;
   margin:0 auto;
   list-style: none;
 }
 
-ul.nav li {
+nav ul li {
   float: left;
 }
 
-ul.nav li a {
+nav ul li a {
   text-decoration: none;
   text-shadow: #FFF 0px 1px;
   color: #000;
@@ -302,7 +308,7 @@ ul.nav li a {
   padding: 20px 20px 15px 20px;
 }
 
-ul.nav li a:hover {
+nav ul li a:hover {
   background: url(/site_media/static/img/nav-over.png) repeat-x 0 0;
 }
 
@@ -325,28 +331,28 @@ body#homepage #main_content hr {
 }
 
 /* banner */
-body#homepage #header {
+body#homepage header {
   background: url(/site_media/static/img/banner-home.png) repeat-x;
   height: 235px;
   padding:0;
 }
 
-body#homepage #header #header-content {
+body#homepage header #header-content {
   padding:40px 0 0 0;
   overflow:hidden;
 }
 
-body#homepage #header #header-content h1 {
+body#homepage header #header-content h1 {
   margin:0;
 }
 
-#header .block-left {
+header .block-left {
   float:left;
   width:400px;
   margin-right:10px;
 }
 
-#header .block-right {
+header .block-right {
   float:left;
   width:545px;
 }

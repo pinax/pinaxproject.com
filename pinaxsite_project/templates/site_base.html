@@ -1,7 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <title>{% block head_title_base %}Pinax : {% block head_title %}{% endblock %}{% endblock %}</title>
+
+        <!--  hack to make IE able to apply CSS to elements that it doesn't usually know about. See http://code.google.com/p/html5shim/ -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
         <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
@@ -14,27 +19,27 @@
 
             {% include "_nav.html" %}
 
-            <div id="header">
+            <header>
                 <div id="header-content">
                     {% block header_content %}
                         <h1><a href="/"><img src="{{ STATIC_URL }}img/pinax_logo.png" alt="Pinax" /></a></h1>
                     {% endblock %}
                 </div>
-            </div>
+            </header>
 
             <div id="main_content">
                 {% block main_content %}{% endblock %}
             </div>
             <div class="push"></div>
         </div>
-        <div id="footer">
+        <footer>
             <p>This site was built using Pinax and is hosted by <a href="http://eldarion.com/">Eldarion</a>.</p>
             <p class="legal">
                 &copy; 2008&ndash;2010 James Tauber and contributors.
                 Pinax is a trademark of James Tauber.
                 Django is a registered trademark of the Django Software Foundation.
             </p>
-        </div>
+        </footer>
 
         {# @@@ google analytics #}
         {% block extra_body %}{% endblock %}
