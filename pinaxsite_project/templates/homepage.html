@@ -38,15 +38,7 @@
 {% endblock %}
 
 {% block main_content %}
-    <section class="row">
-        <div class="row-content">
-            <article class="box">
-                <p>@@@ features (multi-column list)</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="row">
+    <section class="row-grey">
         <div class="row-content">
             <article class="box left2 columns">
                 <h2><a href="{% url blog_section "announcements" %}">Announcements</a></h2>
@@ -96,6 +88,55 @@
             <div class="clear"></div>
         </div>
     </section>
+    <div class="ribbon-btm"></div>
+
+    <section class="row">
+        <div class="row-content features">
+            <article class="features-top">
+                <h2>Features</h2>
+                <hr />
+                <div><b>At this stage, there is:</b></div>
+            </article>
+            <article class="box box4-1 columns3">
+                <ul>
+                    <li>openid support</li>
+                    <li>email verification</li>
+                    <li>password management</li>
+                    <li>site announcements</li>
+                    <li>friend invitation (both internal and external to the site)</li>
+                </ul>
+            </article>
+            <article class="box box4-2 columns3">
+                <ul>
+                    <li>user-to-user messaging</li>
+                    <li>a basic twitter clone</li>
+                    <li>oembed support</li>
+                    <li>gravatar support</li>
+                    <li>projects with basic task and issue management</li>
+                </ul>
+            </article>
+            <article class="box box4-3 columns3">
+                <ul>
+                    <li>interest groups (called tribes)</li>
+                    <li>threaded discussions</li>
+                    <li>bookmarks</li>
+                    <li>blogging</li>
+                    <li>wikis with multiple markup support</li>
+                </ul>
+            </article>
+            <article class="box box4-4 columns3">
+                <ul>
+                    <li>a notification framework</li>
+                    <li>tagging</li>
+                    <li>photo management</li>
+                    <li>contact import (from vCard, Google or Yahoo)</li>
+                </ul>
+                <div class="more-coming"><i>and much more coming...</i></div>
+            </article>
+            {# <p>@@@ features (multi-column list)</p> #}
+        </div>
+    </section>
+
     <div class="ribbon-top"></div>
     <section class="row-grey">
         <div class="row-content">
@@ -217,6 +258,7 @@
     $(function() {
         $(".columns").equalHeights();
         $(".columns2").equalHeights();
+        $(".columns3").equalHeights();
     });
 </script>
 {% endblock %}

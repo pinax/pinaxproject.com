@@ -38,7 +38,7 @@ h1 {
 
 h2 {
   font-weight: normal;
-  color: #336699;
+  color: #2869a9;
   font-weight:bold;
   font-size: 14pt;
   margin-bottom:0;
@@ -48,7 +48,7 @@ h2 {
 h3 {
   font-size: 12pt;
   margin-bottom:10px;
-  color:#666;
+  color:#555;
   font-weight:bold;
 }
 
@@ -169,6 +169,10 @@ footer a:hover {
   text-decoration: underline;
 }
 
+section {
+  overflow:hidden;
+}
+
 /***************************************************************************** elements ***/
 /* columns */
 .col-wrapper {
@@ -218,6 +222,31 @@ footer a:hover {
   height:12px;
   background: url(/site_media/static/img/ribbon-btm.png) repeat-x;
 }
+
+.box4-1 {
+  float: left;
+  width: 217px;
+  margin-right: 5px;
+}
+
+.box4-2 {
+  float: left;
+  width: 217px;
+  margin: 0 5px;
+}
+
+.box4-3 {
+  float: left;
+  width: 217px;
+  margin: 0 5px;
+}
+
+.box4-4 {
+  float: left;
+  width: 217px;
+  margin-left: 5px;
+}
+
 
 .left2 {
   float: left;
@@ -291,6 +320,7 @@ nav ul {
   width: 960px;
   margin:0 auto;
   list-style: none;
+  letter-spacing:0.03em;
 }
 
 nav ul li {
@@ -327,7 +357,7 @@ body#homepage #main_content h2 a:hover {
 }
 
 body#homepage #main_content hr {
-  margin-bottom:6px;
+  margin-bottom:8px;
 }
 
 /* banner */
@@ -359,7 +389,7 @@ header .block-right {
 
 body#homepage #main_content {
   width: 100%;
-  margin: 10px auto 10px;
+  margin: 0 auto 10px;
 }
 
 body#homepage #main_content .row-content {
@@ -392,6 +422,38 @@ body#homepage #main_content .row-content {
 
 .intro p {
   margin-bottom:15px;
+}
+
+/* features */
+.features .features-top {
+  margin: 30px 0 -20px 0;
+  padding: 0 10px;
+}
+
+.features .features-top h2 span {
+  font-size:77%;
+  color:#555;
+  font-weight:normal;
+}
+
+.features .box {
+  margin-bottom:30px;
+}
+
+.features ul {
+  list-style-type:square;
+  margin-left:20px;
+}
+
+.features ul li {
+  margin-bottom:7px;
+  line-height:1.2em;
+}
+
+.more-coming {
+  color:#666;
+  font-style:italic;
+  margin:5px 0 0 5px;
 }
 
 /* blog */
