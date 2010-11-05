@@ -4,7 +4,13 @@
 
 {% block blog_content %}
 
-    <h2>{{ post.title }}</h2>
+    <div class="main">
+
+    <p class="breadcrumbs">
+        <a href="{% url blog %}">&laquo; back to blog</a>
+    </p>
+
+    <h2 class="post-title">{{ post.title }}</h2>
     {% include "biblion/dateline.html" %}
     <hr />
 
@@ -13,5 +19,33 @@
     <div class="content">{{ post.content_html|safe }}</div>
 
     <p class="share"></p>
+
+    <p class="breadcrumbs">
+        <a href="{% url blog %}">&laquo; back to blog</a>
+    </p>
+
+    </div>
+
+    <aside class="sidebar">
+        <div class="blog-sections">
+            <h4>Categories</h4>
+            <hr />
+            <ul>
+                <li><a href="#">Announcements</a></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">Community</a></li>
+            </ul>
+        </div>
+
+        <div class="blog-sections">
+            <h4>Recent Posts</h4>
+            <hr />
+            <ul>
+                <li><a href="#">Using Fabric to Deploy a Pinax Project</a></li>
+                <li><a href="#">New Website</a></li>
+                <li><a href="#">Community</a></li>
+            </ul>
+        </div>
+    </aside>
 
 {% endblock %}
