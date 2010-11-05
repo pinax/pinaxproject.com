@@ -14,7 +14,7 @@
     <h2>Submit A Site</h2>
     <hr />
 
-    <form method="POST" action="{% url sites_submit_site %}" class="uniForm">
+    <form method="POST" action="{% url sites_submit_site %}" class="uniForm custom">
         <fieldset class="blockLabels">
             {% csrf_token %}
             {{ form|as_uni_form }}

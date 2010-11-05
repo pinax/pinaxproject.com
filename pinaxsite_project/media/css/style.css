@@ -342,6 +342,23 @@ nav ul li a:hover {
   background: url(/site_media/static/img/nav-over.png) repeat-x 0 0;
 }
 
+/*** forms ***/
+form.custom input[type="text"], form.custom textarea {
+  border:1px solid #bdbdbd;
+  padding:10px;
+  font-size:100%;
+  color:#444;
+  background: #fff url(/site_media/static/img/input-bg.gif) repeat-x 0 0;
+}
+
+form.custom .ctrlHolder {
+  border-bottom:1px solid #ddd;
+}
+
+form.custom .focused {
+  background:#f5f5f5;
+}
+
 /***************************************************************************** page specific styles */
 /*** homepage ***/
 body#homepage #main_content h2 {
@@ -675,7 +692,7 @@ body#sites .container a {
   text-shadow:0 1px 0 #f6f6f6;
   width:275px;
   float:left;
-  color:#666;
+  color:#444;
 }
 
 body#sites .container a:hover {
