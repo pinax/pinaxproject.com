@@ -463,8 +463,8 @@ body#homepage #main_content .row-content {
 }
 
 .features ul li {
-  margin-bottom:7px;
-  line-height:1.2em;
+  margin-bottom:8px;
+  line-height:1.35em;
 }
 
 .more-coming {
@@ -739,7 +739,7 @@ a.submit:hover {
 body#blog .post-container {
   display:block;
   margin: 0 0 10px 0;
-  padding:6px 15px;
+  padding:15px 15px 6px 15px;
   background: #eee;
   border:1px solid #ddd;
   box-shadow:1px 1px 0 #f4f4f4;

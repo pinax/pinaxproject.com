@@ -6,17 +6,31 @@
 
 {% block blog_content %}
 
-    <h2>Blog</h2>
-    <hr />
+    <div class="main">
 
-    {% if posts %}
-        {% for post in posts %}
-            <div class="post-container">
-                {% include "biblion/_minipost.html" %}
-            </div>
-        {% endfor %}
-    {% else %}
-        <p>No blog posts have been published.</p>
-    {% endif %}
+        {% if posts %}
+            {% for post in posts %}
+                <div class="post-container">
+                    {% include "biblion/_minipost.html" %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No blog posts have been published.</p>
+        {% endif %}
+
+    </div>
+
+    <aside class="sidebar">
+        <div class="blog-sections">
+            <h4>Categories</h4>
+            <hr />
+            <ul>
+                <li><a href="#">Announcements</a></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">Community</a></li>
+            </ul>
+        </div>
+
+    </aside>
 
 {% endblock %}
