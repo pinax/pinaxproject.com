@@ -734,6 +734,7 @@ body#downloads h3 {
 body#downloads .release span {
   float:left;
   margin-right:5px;
+  width:150px;
 }
 
 body#downloads .release a {
@@ -754,7 +755,7 @@ body#downloads .release a {
   text-transform:uppercase;
   font-weight:bold;
   letter-spacing:0.03em;
-  margin-right:5px;
+  margin-right:15px;
 }
 
 body#downloads .release a:hover {
