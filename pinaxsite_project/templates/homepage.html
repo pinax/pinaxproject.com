@@ -233,7 +233,23 @@
                 <h2><a href="{% url events_home %}">Events</a></h2>
                 <hr />
                 <div class="column-content">
-                    <p>@@@ featured event / rotating events</p>
+                    {# <p>@@@ featured event / rotating events</p> #}
+                    <div class="featured-event-box">
+                        <a href="#">
+                            <img src="{{ STATIC_URL }}img/temp/DjangoCon2010.png" width="100px" alt="DjangoCon2010" />
+                        </a>
+                        <div><b>Euro DjangoCon 2010 Workshop</b><br />
+                        <span>24th May 2010, Berlin, Germany</span>
+                        </div>
+                    </div>
+                    <ul id="event-list">
+                        <li><a href="#">Pycon 2010 Workshop</a>
+                            <span>24th January 2010, Atlanta, GA</span>
+                        </li>
+                        <li><a href="#">DjangoCon 2011 Sprint</a>
+                            <span>24th January 2010, Atlanta, GA</span>
+                        </li>
+                    </ul>
                 </div>
                 <p><a href="{% url events_home %}" class="more">more events &rarr;</a></p>
             </article>
