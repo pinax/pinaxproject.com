@@ -587,6 +587,10 @@ a#btn-release:hover {
   border:1px solid #999;
 }
 
+.featured-site-box a b {
+  color:#404040;
+}
+
 /* quotes */
 .quote {
   font-size: 10pt;
@@ -621,7 +625,11 @@ a#btn-release:hover {
 }
 
 .featured-event-box a:hover img {
-  background:#888;
+  border:1px solid #999;
+}
+
+.featured-event-box a b {
+  color:#404040;
 }
 
 .featured-event-box span {

@@ -184,14 +184,14 @@
         <div class="row-content">
             <article class="box left2 columns2">
                 <h2><a href="{% url sites_home %}">Sites Built with Pinax</a></h2>
-                <hr />
+                {# <hr /> #}
 
                     {% featured_site as site %}
                     <div class="featured-site-box">
                         <a href="{{ site.url }}">
                             <img src="{{ MEDIA_URL }}{{ site.image }}" alt="{{ site.name }}" width="100px" />
                         </a>
-                        <div><b>{{ site.name }}</b><br />
+                        <div><a href="{{ site.url }}"><b>{{ site.name }}</b></a><br />
                         <a href="{{ site.url }}">{{ site.url }}</a></div>
                     </div>
                     {% random_sites 6 as sites %}
@@ -231,22 +231,22 @@
 
             <article class="box right2 columns2">
                 <h2><a href="{% url events_home %}">Events</a></h2>
-                <hr />
+                {# <hr /> #}
                 <div class="column-content">
                     {# <p>@@@ featured event / rotating events</p> #}
                     <div class="featured-event-box">
-                        <a href="#">
+                        <a href="{% url events_home %}">
                             <img src="{{ STATIC_URL }}img/temp/DjangoCon2010.png" width="100px" alt="DjangoCon2010" />
                         </a>
-                        <div><b>Euro DjangoCon 2010 Workshop</b><br />
+                        <div><a href="{% url events_home %}"><b>Euro DjangoCon 2010 Workshop</b></a><br />
                         <span>24th May 2010, Berlin, Germany</span>
                         </div>
                     </div>
                     <ul id="event-list">
-                        <li><a href="#">Pycon 2010 Workshop</a>
+                        <li><a href="{% url events_home %}">Pycon 2010 Workshop</a>
                             <span>24th January 2010, Atlanta, GA</span>
                         </li>
-                        <li><a href="#">DjangoCon 2011 Sprint</a>
+                        <li><a href="{% url events_home %}">DjangoCon 2011 Sprint</a>
                             <span>24th January 2010, Atlanta, GA</span>
                         </li>
                     </ul>
