@@ -22,16 +22,21 @@ class Release(models.Model):
     
     @classmethod
     def latest_stable(cls):
-        return cls._default_manager.filter(stable=True)[0]
+        releases = cls._default_manager.filter(stable=True)
+        if releases:
+            return releases[0]
+        else:
+            return None
     
     @classmethod
     def latest_development(cls):
         stable = cls.latest_stable()
-        dev = cls._default_manager.filter(stable=False)[0]
-        if V(dev.version) > V(stable.version):
-            return dev
-        else:
-            return None
+        releases = cls._default_manager.filter(stable=False)
+        if releases:
+            dev = releases[0]
+            if V(dev.version) > V(stable.version):
+                return dev
+        return None
 
 
 class ReleaseFile(models.Model):

@@ -31,13 +31,15 @@ class LatestReleaseNode(AsNode):
 class OlderReleasesNode(AsNode):
     
     def render(self, context):
-        
-        latest_releases = [
-            Release.latest_stable().id,
-        ]
+        latest_releases = []
+        latest_stable = Release.latest_stable()
         latest_dev = Release.latest_development()
+        
+        if latest_stable:
+            latest_releases.append(latest_stable.id)
         if latest_dev:
             latest_releases.append(latest_dev.id)
+        
         older_releases = Release.objects.exclude(id__in=latest_releases)
         context[self.context_var] = older_releases
         
