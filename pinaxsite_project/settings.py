@@ -128,20 +128,21 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.humanize",
     "django.contrib.webdesign",
-
+    
     # admin
     "django.contrib.admin",
-
+    
     # pinax
     "staticfiles",
     "biblion",
-
+    
     # external
     "dregni",
     "tagging",
     "template_utils",
     "uni_form",
-
+    "nashvegas",
+    
     # local
     "downloads",
     "example_sites",
