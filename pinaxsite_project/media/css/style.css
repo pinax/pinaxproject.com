@@ -84,11 +84,11 @@ aside, nav, article, figure {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -110px; /* the bottom margin is the negative value of the footer's height */
+  margin: 0 auto -100px; /* the bottom margin is the negative value of the footer's height */
 }
 
 .push {
-  height: 110px; /* .push must be the same height as footer */
+  height: 100px; /* .push must be the same height as footer */
 }
 
 /*** header ***/
@@ -145,7 +145,7 @@ footer {
   color: #FFF;
   text-align: center;
   padding: 10px 5px 20px;
-  height:80px;
+  height: 70px;
 }
 
 footer p {
