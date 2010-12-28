@@ -865,6 +865,9 @@ body#blog .post-container {
   width: 670px;
   margin-right: 15px;
 }
+.intro .main {
+  width: 520px;
+}
 
 #main_content .sidebar hr {
   margin-bottom:10px;
