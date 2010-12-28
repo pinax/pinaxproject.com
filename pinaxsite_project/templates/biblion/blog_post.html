@@ -5,52 +5,19 @@
 {% block head_title %}{{ post.title }}{% endblock %}
 
 {% block blog_content %}
-
-    <div class="main">
-
     <p class="breadcrumbs">
         <a href="{% url blog %}">&laquo; back to blog</a>
     </p>
-
+    
     <h2 class="post-title">{{ post.title }}</h2>
     {% include "biblion/dateline.html" %}
     <hr />
-
+    
     <div class="teaser">{{ post.teaser_html|safe }}</div>
-
+    
     <div class="content">{{ post.content_html|safe }}</div>
-
-    <p class="share"></p>
-
+    
     <p class="breadcrumbs">
         <a href="{% url blog %}">&laquo; back to blog</a>
     </p>
-
-    </div>
-
-    <aside class="sidebar">
-        <div class="blog-sections">
-            {% blog_sections as sections %}
-            <h4>Categories</h4>
-            <hr />
-            <ul>
-            {% for section in sections %}
-                <li><a href="{% url blog_section section.0 %}">{{ section.1 }}</a></li>
-            {% endfor %}
-            
-            </ul>
-        </div>
-
-        <div class="blog-sections">
-            {% latest_blog_posts as recent_posts %}
-            <h4>Recent Posts</h4>
-            <hr />
-            <ul>
-            {% for post in recent_posts %}
-                <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
-            {% endfor %}
-            </ul>
-        </div>
-    </aside>
-
 {% endblock %}

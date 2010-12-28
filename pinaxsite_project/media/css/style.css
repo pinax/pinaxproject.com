@@ -508,6 +508,9 @@ div.teaser {
 div.teaser p {
   margin:0;
 }
+aside {
+    margin-left: 685px;
+}
 
 /* download / release */
 a#btn-release {

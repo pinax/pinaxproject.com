@@ -2,11 +2,10 @@
 
 {% load webdesign %}
 
-{% block head_title %}Blog ({{ section|capfirst }}){% endblock %}
+{% block head_title %}Blog ({{ section_name|capfirst }}){% endblock %}
 
 {% block blog_content %}
-    
-    <h2>{{ section|capfirst }}</h2>
+    <h2>{{ section_name|capfirst }}</h2>
     
     {% if posts %}
         {% for post in posts %}
@@ -15,5 +14,4 @@
     {% else %}
         <p>No blog posts have been published in this section.</p>
     {% endif %}
-    
 {% endblock %}

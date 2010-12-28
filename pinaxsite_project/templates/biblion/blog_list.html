@@ -6,33 +6,13 @@
 {% block head_title %}Blog{% endblock %}
 
 {% block blog_content %}
-
-    <div class="main">
-
-        {% if posts %}
-            {% for post in posts %}
-                <div class="post-container">
-                    {% include "biblion/_minipost.html" %}
-                </div>
-            {% endfor %}
-        {% else %}
-            <p>No blog posts have been published.</p>
-        {% endif %}
-
-    </div>
-
-    <aside class="sidebar">
-        <div class="blog-sections">
-            {% blog_sections as sections %}
-            <h4>Categories</h4>
-            <hr />
-            <ul>
-                {% for section in sections  %}
-                  <li><a href="{% url blog_section section.0 %}">{{ section.1 }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
-
-    </aside>
-
+    {% if posts %}
+        {% for post in posts %}
+            <div class="post-container">
+                {% include "biblion/_minipost.html" %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No blog posts have been published.</p>
+    {% endif %}
 {% endblock %}
