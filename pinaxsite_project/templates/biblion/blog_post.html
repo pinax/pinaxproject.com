@@ -4,6 +4,10 @@
 
 {% block head_title %}{{ post.title }}{% endblock %}
 
+{% block extra_head %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/syntax.css" />
+{% endblock %}
+
 {% block blog_content %}
     <p class="breadcrumbs">
         <a href="{% url blog %}">&laquo; back to blog</a>
