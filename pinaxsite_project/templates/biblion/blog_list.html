@@ -10,6 +10,7 @@
         {% for post in posts %}
             <div class="post-container">
                 {% include "biblion/_minipost.html" %}
+                <div><a href="{{ post.get_absolute_url }}" class="more">read more &rarr;</a></div>
             </div>
         {% endfor %}
     {% else %}
