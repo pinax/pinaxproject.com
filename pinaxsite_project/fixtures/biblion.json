@@ -1,39 +1,5 @@
 [
   {
-    "pk": 3, 
-    "model": "biblion.post", 
-    "fields": {
-      "view_count": 0, 
-      "updated": "2010-01-24 10:17:55", 
-      "author": 1, 
-      "section": "4", 
-      "title": "Using Fabric to Deploy a Pinax Project", 
-      "tweet_text": "", 
-      "slug": "using-fabric-deploy-pinax-project", 
-      "created": "2010-01-24 10:17:55", 
-      "published": "2010-01-24 10:17:55", 
-      "content_html": "<p><a href=\"http://www.rhonabwy.com/wp/2010/01/23/using-fabric-to-deploy-a-pinax-project/\">http://www.rhonabwy.com/wp/2010/01/23/using-fabric-to-deploy-a-pinax-project/</a></p>\n", 
-      "teaser_html": "<p>Blog post by Joe Heck</p>\n"
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "biblion.post", 
-    "fields": {
-      "view_count": 0, 
-      "updated": "2010-01-24 10:15:41", 
-      "author": 1, 
-      "section": "3", 
-      "title": "How To Do Something In Pinax", 
-      "tweet_text": "", 
-      "slug": "how-do-something-pinax", 
-      "created": "2010-01-24 10:15:41", 
-      "published": "2010-01-24 10:15:41", 
-      "content_html": "<p>This is a fake how-to article about Pinax, just so there's content to use in the development of the new website.\r</p>\n<h3>Heading</h3>\n<p>That was a heading.\r</p>\n<p>This is a list:\r</p>\n<ul>\n<li>item\r</li>\n<li>item\r</li>\n<li>item\r</li>\n</ul>\n<p>And what would a how-to-article be without code:\r</p>\n<div class=\"syntax\"><pre><span class=\"nd\">@classmethod</span>\n<span class=\"k\">def</span> <span class=\"nf\">latest_development</span><span class=\"p\">(</span><span class=\"n\">cls</span><span class=\"p\">):</span>\n    <span class=\"n\">stable</span> <span class=\"o\">=</span> <span class=\"n\">cls</span><span class=\"o\">.</span><span class=\"n\">latest_stable</span><span class=\"p\">()</span>\n    <span class=\"n\">dev</span> <span class=\"o\">=</span> <span class=\"n\">cls</span><span class=\"o\">.</span><span class=\"n\">_default_manager</span><span class=\"o\">.</span><span class=\"n\">filter</span><span class=\"p\">(</span><span class=\"n\">stable</span><span class=\"o\">=</span><span class=\"bp\">False</span><span class=\"p\">)[</span><span class=\"mi\">0</span><span class=\"p\">]</span>\n    <span class=\"k\">if</span> <span class=\"n\">V</span><span class=\"p\">(</span><span class=\"n\">dev</span><span class=\"o\">.</span><span class=\"n\">version</span><span class=\"p\">)</span> <span class=\"o\">&gt;</span> <span class=\"n\">V</span><span class=\"p\">(</span><span class=\"n\">stable</span><span class=\"o\">.</span><span class=\"n\">version</span><span class=\"p\">):</span>\n        <span class=\"k\">return</span> <span class=\"n\">dev</span>\n    <span class=\"k\">else</span><span class=\"p\">:</span>\n        <span class=\"k\">return</span> <span class=\"bp\">None</span>\n</pre></div>", 
-      "teaser_html": "<p>I don't yet have time to write a real how-to article so this is just here for testing.</p>\n"
-    }
-  }, 
-  {
     "pk": 1, 
     "model": "biblion.post", 
     "fields": {
@@ -76,34 +42,6 @@
       "teaser": "The Pinax project has a newly designed website.", 
       "published": "2010-01-24 10:08:45", 
       "post": 1
-    }
-  }, 
-  {
-    "pk": 3, 
-    "model": "biblion.revision", 
-    "fields": {
-      "view_count": 0, 
-      "updated": "2010-01-24 10:15:41", 
-      "author": 1, 
-      "title": "How To Do Something In Pinax", 
-      "content": "This is a fake how-to article about Pinax, just so there's content to use in the development of the new website.\r\n\r\n===Heading===\r\n\r\nThat was a heading.\r\n\r\nThis is a list:\r\n\r\n* item\r\n* item\r\n* item\r\n\r\nAnd what would a how-to-article be without code:\r\n\r\n{{{\r\n#!code python\r\n@classmethod\r\ndef latest_development(cls):\r\n    stable = cls.latest_stable()\r\n    dev = cls._default_manager.filter(stable=False)[0]\r\n    if V(dev.version) > V(stable.version):\r\n        return dev\r\n    else:\r\n        return None\r\n}}}\r\n", 
-      "teaser": "I don't yet have time to write a real how-to article so this is just here for testing.", 
-      "published": "2010-01-24 10:15:41", 
-      "post": 2
-    }
-  }, 
-  {
-    "pk": 4, 
-    "model": "biblion.revision", 
-    "fields": {
-      "view_count": 0, 
-      "updated": "2010-01-24 10:17:55", 
-      "author": 1, 
-      "title": "Using Fabric to Deploy a Pinax Project", 
-      "content": "[[http://www.rhonabwy.com/wp/2010/01/23/using-fabric-to-deploy-a-pinax-project/]]", 
-      "teaser": "Blog post by Joe Heck", 
-      "published": "2010-01-24 10:17:55", 
-      "post": 3
     }
   }
 ]
