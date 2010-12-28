@@ -1,6 +1,7 @@
 {% extends "biblion/blog_base.html" %}
 
 {% load webdesign %}
+{% load biblion_tags %}
 
 {% block head_title %}Blog{% endblock %}
 
@@ -22,12 +23,13 @@
 
     <aside class="sidebar">
         <div class="blog-sections">
+            {% blog_sections as sections %}
             <h4>Categories</h4>
             <hr />
             <ul>
-                <li><a href="#">Announcements</a></li>
-                <li><a href="#">Articles</a></li>
-                <li><a href="#">Community</a></li>
+                {% for section in sections  %}
+                  <li><a href="{% url blog_section section.0 %}">{{ section.1 }}</a></li>
+                {% endfor %}
             </ul>
         </div>
 
