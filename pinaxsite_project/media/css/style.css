@@ -508,9 +508,6 @@ div.teaser {
 div.teaser p {
   margin:0;
 }
-aside {
-    margin-left: 685px;
-}
 
 /* download / release */
 a#btn-release {
@@ -882,7 +879,8 @@ body#blog .post-container {
 
 .blog-sections {
   margin-bottom:20px;
-  float: left;
+  float: right;
+  clear: right;
   width: 220px;
   margin-left: 5px;
   padding:15px;
