@@ -181,6 +181,8 @@ DEBUG_TOOLBAR_CONFIG = {
     "INTERCEPT_REDIRECTS": False,
 }
 
+DOCS_ROOT = "/home/anduin/pinax-docs/"
+
 # local_settings.py can be used to override environment-specific settings
 # like database and email that differ between development and production.
 try:

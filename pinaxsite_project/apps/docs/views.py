@@ -1,6 +1,8 @@
 import cPickle as pickle
 import httplib2
+import os
 
+from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.http import Http404, HttpResponse, HttpResponsePermanentRedirect
 from django.shortcuts import render_to_response
@@ -10,7 +12,10 @@ from django.utils import simplejson as json
 
 def documentation_index(request):
     ctx = {
-        "versions": ["0.7", "dev"]
+        "versions": [
+            ("0.7", "0.7"),
+            ("dev", "Development")
+        ]
     }
     ctx = RequestContext(request, ctx)
     return render_to_response("docs/index.html", ctx)
@@ -54,6 +59,11 @@ def documentation_detail(request, version, slug=None):
 
 
 def fetch_doc(branch, slug):
-    with open("/home/anduin/pinax-docs/output-%s/%s.fpickle" % (branch, slug)) as fp:
+    doc_file = os.path.join(
+        settings.DOCS_ROOT,
+        "output-%s" % branch,
+        "%s.fpickle" % slug
+    )
+    with open(doc_file) as fp:
         parts = pickle.load(fp)
     return parts
