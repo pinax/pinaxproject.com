@@ -1,5 +1,5 @@
 {% extends "docs/base.html" %}
 
 {% block main_col %}
-{{ doc.body }}
+    {{ doc.body|safe }}
 {% endblock %}
