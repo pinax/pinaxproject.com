@@ -4,7 +4,7 @@
 --requirement=base.txt
 
 creole==1.1
-http://ftp.de.debian.org/debian/pool/main/p/python-imaging/python-imaging_1.1.7.orig.tar.gz
+PIL==1.1.7
 psycopg2==2.3.2
 Pygments==1.3.1
 biblion>=0.1.0-dev0
