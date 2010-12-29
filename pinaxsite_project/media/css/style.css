@@ -367,30 +367,37 @@ ul#messages {
   margin:10px auto;
   font-size:10pt;
 }
+
 ul#messages li {
   padding: 5px 10px;
   margin:3px;
 }
+
 ul#messages li a {
   float: right;
   color: #693;
 }
+
 ul#messages .debug {
   background: #EEE;
   border: 1px solid #BBB;
 }
+
 ul#messages .info {
   background: #DEF;
   border: 1px solid #9BC;
 }
+
 ul#messages .success {
   background: #EFD;
   border: 1px solid #BC9;
 }
+
 ul#messages .warning {
   background: #FED;
   border: 1px solid #CB9;
 }
+
 ul#messages .error {
   background: #FDD;
   border: 1px solid #C99;
@@ -901,6 +908,7 @@ body#blog .post-container {
   width: 670px;
   margin-right: 15px;
 }
+
 .intro .main {
   width: 520px;
 }
@@ -937,3 +945,177 @@ body#blog .post-container {
   border-top: solid 1px #ccc;
   border-bottom: solid 1px #fff;
 }
+
+/*** docs ***/
+.docs-content {
+  overflow:hidden;
+}
+
+.docs-content .sidebar {
+  float:left;
+  width:200px;
+  margin-right:15px;
+  margin-bottom:20px;
+  padding:15px;
+  background: #eee;
+  border:1px solid #d6d6d6;
+  box-shadow:1px 1px 0 #f8f8f8;
+  -moz-box-shadow:1px 1px 0 #f8f8f8;
+  -webkit-box-shadow:1px 1px 0 #f8f8f8;
+  text-shadow:0 1px 0 #f6f6f6;
+}
+
+.docs-content .main-col {
+  float:left;
+  width:713px;
+}
+
+body.docs h1, body.docs h2, body.docs h3,
+body.docs h4, body.docs h5, body.docs h6 {
+  margin-bottom:10px;
+  font-weight: normal;
+  color: #2869a9;
+}
+
+body.docs h1 { font-size: 20pt; margin-bottom:15px; }
+body.docs h2 { font-size: 18pt; }
+body.docs h3 { font-size: 16pt; }
+body.docs h4 { font-size: 14pt; }
+body.docs h5 { font-size: 12pt; }
+body.docs h6 { font-size: 10pt; font-weight:bold; }
+
+body.docs .main-col ul, body.docs .main-col ol,
+body.docs .main-col p {
+  margin-bottom:10px;
+}
+
+body.docs .main-col ul {
+  list-style-type:square;
+  margin-left:32px;
+}
+
+body.docs .main-col ul li ul {
+  list-style-type:circle;
+}
+
+body.docs .main-col ol {
+  list-style-type: decimal;
+  margin-left:32px;
+}
+
+div.note {
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+div.seealso {
+    background-color: #ffc;
+    border: 1px solid #ff6;
+}
+
+div.topic {
+    background-color: #eee;
+}
+
+div.warning {
+    background-color: #ffe4e4;
+    border: 1px solid #f66;
+}
+
+p.admonition-title {
+    display: inline;
+}
+
+p.admonition-title:after {
+    content: ":";
+}
+
+pre {
+    padding: 5px;
+    background-color: #eeffcc;
+    color: #333333;
+    line-height: 120%;
+    border: 1px solid #ac9;
+    border-left: none;
+    border-right: none;
+}
+
+tt {
+    background-color: #ecf0f3;
+    padding: 0 1px 0 1px;
+    font-size: 0.95em;
+}
+
+/* -- code displays --------------------------------------------------------- */
+
+pre {
+    overflow: auto;
+}
+
+td.linenos pre {
+    padding: 5px 0px;
+    border: 0;
+    background-color: transparent;
+    color: #aaa;
+}
+
+table.highlighttable {
+    margin-left: 0.5em;
+}
+
+table.highlighttable td {
+    padding: 0 0.5em 0 0.5em;
+}
+
+tt.descname {
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+tt.descclassname {
+    background-color: transparent;
+}
+
+tt.xref, a tt {
+    background-color: transparent;
+    font-weight: bold;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+    background-color: transparent;
+}
+
+/* -- math display ---------------------------------------------------------- */
+
+img.math {
+    vertical-align: middle;
+}
+
+div.math p {
+    text-align: center;
+}
+
+span.eqno {
+    float: right;
+}
+
+/* -- printout stylesheet --------------------------------------------------- */
+
+@media print {
+    div.document,
+    div.documentwrapper,
+    div.bodywrapper {
+        margin: 0;
+        width: 100%;
+    }
+
+    div.sphinxsidebar,
+    div.related,
+    div.footer,
+    #top-link {
+        display: none;
+    }
+}
+
+
