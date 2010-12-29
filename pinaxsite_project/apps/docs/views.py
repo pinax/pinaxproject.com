@@ -39,7 +39,7 @@ def documentation_detail(request, version, slug=None):
             "version": version,
             "real_version": real_version,
         }
-        ctx = RequestContext(request)
+        ctx = RequestContext(request, ctx)
         return render_to_response("docs/%s_index.html" % version, ctx)
     
     # handle old documentation and redirect to new URL
