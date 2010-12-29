@@ -59,11 +59,16 @@ def documentation_detail(request, version, slug=None):
 
 
 def fetch_doc(branch, slug):
-    doc_file = os.path.join(
-        settings.DOCS_ROOT,
-        "output-%s" % branch,
-        "%s.fpickle" % slug
-    )
-    with open(doc_file) as fp:
-        parts = pickle.load(fp)
-    return parts
+    branch_path = os.path.join(settings.DOCS_ROOT, "output-%s" % branch)
+    # check if slug is a directory
+    if os.path.isdir(os.path.join(branch_path, slug)):
+        doc_file = os.path.join(slug, "index.fpickle")
+    else:
+        doc_file = "%s.fpickle" % slug
+    doc_path = os.path.join(branch_path, doc_file)
+    if os.path.exists(doc_path):
+        with open(doc_path) as fp:
+            parts = pickle.load(fp)
+        return parts
+    else:
+        raise Http404("no doc")
