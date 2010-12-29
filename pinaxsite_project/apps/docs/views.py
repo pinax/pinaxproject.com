@@ -17,9 +17,23 @@ def documentation_index(request):
 
 
 def documentation_detail(request, version, slug=None):
+    
+    # figure out which branch to pull docs from based on version
+    try:
+        branch = {"0.7": "0.7.X", "dev": "master"}[version]
+    except KeyError:
+        raise Http404("no version")
+    else:
+        real_version = {"master": "0.9a2.dev5"}.get(branch, branch)
+    
     # when no slug is given we are looking at a version detail so just
     # render a template for it
     if slug is None:
+        ctx = {
+            "doc": fetch_doc(branch, "index"),
+            "version": version,
+            "real_version": real_version,
+        }
         ctx = RequestContext(request)
         return render_to_response("docs/%s_index.html" % version, ctx)
     
@@ -30,18 +44,16 @@ def documentation_detail(request, version, slug=None):
         })
         return HttpResponsePermanentRedirect(redirect_to)
     
-    # figure out which branch to pull docs from based on version
-    try:
-        branch = {"0.7": "0.7.X", "dev": "master"}[version]
-    except KeyError:
-        raise Http404("no version")
-    else:
-        version = {"master": "0.9a2.dev5"}.get(branch, branch)
-    
-    with open("/home/anduin/pinax-docs/output-%s/%s.fpickle" % (branch, slug)) as fp:
-        parts = pickle.load(fp)
     ctx = {
-        "doc": parts,
+        "doc": fetch_doc(branch, slug),
+        "version": version,
+        "real_version": real_version,
     }
     ctx = RequestContext(request, ctx)
     return render_to_response("docs/detail.html", ctx)
+
+
+def fetch_doc(branch, slug):
+    with open("/home/anduin/pinax-docs/output-%s/%s.fpickle" % (branch, slug)) as fp:
+        parts = pickle.load(fp)
+    return parts

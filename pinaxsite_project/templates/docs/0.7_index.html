@@ -1,1 +1,11 @@
-0.7
+{% extends "docs/base.html" %}
+
+{% block head_title %}{{ doc.title }}{% endblock %}
+
+{% block content_aside %}
+    {{ doc.toc|safe }}
+{% endblock %}
+
+{% block main_col %}
+    {{ doc.body|safe }}
+{% endblock %}

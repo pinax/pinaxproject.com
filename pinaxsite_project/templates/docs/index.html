@@ -1,3 +1,9 @@
 {% extends "docs/base.html" %}
 
-{% block main_col %}index{% endblock %}
+{% block main_col %}
+    <ul>
+        {% for version in versions %}
+            <li><a href="{% url documentation_version version %}">{{ version }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
