@@ -14,3 +14,4 @@ django-uni-form==0.7.0
 dregni==0.1.dev1
 template_utils==0.4p2
 nashvegas==0.2.1
+httplib2==0.6.0
