@@ -228,7 +228,12 @@ section {
   width: 217px;
   margin-right: 5px;
 }
-
+.box.box2-1 {
+  float: left;
+  width: 400px;
+  font-size: 11pt;
+  margin: 20px 25px 20px 0;
+}
 .box4-2 {
   float: left;
   width: 217px;
@@ -500,6 +505,9 @@ body#homepage #main_content .row-content {
   margin-bottom:30px;
 }
 
+.features p {
+  font-size: 11pt;
+}
 .features ul {
   list-style-type:square;
   margin-left:20px;
