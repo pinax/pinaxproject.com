@@ -1,0 +1,19 @@
+{% extends "site_base.html" %}
+
+{% block head_title %}Documentation{% endblock %}
+{% block body_class %}docs{% endblock %}
+
+{% block main_content %}
+<div class="docs-content">
+    <aside class="sidebar">
+        <ul>
+            <li><a href="{% url index %}">index</a></li>
+            <li><a href="{% url dev_index %}">dev_index</a></li>
+            <li><a href="{% url gettingstarted %}">gettingstarted</a></li>
+        </ul>
+    </aside>
+    <div class="main-col">
+        {% block main_col %}{% endblock %}
+    </div>
+</div>
+{% endblock %}
