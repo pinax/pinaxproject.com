@@ -1,5 +1,7 @@
 {% extends "docs/base.html" %}
 
+{% block head_title %}{{ doc.title }}{% endblock %}
+
 {% block main_col %}
     {{ doc.body|safe }}
 {% endblock %}
