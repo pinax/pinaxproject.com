@@ -148,6 +148,7 @@ INSTALLED_APPS = [
     "example_sites",
     "quotes",
     "biblion_extras",
+    "docs",
 ]
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"

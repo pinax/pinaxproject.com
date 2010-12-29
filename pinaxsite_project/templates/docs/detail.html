@@ -1,3 +1,5 @@
 {% extends "docs/base.html" %}
 
-{% block main_col %}detail{% endblock %}
+{% block main_col %}
+{{ doc.body }}
+{% endblock %}

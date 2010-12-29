@@ -18,6 +18,7 @@ urlpatterns = patterns("",
     url(r"^blog/", include("biblion.urls")),
     url(r"^feed/$", "biblion.views.blog_feed", name="blog_feed_combined"),
     url(r"^feed/(?P<section>[-\w]+)/$", "biblion.views.blog_feed", name="blog_feed"),
+    url(r"^docs/", include("docs.urls")),
     
     url(r"^downloads/", include("downloads.urls")),
     url(r"^sites/", include("example_sites.urls")),
