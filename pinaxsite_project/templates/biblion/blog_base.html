@@ -16,7 +16,11 @@
                 <hr />
                 <ul>
                 {% for section in sections %}
-                    <li><a href="{% url blog_section section.0 %}">{{ section.1 }}</a></li>
+                    {% ifequal section.0 "all" %}
+                        <li><a href="{% url blog %}">{{ section.1 }}</a></li>
+                    {% else %}
+                        <li><a href="{% url blog_section section.0 %}">{{ section.1 }}</a></li>
+                    {% endifequal %}
                 {% endfor %}
                 </ul>
             </div>
