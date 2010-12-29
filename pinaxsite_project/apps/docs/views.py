@@ -2,7 +2,7 @@ import cPickle as pickle
 import httplib2
 
 from django.core.urlresolvers import reverse
-from django.http import Http404, HttpResponse, HttpResponseRedirect
+from django.http import Http404, HttpResponse, HttpResponsePermanentRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.utils import simplejson as json
@@ -28,7 +28,7 @@ def documentation_detail(request, version, slug=None):
         redirect_to = reverse("documentation_detail", kwargs={
             "version": version, "slug": slug.replace(".html", "")
         })
-        return HttpResponseRedirect(redirect_to)
+        return HttpResponsePermanentRedirect(redirect_to)
     
     # figure out which branch to pull docs from based on version
     try:
