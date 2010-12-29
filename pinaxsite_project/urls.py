@@ -14,28 +14,24 @@ handler500 = "pinax.views.server_error"
 
 urlpatterns = patterns("",
     url(r"^$", direct_to_template, {"template": "homepage.html"}, name="home"),
-
+    
     url(r"^blog/", include("biblion.urls")),
     url(r"^feed/$", "biblion.views.blog_feed", name="blog_feed_combined"),
     url(r"^feed/(?P<section>[-\w]+)/$", "biblion.views.blog_feed", name="blog_feed"),
-
-    # stubbed out for reverse (webserver maps this to static file serving)
-    url(r"^docs/$", "pinax.views.noop", name="documentation"),
-
+    
     url(r"^downloads/", include("downloads.urls")),
     url(r"^sites/", include("example_sites.urls")),
     url(r"^quotes/", include("quotes.urls")),
     url(r"^events/$", direct_to_template, {
         "template": "events/home.html",
     }, name="events_home"),
-
+    
     url(r"^admin/", include(admin.site.urls)),
-
+    
     # temporary urls
     url(r"^docs/$", direct_to_template, {"template": "docs/index.html"}, name="index"),
     url(r"^docs/dev/$", direct_to_template, {"template": "docs/dev_index.html"}, name="dev_index"),
     url(r"^docs/dev/gettingstarted/$", direct_to_template, {"template": "docs/detail.html"}, name="gettingstarted"),
-
 )
 
 
