@@ -359,6 +359,42 @@ form.custom .focused {
   background:#f5f5f5;
 }
 
+/*** messages ***/
+ul#messages {
+  padding: 0;
+  list-style: none;
+  width:960px;
+  margin:10px auto;
+  font-size:10pt;
+}
+ul#messages li {
+  padding: 5px 10px;
+  margin:3px;
+}
+ul#messages li a {
+  float: right;
+  color: #693;
+}
+ul#messages .debug {
+  background: #EEE;
+  border: 1px solid #BBB;
+}
+ul#messages .info {
+  background: #DEF;
+  border: 1px solid #9BC;
+}
+ul#messages .success {
+  background: #EFD;
+  border: 1px solid #BC9;
+}
+ul#messages .warning {
+  background: #FED;
+  border: 1px solid #CB9;
+}
+ul#messages .error {
+  background: #FDD;
+  border: 1px solid #C99;
+}
 /***************************************************************************** page specific styles */
 /*** homepage ***/
 body#homepage #main_content h2 {
