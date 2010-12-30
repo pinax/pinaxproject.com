@@ -10,157 +10,280 @@
 
 {% block body_id %}homepage{% endblock %}
 
+{% block header_content %}
+<div class="block-left">
+    <h1><a href="/"><img src="{{ STATIC_URL }}img/pinax_logo_lg.png" alt="Pinax" /></a></h1>
+    <h2>a platform for rapidly developing websites</h2>
+</div>
+<div class="block-right">
+    <article class="intro">
+        <p class="main">
+            Pinax is an open-source platform built on the
+            <a href="http://djangoproject.com">Django Web Framework</a>.
+        </p>
+
+        <p class="main">
+            By integrating numerous reusable Django apps and providing starter
+            projects and infrastructure tools, Pinax takes care of the things
+            that many sites have in common so you can focus on what makes your
+            site different.
+        </p>
+
+        <p class="main">
+            Pinax has been used for everything from social networks to
+            conference websites, and from intranets to online games.
+        </p>
+    </article>
+</div>
+{% endblock %}
+
 {% block main_content %}
-    
-    <div class="row">
-        <div class="box">
-            <p class="main">
-                Pinax is an open-source platform built on the
-                <a href="http://djangoproject.com">Django Web Framework</a>.
-            </p>
-            
-            <p class="main">
-                By integrating numerous reusable Django apps and providing starter
-                projects and infrastructure tools, Pinax takes care of the things
-                that many sites have in common so you can focus on what makes your
-                site different.
-            </p>
-            
-            <p class="main">
-                Pinax has been used for everything from social networks to
-                corporate websites and from intranets to online games.
-            </p>
+    <section class="row-grey">
+        <div class="row-content">
+            <article class="box left2 columns">
+                <h2><a href="{% url blog_section "announcements" %}">Announcements</a></h2>
+                <hr />
+                <div class="column-content">
+                    {% latest_section_post "announcements" as post %}
+                    {% include "biblion/_minipost2.html" %}
+                </div>
+                <p><a href="{% url blog_section "announcements" %}" class="more">more announcements &rarr;</a></p>
+            </article>
+
+            <article class="box center2 columns">
+                <h2>Featured Post</h2>
+                <hr />
+
+                {% featured_post as post %}
+                {% if post %}
+                    <div class="column-content">
+                        {% include "biblion/_minipost.html" %}
+                    </div>
+                    <p><a href="{{ post.get_absolute_url }}" class="more">read this post &rarr;</a></p>
+                {% else %}
+                    <p>No featured post.</p>
+                {% endif %}
+            </article>
+
+            <article class="box right2 columns">
+                <h2><a href="{% url downloads_home %}">Download</a></h2>
+                <hr />
+
+                {% latest_stable_release as release %}
+                {% if release %}
+                    <div class="column-content">
+                        <p class="main">
+                            <a href="{% url downloads_home %}" id="btn-release">
+                                Latest stable release: {{ release.version }}
+                            </a>
+                        </p>
+                    </div>
+                    <p><a href="{% url downloads_home %}" class="more">more downloads &rarr;</a></p>
+                {% else %}
+                    <p class="main">
+                        There are currently no stable releases.
+                    </p>
+                {% endif %}
+            </article>
+            <div class="clear"></div>
         </div>
-    </div>
-    
-    <div class="row">
-        <div class="box">
-            <p>@@@ features (multi-column list)</p>
+    </section>
+    <div class="ribbon-btm"></div>
+
+    <section class="row">
+        <div class="row-content features">
+            <article class="features-top">
+                <h2>Features</h2>
+                <hr />
+            </article>
+            <article class="box box2-1 columns3">
+                <p>Pinax provides:</p>
+                <ul>
+                    <li><b>standard project layout</b> for consistency and easy deployment</li>
+                    <li><b>starter projects</b> that can be used as the basis for any Django website as well as some tailored to community sites, company sites, intranets and sites in closed beta </li>
+                    <li><b>reusable apps</b> providing both back-end functionality and user-facing components</li>
+                    <li><b>default templates</b> to enable quick prototyping</li>
+                </ul>
+            </article>
+            {% comment %}
+            <article class="box box4-2 columns3">
+                <p>More advanced starter projects for things like:</p>
+                <ul>
+                    <li>intranets</li>
+                    <li>team project sites</li>
+                    <li>template-based HTML mockups</li>
+                    <li>social networks</li>
+                </ul>
+            </article>
+            {% endcomment %}
+            <article class="box box4-3 columns3">
+                <p>...including apps for:</p>
+                <ul>
+                    <li>account management
+                        <ul>
+                            <li>openid</li>
+                            <li>e-mail verification</li>
+                            <li>password management</li>
+                        </ul>
+                    </li>
+                    <li>profiles</li>
+                    <li>notifications</li>
+                    <li>activity streams</li>
+                    <li>private betas / waiting lists</li>
+                </ul>
+            </article>
+            <article class="box box4-4 columns3">
+                <p>&nbsp;</p>
+                <ul>
+                    <li>badges</li>
+                    <li>tagging</li>
+                    <li>wikis</li>
+                    <li>forums</li>
+                    <li>blogs</li>
+                    <li>task tracking</li>
+                    <li>friend and follower relations</li>
+                </ul>
+                <div class="more-coming"><i>and more...</i></div>
+            </article>
+            {# <p>@@@ features (multi-column list)</p> #}
         </div>
-    </div>
-    
-    <div class="row">
-        <div class="box left2">
-            <h2>Release</h2>
-            
-            {% latest_stable_release as release %}
-            {% if release %}
-                <p class="main">
-                    The latest stable release is {{ release.version }}
-                </p>
-            {% else %}
-                <p class="main">
-                    There are currently no stable releases.
-                </p>
-            {% endif %}
-            
-            <p><a href="{% url downloads_home %}">more downloads...</a></p>
-        </div>
-        
-        <div class="box center2">
-            <h2>Featured Post</h2>
-            
-            {% featured_post as post %}
-            {% if post %}
-                {% include "biblion/_minipost.html" %}
-            {% else %}
-                <p>No featured post.</p>
-            {% endif %}
-        </div>
-        
-        <div class="box right2">
-            <h2>Announcements</h2>
-            
-            {% latest_section_post "announcements" as post %}
-            {% include "biblion/_minipost2.html" %}
-            
-            <p><a href="{% url blog_section "announcements" %}">more announcements...</a></p>
-        </div>
-        <div class="clear"></div>
-    </div>
-    
-    <div class="row">
-        <div class="box left3">
-            <h2>Developer Information</h2>
-            
-            <p>
-                Pinax is available under an MIT license. The source code is
-                available from <a href="http://github.com/pinax/pinax">GitHub</a>.
-            </p>
-            
-            <p>
-                Tickets and Wiki are at
-                <a href="http://code.pinaxproject.com">code.pinaxproject.com</a>
-            </p>
-            
-            <p>
-                Most discussion about Pinax takes place on the IRC channel
-                <a href="irc://irc.freenode.net/pinax">#pinax</a>
-                on Freenode or the
-                <a href="http://groups.google.com/group/pinax-users">pinax-users</a>
-                mailing list on Google Groups.
-            </p>
-        </div>
-        
-        <div class="box right3">
-            <h2>The Pinax Blog</h2>
-            
-            {% latest_blog_posts as posts %}
-            {% for post in posts %}
-                {% include "biblion/_minipost.html" %}
-            {% empty %}
-                <p>No blog posts.</p>
-            {% endfor %}
-            
-            <p><a href="{% url blog %}">more blog posts...</a></>
-        </div>
-        <div class="clear"></div>
-    </div>
-    
-    <div class="row">
-        <div class="box left2">
-            <h2>Sites built with Pinax</h2>
-            
-            {% featured_site as site %}
-            {{ site }}
-            
-            {% random_sites 5 as sites %}
-            {% if sites %}
-            <ul class="sites">
-                {% for site in sites %}
-                    <li><a href="{{ site.url }}">{{ site.name }}</a></li>
+    </section>
+
+    <div class="ribbon-top"></div>
+    <section class="row-grey">
+        <div class="row-content">
+            <article class="box left3 pinax-blog">
+                <h2><a href="{% url blog %}">The Pinax Blog</a></h2>
+                <hr />
+
+                {% latest_blog_posts as posts %}
+                {% for post in posts %}
+                    {% include "biblion/_minipost.html" %}
+                {% empty %}
+                    <p>No blog posts.</p>
                 {% endfor %}
-            </ul>
-            {% endif %}
-            
-            <p><a href="{% url sites_home %}">more sites built on Pinax...</a></p>
+
+                <p><a href="{% url blog %}" class="more">more blog posts &rarr;</a></p>
+            </article>
+
+            <article class="box right3 dev-info">
+                <h2>Developer Information</h2>
+                <hr />
+
+                <p>
+                    Pinax is available under an MIT license. The source code is
+                    available from <a href="http://github.com/pinax/pinax">GitHub</a>.
+                </p>
+
+                <p>
+                    Tickets and Wiki are at
+                    <a href="http://code.pinaxproject.com">code.pinaxproject.com</a>
+                </p>
+
+                <p>
+                    Most discussion about Pinax takes place on the IRC channel
+                    <a href="irc://irc.freenode.net/pinax">#pinax</a>
+                    on Freenode or the
+                    <a href="http://groups.google.com/group/pinax-users">pinax-users</a>
+                    mailing list on Google Groups.
+                </p>
+            </article>
+            <div class="clear"></div>
         </div>
-        
-        <div class="box center2">
-            <h2>Quotes about Pinax</h2>
+    </section>
+    <div class="ribbon-btm"></div>
+    <section class="row">
+        <div class="row-content">
+            <article class="box left2 columns2">
+                <h2><a href="{% url sites_home %}">Sites Built with Pinax</a></h2>
+                {# <hr /> #}
+
+                    {% featured_site as site %}
+                    <div class="featured-site-box">
+                        <a href="{{ site.url }}">
+                            <img src="{{ MEDIA_URL }}{{ site.image }}" alt="{{ site.name }}" width="100px" />
+                        </a>
+                        <div><a href="{{ site.url }}"><b>{{ site.name }}</b></a><br />
+                        <a href="{{ site.url }}">{{ site.url }}</a></div>
+                    </div>
+                    {% random_sites 6 as sites %}
+                    {% if sites %}
+                    <div class="column-content">
+                            <div class="sites">
+                                {% for site in sites %}
+                                    <span><a href="{{ site.url }}">{{ site.name }}</a></span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <p><a href="{% url sites_home %}" class="more">more sites built on Pinax &rarr;</a></p>
+                    {% else %}
+                        <p>Coming Soon!</p>
+                    {% endif %}
+
+            </article>
+
+            <article class="box center2 columns2">
+                <h2><a href="{% url quotes_home %}">Quotes about Pinax</a></h2>
+                <hr />
+
+                {% featured_quote as quote %}
+                {% if quote %}
+                    <div class="column-content">
+                        <div class="quote">
+                            <span class="marks">&ldquo;</span>{{ quote.text }}<span class="marks">&rdquo;</span>
+                            <br />
+                            <span class="attribution">&mdash; {{ quote.author }}<span>
+                        </div>
+                    </div>
+                    <p><a href="{% url quotes_home %}" class="more">more quotes about Pinax &rarr;</a></p>
+                {% else %}
+                    <p>No featured quote.</p>
+                {% endif %}
+            </article>
             
-            {% featured_quote as quote %}
-            {% if quote %}
-            <div class="quote">
-                <span class="marks">&ldquo;</span>{{ quote.text }}<span class="marks">&rdquo;</span>
-                <br />
-                <span class="attribution">&mdash; {{ quote.author }}<span>
+            <article class="box right2 columns2">
+                <h2>Events</h2>
+                {# <hr /> #}
+                <div class="column-content">
+                    {# <p>@@@ featured event / rotating events</p> #}
+                    <div class="featured-event-box">
+                        <a href="http://confoo.ca/en/2011/session/a-pinax-tutorial">
+                            <img src="{{ STATIC_URL }}img/logo_confoo.gif" width="100px" alt="" />
+                        </a>
+                        <div><a href="http://confoo.ca/en/2011/session/a-pinax-tutorial"><b>Pinax Tutorial at ConFoo.ca</b></a><br />
+                        <span>9th-11th March 2011, Montreal, Canada</span>
+                        </div>
+                    </div>
+                    <ul id="event-list">
+                        <li><a href="http://us.pycon.org/">PyCon 2011 (including Pinax sprint)</a>
+                            <span>9th-17th March 2011, Atlanta, GA</span>
+                        </li>
+                    </ul>
+                </div>
+                {# <p><a href="{% url events_home %}" class="more">more events &rarr;</a></p> #}
+            </article>
+
+            <div class="clear"></div>
+        </div>
+
+        <div id="extra-line">
+            <div class="content">
+                <img src="{{ STATIC_URL }}img/twitter_standing.png" width="48" height="48" alt="Twitter" />
+                Get latest news and updates on Pinax. <a href="http://twitter.com/pinaxproject/">Follow us on Twitter.</a>
             </div>
-            {% else %}
-                <p>No featured quote.</p>
-            {% endif %}
-            
-            <p><a href="{% url quotes_home %}">more quotes about Pinax...</a></p>
         </div>
-        
-        <div class="box right2">
-            <h2>Events</h2>
-            
-            <p>@@@ featured event / rotating events</p>
-            
-            <p><a href="{% url events_home %}">more events...</a></p>
-        </div>
-        
-        <div class="clear"></div>
-    </div>
+
+    </section>
+{% endblock %}
+
+{% block extra_body %}
+<script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="{{ STATIC_URL }}js/jquery.equalheights.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $(".columns").equalHeights();
+        $(".columns2").equalHeights();
+        $(".columns3").equalHeights();
+    });
+</script>
 {% endblock %}

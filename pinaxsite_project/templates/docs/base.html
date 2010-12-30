@@ -1,0 +1,16 @@
+{% extends "site_base.html" %}
+
+{% block head_title %}Documentation{% endblock %}
+{% block body_class %}docs{% endblock %}
+
+{% block main_content %}
+<div class="docs-content">
+    <div class="main-col">
+        {% block main_col %}{% endblock %}
+    </div>
+    {% block content_aside %}
+    {% endblock %}
+</div>
+<div class="clear"></div>
+{% endblock %}
+

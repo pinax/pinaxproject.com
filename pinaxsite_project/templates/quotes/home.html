@@ -6,9 +6,10 @@
 {% block body_id %}quotes{% endblock %}
 
 {% block main_content %}
-    
-    <h2>Quotes</h2>
-    
+
+    <h2>Quotes about Pinax</h2>
+    <hr />
+
     {% for quote in quotes %}
         <div class="quote">
             <span class="marks">&ldquo;</span>{{ quote.text }}<span class="marks">&rdquo;</span>
@@ -18,5 +19,5 @@
     {% empty %}
         <p>No quotes.</p>
     {% endfor %}
-    
+
 {% endblock %}

@@ -113,7 +113,9 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "django.core.context_processors.media",
     "django.core.context_processors.request",
     "django.contrib.messages.context_processors.messages",
-    
+
+    "staticfiles.context_processors.static_url",
+
     "pinax.core.context_processors.pinax_settings",
 ]
 
@@ -138,12 +140,15 @@ INSTALLED_APPS = [
     "dregni",
     "tagging",
     "template_utils",
+    "uni_form",
+    "nashvegas",
     
     # local
     "downloads",
     "example_sites",
     "quotes",
     "biblion_extras",
+    "docs",
 ]
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
@@ -175,6 +180,8 @@ EVENT_TYPES = [
 DEBUG_TOOLBAR_CONFIG = {
     "INTERCEPT_REDIRECTS": False,
 }
+
+DOCS_ROOT = "/home/anduin/pinax-docs/"
 
 # local_settings.py can be used to override environment-specific settings
 # like database and email that differ between development and production.

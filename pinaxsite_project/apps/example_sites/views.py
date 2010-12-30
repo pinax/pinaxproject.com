@@ -1,5 +1,7 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
+
+from django.contrib import messages
 
 from example_sites.forms import SiteSubmissionForm
 from example_sites.models import Site
@@ -25,6 +27,8 @@ def submit_site(request):
         form = SiteSubmissionForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Thank you for your submission. It will be reviewed shortly.")
+            return redirect("sites_home")
     else:
         form = SiteSubmissionForm()
     

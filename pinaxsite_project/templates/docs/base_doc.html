@@ -1,0 +1,31 @@
+{% extends "docs/base.html" %}
+
+{% block head_title %}{{ doc.title|striptags|safe }}{% endblock %}
+
+{% block content_aside %}
+    <aside class="sidebar">
+        <h5>Releases</h5>
+        <hr />
+        <ul>
+            {% for v, name in versions %}
+                <li{% if version == v %} style="font-weight: bold;"{% endif %}><a href="{% url documentation_version v %}">{{ name }}</a></li>
+            {% endfor %}
+        </ul>
+    </aside>
+    <aside class="sidebar">
+        <h5>TOC</h5>
+        <hr />
+        {{ doc.toc|safe }}
+    </aside>
+{% endblock %}
+
+{% block main_col %}
+    <div class="doc-notice">
+        {% if version == "dev" %}
+            <p>This document is for Pinax's development version, which can be significantly different from previous releases. Get old docs here: <a href="{% url documentation_version "0.7" %}">0.7</a></p>
+        {% else %}
+            <p>This document describes Pinax {{ version }}. For development docs, go <a href="{% url documentation_version "dev" %}">here</a>.</p>
+        {% endif %}
+    </div>
+    {{ doc.body|safe }}
+{% endblock %}
