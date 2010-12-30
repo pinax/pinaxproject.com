@@ -42,11 +42,14 @@
             <h3>Older Releases</h3>
 
             {% older_releases as releases %}
-            {% for release in releases %}
-                {% include "downloads/_release.html" %}
-            {% empty %}
-                <p>There are currently no earlier releases.</p>
-            {% endfor %}
+            <div class="older-releases">
+                {% for release in releases %}
+                    {% include "downloads/_release.html" %}
+                {% empty %}
+                    <p>There are currently no earlier releases.</p>
+                {% endfor %}
+            </div>
+
         </section>
         <aside class="col2">
             <p>For more information about installation see our <a href="/docs/0.7/install.html">Getting Started</a> documentation.</p>
