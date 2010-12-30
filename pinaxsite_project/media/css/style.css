@@ -52,7 +52,7 @@ h3 {
   font-weight:bold;
 }
 
-p, ul {
+p, ul, pre {
   margin-bottom:10px;
 }
 
