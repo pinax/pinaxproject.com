@@ -1014,6 +1014,7 @@ body.docs .main-col ol {
 div.note {
     background-color: #eee;
     border: 1px solid #ccc;
+    padding: 5px;
 }
 
 div.seealso {
@@ -1032,6 +1033,7 @@ div.warning {
 
 p.admonition-title {
     display: inline;
+    font-weight: bold;
 }
 
 p.admonition-title:after {
