@@ -4,18 +4,20 @@
     <head>
         <link href="{{ STATIC_URL }}img/favicon.ico" rel="shortcut icon" />
         <title>{% block head_title_base %}Pinax : {% block head_title %}{% endblock %}{% endblock %}</title>
-
+        
+        <link rel="alternate" type="application/atom+xml" title="Pinax Blog" href="{% url blog_feed_combined %}" />
+        
         <!--  hack to make IE able to apply CSS to elements that it doesn't usually know about. See http://code.google.com/p/html5shim/ -->
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-
+        
         <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
         {% block extra_head %}{% endblock %}
         {# @@@ atom feeds #}
     </head>
-
+    
     <body class="{% block body_class %}default{% endblock %}" id="{% block body_id %}default{% endblock %}">
         <div class="wrapper">
 
