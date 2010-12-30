@@ -8,6 +8,7 @@ from django.http import Http404, HttpResponse, HttpResponsePermanentRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.utils import simplejson as json
+from django.views.static import serve
 
 
 def version_context():
@@ -78,3 +79,18 @@ def fetch_doc(branch, slug):
         return parts
     else:
         raise Http404("no doc")
+
+
+def documentation_static(request, version, slug):
+    # this view is really the only way at the moment to serve images from
+    # Sphinx in Gondor
+    try:
+        branch = {"0.7": "0.7.X", "dev": "master"}[version]
+    except KeyError:
+        raise Http404("no version")
+    branch_path = os.path.join(settings.DOCS_ROOT, "output-%s" % branch)
+    root = slug.split("/")[0]
+    return serve(
+        request, slug.replace(root, ""),
+        document_root=os.path.join(branch_path, root)
+    )
