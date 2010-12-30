@@ -1,0 +1,24 @@
+{% extends "docs/base.html" %}
+
+{% block head_title %}{{ doc.title }}{% endblock %}
+
+{% block content_aside %}
+    <aside class="sidebar">
+        <h5>Releases</h5>
+        <hr />
+        <ul>
+            {% for v, name in versions %}
+                <li{% if version == v %} style="font-weight: bold;"{% endif %}><a href="{% url documentation_version v %}">{{ name }}</a></li>
+            {% endfor %}
+        </ul>
+    </aside>
+    <aside class="sidebar">
+        <h5>TOC</h5>
+        <hr />
+        {{ doc.toc|safe }}
+    </aside>
+{% endblock %}
+
+{% block main_col %}
+    {{ doc.body|safe }}
+{% endblock %}

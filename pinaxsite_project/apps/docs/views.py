@@ -10,13 +10,17 @@ from django.template import RequestContext
 from django.utils import simplejson as json
 
 
-def documentation_index(request):
-    ctx = {
+def version_context():
+    return {
         "versions": [
             ("0.7", "0.7"),
             ("dev", "Development")
         ]
     }
+
+
+def documentation_index(request):
+    ctx = version_context()
     ctx = RequestContext(request, ctx)
     return render_to_response("docs/index.html", ctx)
 
@@ -39,6 +43,7 @@ def documentation_detail(request, version, slug=None):
             "version": version,
             "real_version": real_version,
         }
+        ctx.update(version_context())
         ctx = RequestContext(request, ctx)
         return render_to_response("docs/%s_index.html" % version, ctx)
     
@@ -54,6 +59,7 @@ def documentation_detail(request, version, slug=None):
         "version": version,
         "real_version": real_version,
     }
+    ctx.update(version_context())
     ctx = RequestContext(request, ctx)
     return render_to_response("docs/detail.html", ctx)
 
