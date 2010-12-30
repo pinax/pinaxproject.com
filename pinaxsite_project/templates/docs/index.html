@@ -1,8 +1,9 @@
 {% extends "docs/base.html" %}
 
 {% block content_aside %}
+    <h5>Releases</h5>
+    <hr />
     <ul>
-        <li><b>Releases</b></li>
         {% for version, name in versions %}
             <li><a href="{% url documentation_version version %}">{{ name }}</a></li>
         {% endfor %}
@@ -12,4 +13,5 @@
 {% block main_col %}
     <h1>Pinax Documentation</h1>
     <p>Welcome to the Pinax documentation!</p>
+    <p>Select a release to the left to browse the documentation for that release.</p>
 {% endblock %}
