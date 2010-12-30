@@ -1,11 +1,9 @@
 Setting up documentation
 ========================
 
-Create a directory somewhere on your hard-drive which will be the ``DOCS_ROOT``.
-Set the setting ``DOCS_ROOT`` to its path in your local_settings.py. For this
-example I will use the following::
-
-    DOCS_ROOT = "/home/user/pinax-docs/"
+Create a directory somewhere on your filesystem which will be the
+``DOCS_ROOT``. Set the setting ``DOCS_ROOT`` to its path in your
+``local_settings.py``.
 
 To setup the documentation run the following commands::
 
@@ -17,8 +15,9 @@ To setup the documentation run the following commands::
     env/bin/sphinx-build -b pickle -aE pinax-0.7.X/docs/ output-0.7.X
     env/bin/sphinx-build -b pickle -aE pinax-master/docs/ output-master
 
-This will be sufficient to run the documentation locally. To update the docs
-to the latest version run::
+This will be sufficient to run the documentation locally.
+
+To update the docs to the latest version run::
 
     cd $DOCS_ROOT # fill in with yours
     (cd pinax-0.7.X ; git pull)
