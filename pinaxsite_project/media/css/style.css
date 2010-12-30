@@ -986,7 +986,7 @@ body.docs h4, body.docs h5, body.docs h6 {
 }
 
 body.docs h1 { font-size: 20pt; margin-bottom:15px; }
-body.docs h2 { font-size: 18pt; }
+body.docs h2 { font-size: 18pt; margin-top: 20px;}
 body.docs h3 { font-size: 16pt; }
 body.docs h4 { font-size: 14pt; }
 body.docs h5 { font-size: 12pt; }
