@@ -40,7 +40,9 @@ class OlderReleasesNode(AsNode):
         if latest_dev:
             latest_releases.append(latest_dev.id)
         
-        older_releases = Release.objects.exclude(id__in=latest_releases)
+        older_releases = Release.objects.filter(
+            stable=True
+        ).exclude(id__in=latest_releases)
         context[self.context_var] = older_releases
         
         return u""
