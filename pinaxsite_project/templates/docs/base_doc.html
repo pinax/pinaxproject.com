@@ -1,6 +1,6 @@
 {% extends "docs/base.html" %}
 
-{% block head_title %}{{ doc.title }}{% endblock %}
+{% block head_title %}{{ doc.title|striptags }}{% endblock %}
 
 {% block content_aside %}
     <aside class="sidebar">
