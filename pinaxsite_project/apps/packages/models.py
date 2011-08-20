@@ -103,10 +103,9 @@ class Package(DateAuditModel):
         return unicode(self.name)
 
 
-class CommitActivityFeed(DateAuditModel):
+class PackageBranch(DateAuditModel):
     
-    app = models.ForeignKey(Package, related_name="feeds")
-    feed_url = models.URLField()
+    package = models.ForeignKey(Package, related_name="feeds")
     branch_name = models.CharField(max_length=96)
     active = models.BooleanField(default=True)
     
