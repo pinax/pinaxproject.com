@@ -1,0 +1,16 @@
+{% extends "site_base.html" %}
+
+{% block head_title %}{% endblock %}
+{% block body_id %}{% endblock %}
+
+{% block main_content %}
+    <div class="col-wrapper">
+        <section class="col1">
+            {% block packages_content %}{% endblock %}
+        </section>
+        <aside class="col2">
+            {% block side_bar %}{% endblock %}
+        </aside>
+    </div>
+    <div class="clear"></div>
+{% endblock %}

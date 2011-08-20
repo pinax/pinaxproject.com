@@ -1,0 +1,10 @@
+{% extends "packages/base.html" %}
+
+{% block head_title %}Package List{% endblock %}
+{% block body_id %}package-list{% endblock %}
+
+{% block packages_content %}
+    {% for obj in packages %}
+        <div><a href="{% url packages_detail obj.pk %}">{{ obj.name }}</a> ({{ obj.get_package_type_display }})</div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "packages/base.html" %}
+
+{% block head_title %}{{ obj.name }}{% endblock %}
+{% block body_id %}package-{{ obj.get_package_type_display.lower }}-detail{% endblock %}
+
+{% block packages_content %}
+    <div>
+        {{ package.name }}
+    </div>
+{% endblock %}
