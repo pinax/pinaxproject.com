@@ -15,3 +15,5 @@ dregni==0.1.dev1
 template_utils==0.4p2
 nashvegas==0.6.3
 httplib2==0.6.0
+
+requests==0.6.0

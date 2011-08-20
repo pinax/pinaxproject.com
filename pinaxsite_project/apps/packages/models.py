@@ -1,6 +1,9 @@
 import datetime
+import json
 
 from django.db import models
+
+import requests
 
 from biblion.models import Post
 
@@ -72,6 +75,17 @@ class Package(DateAuditModel):
     cpc_tag = models.CharField(max_length=64, null=True, blank=True)
     package_name = models.CharField(max_length=96, null=True, blank=True)
     package_uses = models.ManyToManyField("Package", blank=True) # make sure that this is nullable/blankable
+    
+    def save(self, *args, **kwargs):
+        if not self.description:
+            if "://github.com" in self.repo_url:
+                repo = self.repo_url.replace("http://github.com/", "").replace("https://github.com/", "")
+                info = json.loads(requests.get("http://github.com/api/v2/json/repos/show/%s" % repo).content)
+                if info.get("repository"):
+                    self.description = info["repository"]["description"]
+                else:
+                    self.description = info["error"]
+        super(Package, self).save(*args, **kwargs)
     
     @classmethod
     def apps(cls):
