@@ -7,6 +7,8 @@ import requests
 
 from biblion.models import Post
 
+from packages.utils import merge_commits
+
 
 class DateAuditModel(models.Model):
     
@@ -130,3 +132,7 @@ class PackageBranch(DateAuditModel):
     @classmethod
     def active_branches(cls):
         return cls.objects.filter(active=True)
+    
+    @classmethod
+    def active_branch_commits(cls):
+        return merge_commits([x.commits() for x in cls.active_branches()])
