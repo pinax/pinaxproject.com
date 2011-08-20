@@ -1148,3 +1148,28 @@ span.eqno {
 }
 
 
+body#commits .branch {
+    background-color: #555;
+    color: #DDD;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 4px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    vertical-align: middle;
+}
+
+body#commits .commit {
+  margin-bottom: 30px;
+  border: 1px solid #999;
+  background-color: white;
+  padding: 10px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+
+body#commits .commit h2 {
+  font-size: 18pt;
+  margin-bottom: 6px;
+}
+

@@ -127,7 +127,11 @@ class PackageBranch(DateAuditModel):
         if self.package.repo():
             url = "http://github.com/api/v2/json/commits/list/%s/%s" % (self.package.repo(), self.branch_name)
             data = json.loads(requests.get(url).content)
-            return data.get("commits")
+            commits = data.get("commits")
+            if commits:
+                for commit in commits:
+                    commit["package_branch"] = self
+            return commits
     
     @classmethod
     def active_branches(cls):

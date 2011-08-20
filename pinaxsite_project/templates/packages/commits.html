@@ -1,0 +1,23 @@
+{% extends "packages/base.html" %}
+
+{% block head_title %}Commits{% endblock %}
+{% block body_id %}commits{% endblock %}
+
+{% block packages_content %}
+    {% for commit in commits %}
+    <div class="commit">
+        <h3>
+            <a href="{% url packages_detail commit.package_branch.package.pk %}">
+                {{ commit.package_branch.package }}
+            </a>
+            
+            <span class="branch">{{ commit.package_branch.branch_name }}</span>
+        </h3>
+        <div class="message">{{ commit.message }}</div>
+        <div class="date">{{ commit.committed_date }}</div>
+        <div class="author">{{ commit.author.name }}</div>
+        
+        <div class="sha"><a href="https://github.com{{ commit.url }}">{{ commit.id }}</a></div>
+    </div>
+    {% endfor %}
+{% endblock %}

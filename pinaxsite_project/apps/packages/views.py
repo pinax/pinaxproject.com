@@ -1,7 +1,8 @@
+from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
-from packages.models import Package
+from packages.models import Package, PackageBranch
 
 
 class AppList(ListView):
@@ -37,3 +38,13 @@ class PackageDetail(DetailView):
     template_name = "packages/detail.html"
     model = Package
     context_object_name = "package"
+
+
+class CommitsView(TemplateView):
+    
+    template_name = "packages/commits.html"
+    
+    def get_context_data(self, **kwargs):
+        context = super(CommitsView, self).get_context_data(**kwargs)
+        context["commits"] = PackageBranch.active_branch_commits()
+        return context

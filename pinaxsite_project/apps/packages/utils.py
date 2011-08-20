@@ -9,6 +9,7 @@ def merge_commits(commit_lists):
     {
           "commits": [
             {
+              "package_branch": <obj>,   # modified to include reference to PackageBranch
               "parents": [
                 {
                   "id": "e3be659a93ce0de359dd3e5c3b3b42ab53029065"
