@@ -96,6 +96,8 @@ class Package(DateAuditModel):
                 else:
                     self.description = info["error"]
         super(Package, self).save(*args, **kwargs)
+        if self.branches.count() == 0:
+            self.branches.create(branch_name="master")
     
     @classmethod
     def apps(cls):
@@ -115,10 +117,10 @@ class Package(DateAuditModel):
 
 class PackageBranch(DateAuditModel):
     
-    package = models.ForeignKey(Package, related_name="feeds")
+    package = models.ForeignKey(Package, related_name="branches")
     branch_name = models.CharField(max_length=96)
     active = models.BooleanField(default=True)
     
     @classmethod
-    def active_feeds(cls):
+    def active_branches(cls):
         return cls.objects.filter(active=True)
