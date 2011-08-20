@@ -76,11 +76,21 @@ class Package(DateAuditModel):
     package_name = models.CharField(max_length=96, null=True, blank=True)
     package_uses = models.ManyToManyField("Package", blank=True) # make sure that this is nullable/blankable
     
+    def repo(self):
+        if "://github.com" in self.repo_url:
+            return self.repo_url.replace(
+                "http://github.com/", ""
+            ).replace(
+                "https://github.com/", ""
+            ).strip("/")
+        return None
+    
     def save(self, *args, **kwargs):
         if not self.description:
-            if "://github.com" in self.repo_url:
-                repo = self.repo_url.replace("http://github.com/", "").replace("https://github.com/", "")
-                info = json.loads(requests.get("http://github.com/api/v2/json/repos/show/%s" % repo).content)
+            if self.repo():
+                info = json.loads(
+                    requests.get("http://github.com/api/v2/json/repos/show/%s" % self.repo()
+                ).content)
                 if info.get("repository"):
                     self.description = info["repository"]["description"]
                 else:
