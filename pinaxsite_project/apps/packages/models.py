@@ -115,6 +115,9 @@ class Package(DateAuditModel):
     
     def __unicode__(self):
         return unicode(self.name)
+    
+    def active_branches(self):
+        return self.branches.filter(active=True)
 
 
 class PackageBranch(DateAuditModel):
