@@ -1192,6 +1192,21 @@ body#package-detail span.branch {
   text-shadow: none;
   background: #333;
 }
+body#package-list h2 span.theme,
+body#package-detail.theme h2 span {
+  background: #55955E;
+  color: #EEE;
+}
+body#package-list h2 span.starter.project,
+body#package-detail.starter.project h2 span {
+  background: #667E92;
+  color: #EEE;
+}
+body#package-list h2 span.app,
+body#package-detail.app h2 span {
+  background: #986455;
+  color: #EEE;
+}
 
 body#package-list ul.urls li,
 body#package-detail ul.urls li {
