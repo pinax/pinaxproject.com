@@ -37,7 +37,8 @@ def merge_commits(commit_lists):
     """
     one_list = []
     for l in commit_lists:
-        one_list.extend(l)
+        if l:
+            one_list.extend(l)
     
     return sorted(
         one_list,
