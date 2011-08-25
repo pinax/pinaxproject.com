@@ -1148,17 +1148,6 @@ span.eqno {
 }
 
 
-body#commits .branch {
-    background-color: #555;
-    color: #DDD;
-    font-size: 12px;
-    font-weight: normal;
-    padding: 4px;
-    border-radius: 7px;
-    -webkit-border-radius: 7px;
-    vertical-align: middle;
-}
-
 body#commits .commit,
 body#package-list .package,
 body#package-detail .commit,
@@ -1181,7 +1170,8 @@ body#package-detail .package h2 {
 
 body#package-list .package h2 span,
 body#package-detail .package h2 span,
-body#package-detail span.branch {
+body#package-detail span.branch,
+body#commits span.branch {
   font-size: 12px;
   padding: 2px 6px;
   float: right;
