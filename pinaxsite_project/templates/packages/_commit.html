@@ -4,11 +4,19 @@
             {{ commit.package_branch.package }}
         </a>
         
-        <span class="branch">{{ commit.package_branch.branch_name }}</span>
+        <span class="date">{{ commit.committed_date }}</span>
     </h3>
-    <div class="message">{{ commit.message }}</div>
-    <div class="date">{{ commit.committed_date }}</div>
-    <div class="author">{{ commit.author.name }}</div>
     
-    <div class="sha"><a href="https://github.com{{ commit.url }}">{{ commit.id }}</a></div>
+    <div class="message">{{ commit.message }}</div>
+    
+    <div class="sha">
+        <a href="https://github.com{{ commit.url }}"
+           title="Committed by {{ commit.author.name }}">
+            {{ commit.id }}
+        </a>
+        
+        <span class="branch">
+            {{ commit.package_branch.branch_name }}
+        </span>
+    </div>
 </div>

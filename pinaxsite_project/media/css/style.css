@@ -1148,6 +1148,16 @@ span.eqno {
 }
 
 
+body#commits h3,
+body#package-list h3,
+body#package-detail h3 {
+  margin-bottom: 5px;
+}
+
+body#commits div.sha,
+body#package-detail div.sha {
+  margin-top: 5px;
+}
 body#commits .commit,
 body#package-list .package,
 body#package-detail .commit,
@@ -1181,6 +1191,11 @@ body#commits span.branch {
   border-radius: 5px;
   text-shadow: none;
   background: #333;
+}
+body#commits div.commit h3 span.date,
+body#package-detail div.commit h3 span.date {
+  font-size: 12px;
+  float: right;
 }
 body#package-list h2 span.theme,
 body#package-detail.theme h2 span {
