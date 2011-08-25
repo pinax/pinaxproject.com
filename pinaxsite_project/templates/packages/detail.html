@@ -1,10 +1,46 @@
 {% extends "packages/base.html" %}
 
 {% block head_title %}{{ obj.name }}{% endblock %}
-{% block body_id %}package-{{ obj.get_package_type_display.lower }}-detail{% endblock %}
+{% block body_id %}package-detail{% endblock %}
+{% block body_class %}{{ package.get_package_type_display.lower }}{% endblock %}
 
 {% block packages_content %}
-    <div>
-        {{ package.name }}
+    <div class="package">
+        <h2>
+            {{ package.name }}
+            <span class="{{ package.get_package_type_display.lower }}">
+                {{ package.get_package_type_display }}
+            </span>
+        </h2>
+        
+        {% if package.description %}
+            <div class="description">
+                {{ package.description }}
+            </div>
+        {% endif %}
+        
+        <ul class="urls">
+            <li class="repo_url">
+                <a href="{{ package.repo_url }}">github</a>
+            </li>
+            {% if package.docs_url %}
+                <li class="docs_url">
+                    <a href="{{ package.docs_url }}">docs</a>
+                </li>
+            {% endif %}
+            {% if package.blog_post %}
+                <li class="blog_post">
+                    <a href="{{ package.blog_post.get_absolute_url }}">blog post</a>
+                </li>
+            {% endif %}
+        </ul>
+        <br class="clear space" />
+        
+        {% for branch in package.active_branches %}
+            <h3>Commits</h3>
+            {% for commit in branch.commits %}
+                {% include "packages/_commit.html" %}
+            {% endfor %}
+        {% endfor %}
     </div>
 {% endblock %}
