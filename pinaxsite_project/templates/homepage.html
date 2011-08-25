@@ -247,17 +247,25 @@
                 <div class="column-content">
                     {# <p>@@@ featured event / rotating events</p> #}
                     <div class="featured-event-box">
-                        <a href="http://confoo.ca/en/2011/session/a-pinax-tutorial">
-                            <img src="{{ STATIC_URL }}img/logo_confoo.gif" width="100px" alt="" />
+                        <a href="http://djangocon.us/">
+                            <img src="http://djangocon.us/site_media/static/img/logo.png" width="100" alt="" />
                         </a>
-                        <div><a href="http://confoo.ca/en/2011/session/a-pinax-tutorial"><b>Pinax Tutorial at ConFoo.ca</b></a><br />
-                        <span>9th-11th March 2011, Montreal, Canada</span>
-                        </div>
+                        <div><a href="http://djangocon.us/"><b>DjangoCon 2011 (including Pinax talk and&nbsp;sprint)</b></a></div>
+                        <div class="clear"></div>
+                        <div><span>6th&ndash;10th September 2011, Portland, Oregon</span></div>
                     </div>
                     <ul id="event-list">
-                        <li><a href="http://us.pycon.org/">PyCon 2011 (including Pinax sprint)</a>
-                            <span>9th-17th March 2011, Atlanta, GA</span>
+                        <li><a href="http://us.pycon.org/2012/">PyCon 2012 (including Pinax sprint)</a>
+                            <span>7th&ndash;15th March 2011, Santa Clara, CA</span>
                         </li>
+                        {% comment %}
+                        <li><a href="http://confoo.ca/en/2011/session/a-pinax-tutorial">Pinax Tutorial at ConFoo.ca</a>
+                            <span>9th&ndash;11th March 2011, Montreal, Canada</span>
+                        </li>
+                        <li><a href="http://us.pycon.org/">PyCon 2011 (including Pinax sprint)</a>
+                            <span>9th&ndash;17th March 2011, Atlanta, GA</span>
+                        </li>
+                        {% endcomment %}
                     </ul>
                 </div>
                 {# <p><a href="{% url events_home %}" class="more">more events &rarr;</a></p> #}
