@@ -5,6 +5,8 @@ from django.db import models
 
 import requests
 
+from dateutil import parser
+
 from biblion.models import Post
 
 from packages.utils import merge_commits
@@ -134,6 +136,9 @@ class PackageBranch(DateAuditModel):
             if commits:
                 for commit in commits:
                     commit["package_branch"] = self
+                    commit["committed_date"] = parser.parse(
+                        commit["committed_date"]
+                    )
             return commits
     
     @classmethod
