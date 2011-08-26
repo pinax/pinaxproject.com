@@ -38,7 +38,7 @@
         
         {% for branch in package.active_branches %}
             <h3>Commits</h3>
-            {% for commit in branch.commits %}
+            {% for commit in branch.commits.all %}
                 {% include "packages/_commit.html" %}
             {% endfor %}
         {% endfor %}

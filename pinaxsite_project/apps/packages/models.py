@@ -5,11 +5,7 @@ from django.db import models
 
 import requests
 
-from dateutil import parser
-
 from biblion.models import Post
-
-from packages.utils import merge_commits
 
 
 class DateAuditModel(models.Model):
@@ -128,23 +124,66 @@ class PackageBranch(DateAuditModel):
     branch_name = models.CharField(max_length=96)
     active = models.BooleanField(default=True)
     
-    def commits(self):
+    def fetch_commits(self):
         if self.package.repo():
             url = "http://github.com/api/v2/json/commits/list/%s/%s" % (self.package.repo(), self.branch_name)
             data = json.loads(requests.get(url).content)
-            commits = data.get("commits")
-            if commits:
-                for commit in commits:
-                    commit["package_branch"] = self
-                    commit["committed_date"] = parser.parse(
-                        commit["committed_date"]
-                    )
-            return commits
+            return data.get("commits", [])
+        return []
     
     @classmethod
     def active_branches(cls):
         return cls.objects.filter(active=True)
+
+
+class Person(DateAuditModel):
     
+    name = models.CharField(max_length=128)
+    login = models.CharField(max_length=64)
+    email = models.CharField(max_length=128)
+
+
+class Commit(DateAuditModel):
+    """
+    $ curl http://github.com/api/v2/json/commits/list/mojombo/grit/master
+    {
+          "commits": [
+            {
+              "package_branch": <obj>,   # modified to include reference to PackageBranch
+              "parents": [
+                {
+                  "id": "e3be659a93ce0de359dd3e5c3b3b42ab53029065"
+                }
+              ],
+              "author": {
+                "name": "Ryan Tomayko",
+                "login": "rtomayko",
+                "email": "rtomayko@gmail.com"
+              },
+              "url": "/mojombo/grit/commit/6b7dff52aad33df4bfc0c0eaa88922fe1d1cd43b",
+              "id": "6b7dff52aad33df4bfc0c0eaa88922fe1d1cd43b",
+              "committed_date": "2010-12-09T13:50:17-08:00",
+              "authored_date": "2010-12-09T13:50:17-08:00",
+              "message": "update History.txt with bug fix merges",
+              "tree": "a6a09ebb4ca4b1461a0ce9ee1a5b2aefe0045d5f",
+              "committer": {
+                "name": "Ryan Tomayko",
+                "login": "rtomayko",
+                "email": "rtomayko@gmail.com"
+              }
+            }
+        ]
+    }
+    """
+    branch = models.ForeignKey(PackageBranch, related_name="commits")
+    author = models.ForeignKey(Person, related_name="authored_commits")
+    committer = models.ForeignKey(Person, related_name="committed_commits")
+    url = models.CharField(max_length=128)
+    sha = models.CharField(max_length=64)
+    committed_date = models.DateTimeField()
+    authored_date = models.DateTimeField()
+    message = models.TextField()
+        
     @classmethod
-    def active_branch_commits(cls):
-        return merge_commits([x.commits() for x in cls.active_branches()])
+    def active_commits(cls):
+        return Commit.objects.filter(branch__active=True).order_by("-committed_date")
