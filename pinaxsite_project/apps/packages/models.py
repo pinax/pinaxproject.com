@@ -125,7 +125,7 @@ class PackageBranch(DateAuditModel):
     active = models.BooleanField(default=True)
     
     def fetch_commits(self):
-        if self.package.repo():
+        if self.package.repo(): # @@@ ?page=N until no more results to fetch all commits
             url = "http://github.com/api/v2/json/commits/list/%s/%s" % (self.package.repo(), self.branch_name)
             data = json.loads(requests.get(url).content)
             return data.get("commits", [])
