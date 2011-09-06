@@ -126,10 +126,19 @@ class PackageBranch(DateAuditModel):
     
     def fetch_commits(self):
         if self.package.repo(): # @@@ ?page=N until no more results to fetch all commits
+            page = 1
             url = "http://github.com/api/v2/json/commits/list/%s/%s" % (self.package.repo(), self.branch_name)
+            print "\tGetting commits for page %s" % page
             data = json.loads(requests.get(url).content)
-            return data.get("commits", [])
-        return []
+            commits = []
+            while data.get("error") != "Not Found":
+                commits.extend(data.get("commits", []))
+                page += 1
+                next_url = url + "?page=%s" % page
+                print "\tGetting commits for page %s" % page
+                data = json.loads(requests.get(next_url).content)
+            print "\t%s Total Commits" % len(commits)
+        return commits
     
     @classmethod
     def active_branches(cls):
