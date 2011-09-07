@@ -1187,7 +1187,7 @@ body#commits span.branch {
   float: right;
   background-color: #444;
   color: #EEE;
-  -webkit-border-radius: 5px;
+  -webkit-border-radius: 8px;
   border-radius: 5px;
   text-shadow: none;
   background: #333;
