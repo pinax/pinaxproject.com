@@ -19,6 +19,10 @@
             </div>
         {% endif %}
         
+        {% with package as obj %}
+            {% include "packages/_stats.html" %}
+        {% endwith %}
+        
         <ul class="urls">
             <li class="repo_url">
                 <a href="{{ package.repo_url }}">github</a>
@@ -35,6 +39,21 @@
             {% endif %}
         </ul>
         <br class="clear space" />
+        
+        {% if package.open_pull_requests.exists %}
+            <h3>Pull Requests</h3>
+            {% for pull in package.open_pull_requests %}
+                <div class="pull-request">
+                    <div class="title">{{ pull.title }}</div>
+                    <div class="body">{{ pull.body }}</div>
+                    <div class="created">{{ pull.created_at }}</div>
+                    <div class="merged">{{ pull.merged_at }}</div>
+                    <div class="closed">{{ pull.closed_at }}</div>
+                    <div class="how-long-merge">{{ pull.how_long_to_merge }}</div>
+                    <div class="how-long-close">{{ pull.how_long_to_close }}</div>
+                </div>
+            {% endfor %}
+        {% endif %}
         
         {% for branch in package.active_branches %}
             <h3>Commits</h3>
