@@ -1277,3 +1277,7 @@ body#package-detail div.description {
 body#package-detail ul.urls {
   margin-bottom: 25px;
 }
+
+div.stats {
+  float: right;
+}
