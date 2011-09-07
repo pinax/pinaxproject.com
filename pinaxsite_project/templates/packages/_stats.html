@@ -1,0 +1,14 @@
+<div class="stats">
+    <span class="watchers">
+        <img src="{{ STATIC_URL }}pinax/img/silk/icons/eye.png" />
+        {{ obj.watchers }}
+    </span>
+    <span class="forks">
+        <img src="{{ STATIC_URL }}pinax/img/silk/icons/arrow_join.png" /> {{ obj.forks }}
+    </span>
+    {% if obj.open_pull_requests.exists %}
+        <span class="pull-requests">
+        <img src="{{ STATIC_URL }}pinax/img/silk/icons/asterisk_yellow.png" /> {{ obj.open_pull_requests.count }}
+    </span>
+    {% endif %}
+</div>
