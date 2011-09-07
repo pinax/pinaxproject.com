@@ -80,6 +80,11 @@ class Package(DateAuditModel):
     watchers = models.IntegerField(null=True, blank=True)
     size = models.IntegerField(null=True, blank=True)
     
+    def last_commit(self):
+        return Commit.objects.filter(
+            branch__package=self
+        ).latest("committed_date")
+    
     def repo(self):
         if "://github.com" in self.repo_url:
             return self.repo_url.replace(
@@ -239,7 +244,7 @@ class Commit(DateAuditModel):
     committed_date = models.DateTimeField()
     authored_date = models.DateTimeField()
     message = models.TextField()
-        
+    
     @classmethod
     def active_commits(cls):
         return Commit.objects.filter(branch__active=True).order_by("-committed_date")
