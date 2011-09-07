@@ -1230,38 +1230,6 @@ body#package-list h2 span.latest {
 body#package-detail span.branch {
   padding: 0px 6px;
 }
-body#package-list .repo_url a,
-body#package-detail .repo_url a {
-  background-color: #2869A9;
-  color: #EEE;
-  border: 1px solid #064797;
-}
-body#package-list .repo_url a:hover,
-body#package-detail .repo_url a:hover {
-  background-color: #064797;
-}
-
-body#package-list .docs_url a,
-body#package-detail .docs_url a {
-  background-color: #CAE46E;
-  color: #444;
-  border: 1px solid #A9C24C;
-}
-body#package-list .docs_url a:hover,
-body#package-detail .docs_url a:hover {
-  background-color: #A9C24C;
-}
-
-body#package-list .blog_post a,
-body#package-detail .blog_post a {
-  background-color: #DCEDFE;
-  color: #444;
-  border: 1px solid #B1CBDC;
-}
-body#package-list .blog_post a:hover,
-body#package-detail .blog_post a:hover {
-  background-color: #B1CBDC;
-}
 
 body#package-list div.package,
 body#package-detail div.package {

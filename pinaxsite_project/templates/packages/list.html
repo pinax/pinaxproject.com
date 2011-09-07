@@ -24,22 +24,24 @@
                     {{ obj.description }}
                 </div>
             {% endif %}
+            
             {% include "packages/_stats.html" %}
             <ul class="urls">
                 <li class="repo_url">
                     <a href="{{ obj.repo_url }}">github</a>
                 </li>
-                {% if obj.docs_url %}
+                {% if obj.docs_url %}|
                     <li class="docs_url">
                         <a href="{{ obj.docs_url }}">docs</a>
                     </li>
                 {% endif %}
-                {% if obj.blog_post %}
+                {% if obj.blog_post %}|
                     <li class="blog_post">
                         <a href="{{ obj.blog_post.get_absolute_url }}">blog post</a>
                     </li>
                 {% endif %}
             </ul>
+            
             <br class="clear" />
         </div>
     {% endfor %}
