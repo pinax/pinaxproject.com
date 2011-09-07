@@ -76,6 +76,10 @@ class Package(DateAuditModel):
     package_name = models.CharField(max_length=96, null=True, blank=True)
     package_uses = models.ManyToManyField("Package", blank=True) # make sure that this is nullable/blankable
     
+    forks = models.IntegerField(null=True, blank=True)
+    watchers = models.IntegerField(null=True, blank=True)
+    size = models.IntegerField(null=True, blank=True)
+    
     def repo(self):
         if "://github.com" in self.repo_url:
             return self.repo_url.replace(
@@ -84,6 +88,39 @@ class Package(DateAuditModel):
                 "https://github.com/", ""
             ).strip("/")
         return None
+    
+    def update_stats(self):
+        url = "https://api.github.com/repos/%s" % self.repo()
+        data = json.loads(requests.get(url).content)
+        if data.get("forks"):
+            self.forks = data.get("forks")
+        if data.get("watchers"):
+            self.watchers = data.get("watchers")
+        if data.get("size"):
+            self.size = data.get("size")
+        self.save()
+    
+    def fetch_pull_requests(self):
+        pull_requests = []
+        if self.repo():
+            page = 1
+            url = "https://api.github.com/repos/%s/pulls" % self.repo()
+            data = json.loads(requests.get(url).content)
+            while len(data) > 0:
+                pull_requests.extend(data)
+                page += 1
+                next_url = url + "?page=%s" % page
+                data = json.loads(requests.get(next_url).content)
+            
+            page = 1
+            url = "https://api.github.com/repos/%s/pulls?state=closed" % self.repo()
+            data = json.loads(requests.get(url).content)
+            while len(data) > 0:
+                pull_requests.extend(data)
+                page += 1
+                next_url = url + "&page=%s" % page
+                data = json.loads(requests.get(next_url).content)
+        return pull_requests
     
     def save(self, *args, **kwargs):
         if not self.description:
@@ -127,18 +164,14 @@ class PackageBranch(DateAuditModel):
     def fetch_commits(self):
         if self.package.repo(): # @@@ ?page=N until no more results to fetch all commits
             page = 1
-            url = "http://github.com/api/v2/json/commits/list/%s/%s" % (self.package.repo(), self.branch_name)
-            print "\tGetting commits for page %s" % page
+            url = "https://github.com/api/v2/json/commits/list/%s/%s" % (self.package.repo(), self.branch_name)
             data = json.loads(requests.get(url).content)
-            commits = []
             while data.get("error") != "Not Found":
-                commits.extend(data.get("commits", []))
+                for commit in data["commits"]:
+                    yield commit
                 page += 1
                 next_url = url + "?page=%s" % page
-                print "\tGetting commits for page %s" % page
                 data = json.loads(requests.get(next_url).content)
-            print "\t%s Total Commits" % len(commits)
-        return commits
     
     @classmethod
     def active_branches(cls):
@@ -147,43 +180,44 @@ class PackageBranch(DateAuditModel):
 
 class Person(DateAuditModel):
     
-    name = models.CharField(max_length=128)
+    github_id = models.IntegerField(null=True, blank=True)
+    url = models.CharField(max_length=96, null=True, blank=True)
+    avatar_url = models.CharField(max_length=255, null=True, blank=True)
+    
+    name = models.CharField(max_length=128, null=True, blank=True)
     login = models.CharField(max_length=64)
     email = models.CharField(max_length=128)
 
 
+class PullRequest(DateAuditModel):
+    
+    STATE_OPEN = 1
+    STATE_CLOSED = 2
+    
+    STATE_CHOICES = [
+        (STATE_OPEN, "Open"),
+        (STATE_CLOSED, "Closed")
+    ]
+    
+    package = models.ForeignKey(Package, related_name="pull_requests")
+    user = models.ForeignKey(Person, related_name="pull_requests")
+    number = models.IntegerField()
+    state = models.IntegerField(choices=STATE_CHOICES)
+    title = models.CharField(max_length=255, null=True, blank=True)
+    body = models.TextField(null=True, blank=True)
+    url = models.CharField(max_length=96)
+    html_url = models.CharField(max_length=96)
+    diff_url = models.CharField(max_length=96)
+    patch_url = models.CharField(max_length=96, null=True, blank=True)
+    issue_url = models.CharField(max_length=96, null=True, blank=True)
+    created_at = models.DateTimeField()
+    closed_at = models.DateTimeField(null=True, blank=True)
+    merged_at = models.DateTimeField(null=True, blank=True)
+    updated_at = models.DateTimeField(null=True, blank=True)
+
+
 class Commit(DateAuditModel):
-    """
-    $ curl http://github.com/api/v2/json/commits/list/mojombo/grit/master
-    {
-          "commits": [
-            {
-              "package_branch": <obj>,   # modified to include reference to PackageBranch
-              "parents": [
-                {
-                  "id": "e3be659a93ce0de359dd3e5c3b3b42ab53029065"
-                }
-              ],
-              "author": {
-                "name": "Ryan Tomayko",
-                "login": "rtomayko",
-                "email": "rtomayko@gmail.com"
-              },
-              "url": "/mojombo/grit/commit/6b7dff52aad33df4bfc0c0eaa88922fe1d1cd43b",
-              "id": "6b7dff52aad33df4bfc0c0eaa88922fe1d1cd43b",
-              "committed_date": "2010-12-09T13:50:17-08:00",
-              "authored_date": "2010-12-09T13:50:17-08:00",
-              "message": "update History.txt with bug fix merges",
-              "tree": "a6a09ebb4ca4b1461a0ce9ee1a5b2aefe0045d5f",
-              "committer": {
-                "name": "Ryan Tomayko",
-                "login": "rtomayko",
-                "email": "rtomayko@gmail.com"
-              }
-            }
-        ]
-    }
-    """
+    
     branch = models.ForeignKey(PackageBranch, related_name="commits")
     author = models.ForeignKey(Person, related_name="authored_commits")
     committer = models.ForeignKey(Person, related_name="committed_commits")
