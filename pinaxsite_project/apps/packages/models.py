@@ -100,6 +100,9 @@ class Package(DateAuditModel):
             self.size = data.get("size")
         self.save()
     
+    def open_pull_requests(self):
+        return self.pull_requests.filter(state=PullRequest.STATE_CLOSED)
+    
     def fetch_pull_requests(self):
         pull_requests = []
         if self.repo():
@@ -214,6 +217,16 @@ class PullRequest(DateAuditModel):
     closed_at = models.DateTimeField(null=True, blank=True)
     merged_at = models.DateTimeField(null=True, blank=True)
     updated_at = models.DateTimeField(null=True, blank=True)
+    
+    @property
+    def how_long_to_merge(self):
+        if self.merged_at:
+            return self.merged_at - self.created_at
+    
+    @property
+    def how_long_to_close(self):
+        if self.closed_at:
+            return self.closed_at - self.created_at
 
 
 class Commit(DateAuditModel):
