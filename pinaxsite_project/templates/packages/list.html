@@ -13,6 +13,11 @@
                 <span class="{{ obj.get_package_type_display.lower }}">
                     {{ obj.get_package_type_display }}
                 </span>
+                
+                <span class="latest">
+                    Last Updated on {{ obj.last_commit.committed_date }}
+                </span>
+                
             </h2>
             {% if obj.description %}
                 <div class="description">

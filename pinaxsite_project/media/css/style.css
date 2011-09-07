@@ -1219,14 +1219,14 @@ body#package-detail ul.urls li {
   margin-right: 5px;
 }
 
-body#package-list ul.urls li a,
-body#package-detail ul.urls li a {
-  -webkit-border-radius: 12px;
-  border-radius: 12px;
-  padding: 3px 6px;
-  font-size: 11px;
-  text-shadow: none;
+body#package-list h2 span.latest {
+  background: none;
+  color: #DDD;
+  font-style: italic;
+  margin-right: 10px;
+  font-size: 10px;
 }
+
 body#package-detail span.branch {
   padding: 0px 6px;
 }
