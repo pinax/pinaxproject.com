@@ -1,1 +1,0 @@
-ALTER TABLE "packages_commit" ADD COLUMN "unique" bool;

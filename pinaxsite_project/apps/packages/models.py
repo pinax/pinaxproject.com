@@ -249,7 +249,6 @@ class Commit(DateAuditModel):
     committed_date = models.DateTimeField()
     authored_date = models.DateTimeField()
     message = models.TextField()
-    unique = models.BooleanField(default=False)
     
     @classmethod
     def active_commits(cls):
