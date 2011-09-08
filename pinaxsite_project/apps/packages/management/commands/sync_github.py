@@ -34,24 +34,21 @@ class Command(NoArgsCommand):
                 else:
                     state = PullRequest.STATE_OPEN
                 
-                try:
-                    pull_request = PullRequest.objects.get(
-                        package=package,
-                        number=pull["number"]
-                    )
-                except PullRequest.DoesNotExist:
-                    pull_request = PullRequest.objects.create(
-                        number=pull["number"],
-                        state=state,
-                        package=package,
-                        user=user,
-                        created_at=parse(pull["created_at"]),
-                        html_url=pull["html_url"],
-                        diff_url=pull["diff_url"],
-                        url=pull["url"],
-                        patch_url=pull["patch_url"],
-                        issue_url=pull["issue_url"]
-                    )
+                pull_request, created = PullRequest.objects.get_or_create(
+                    package=package,
+                    number=pull["number"]
+                )
+                if created:
+                    pull_request.number = pull["number"]
+                    pull_request.state = state
+                    pull_request.package = package
+                    pull_request.user = user
+                    pull_request.created_at = parse(pull["created_at"])
+                    pull_request.html_url = pull["html_url"]
+                    pull_request.diff_url = pull["diff_url"]
+                    pull_request.url = pull["url"]
+                    pull_request.patch_url = pull["patch_url"]
+                    pull_request.issue_url = pull["issue_url"]
                 
                 pull_request.title = pull["title"]
                 pull_request.body = pull["body"]
