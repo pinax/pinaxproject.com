@@ -2,7 +2,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
-from packages.models import Package, Commit
+from packages.models import Package, Commit, PullRequest
 
 
 class AppList(ListView):
@@ -48,3 +48,13 @@ class CommitsView(TemplateView):
         context = super(CommitsView, self).get_context_data(**kwargs)
         context["commits"] = Commit.active_commits()
         return context
+
+
+class PullRequestList(ListView):
+    
+    template_name = "packages/pull_requests.html"
+    queryset = PullRequest.objects.filter(
+        state=PullRequest.STATE_OPEN
+    ).order_by("created_at")
+    context_object_name = "pull_requests"
+

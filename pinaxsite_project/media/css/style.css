@@ -1150,7 +1150,8 @@ span.eqno {
 
 body#commits h3,
 body#package-list h3,
-body#package-detail h3 {
+body#package-detail h3,
+body#pull-requests h3 {
   margin-bottom: 5px;
 }
 
@@ -1160,6 +1161,7 @@ body#package-detail div.sha {
 }
 body#commits .commit,
 body#package-list .package,
+body#pull-requests .package,
 body#package-detail .commit,
 body#package-detail .package {
   margin-bottom: 30px;
@@ -1172,6 +1174,7 @@ body#package-detail .package {
 
 body#commits .commit h2,
 body#package-list .package h2,
+body#pull-requests .package h2,
 body#package-detail .commit h2,
 body#package-detail .package h2 {
   font-size: 18pt;
@@ -1232,6 +1235,7 @@ body#package-detail span.branch {
 }
 
 body#package-list div.package,
+body#pull-requests div.package,
 body#package-detail div.package {
   clear: both;
   margin-bottom: 20px;
@@ -1250,16 +1254,20 @@ div.stats {
   float: right;
 }
 
-body#package-detail table {
+body#package-detail table,
+body#pull-requests table {
   width: 100%;
 }
 
-body#package-detail table th {
+body#package-detail table th,
+body#pull-requests table th {
   background-color: #DDD;
   font-weight: bold;
   text-align: left;
 }
 
-body#package-detail table td.age {
+body#package-detail table td.age,
+body#pull-requests table td.age,
+body#pull-requests table td.package-name {
   white-space: nowrap;
 }

@@ -2,6 +2,7 @@ from django.conf.urls.defaults import url, patterns
 
 from packages.views import AppList, StarterProjectList, ThemeList
 from packages.views import PackageList, PackageDetail, CommitsView
+from packages.views import PullRequestList
 
 
 urlpatterns = patterns("",
@@ -12,4 +13,5 @@ urlpatterns = patterns("",
     url(r"^apps/$", AppList.as_view(), name="packages_app_list"),
     url(r"^starter_projects/$", StarterProjectList.as_view(), name="packages_starter_projects_list"),
     url(r"^themes/$", ThemeList.as_view(), name="packages_theme_list"),
+    url(r"^pull-requests/$", PullRequestList.as_view(), name="packages_pull_requests"),
 )
