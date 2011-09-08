@@ -106,7 +106,9 @@ class Package(DateAuditModel):
         self.save()
     
     def open_pull_requests(self):
-        return self.pull_requests.filter(state=PullRequest.STATE_CLOSED)
+        return self.pull_requests.filter(
+            state=PullRequest.STATE_OPEN
+        ).order_by("number")
     
     def fetch_pull_requests(self):
         pull_requests = []
