@@ -6,9 +6,16 @@
 
 {% block packages_content %}
     <div class="package">
+        <h1>Activity by Contributors</h1>
+        <p>The following is the number of commits by person for
+        the previous 6 months.</p>
         <div id="author-punchcard">
             <img src="{{ punchcard_url }}" />
         </div>
+        <br />
+        <h1>Activity by Project</h1>
+        <p>The following is the number of commits by project for
+        the previous 6 months.</p>
         <div id="package-punchcard">
             <img src="{{ project_punchcard_url }} " />
         </div>
