@@ -1,3 +1,5 @@
+from math import log
+
 from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
@@ -59,7 +61,14 @@ class PullRequestList(ListView):
     context_object_name = "pull_requests"
 
 
+def normalize(value, max_value):
+    if value == 0 or max_value == 0:
+        return 0
+    return int(round(25 * log(value) / log(max_value)))
+
+
 class DashboardView(TemplateView):
+    
     template_name = "packages/dashboard.html"
     
     def get_img_url(self, commits, label="author"):
@@ -70,6 +79,11 @@ class DashboardView(TemplateView):
         obj = "|".join([x[label].name for x in commits])
         chxl = "chxl=0:||%s||1:||%s|&" % (months, obj)
         
+        max_commits = max([
+            max([x["count"] for x in d["commits"]])
+            for d in commits
+        ])
+        
         url += chxl
         
         first = ["0"]
@@ -79,7 +93,11 @@ class DashboardView(TemplateView):
             for j, commit in enumerate(obj["commits"]):
                 first.append(str(j))
                 second.append(str(i))
-                third.append(str(commit["count"]))
+                third.append(
+                    str(
+                        normalize(commit["count"], max_commits)
+                    )
+                )
         chd = "t:%s|%s|%s" % (",".join(first), ",".join(second), ",".join(third))
         
         url += "chd=%s&" % chd
