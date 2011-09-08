@@ -1,0 +1,16 @@
+{% extends "packages/base.html" %}
+
+{% block head_title %}Open Pull Requests{% endblock %}
+{% block body_id %}dashboard{% endblock %}
+{% block body_class %}packages{% endblock %}
+
+{% block packages_content %}
+    <div class="package">
+        <div id="author-punchcard">
+            <img src="{{ punchcard_url }}" />
+        </div>
+        <div id="package-punchcard">
+            <img src="{{ project_punchcard_url }} " />
+        </div>
+    </div>
+{% endblock %}

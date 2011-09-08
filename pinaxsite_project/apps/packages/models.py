@@ -1,3 +1,4 @@
+import calendar
 import datetime
 import json
 
@@ -254,6 +255,24 @@ class PullRequest(DateAuditModel):
             return self.closed_at - self.created_at
 
 
+def minus_month(year, month):
+    if month > 1:
+        return year, month - 1
+    else:
+        return year - 1, 12
+
+
+def final_days(how_many=6):
+    now = datetime.datetime.now()
+    months = []
+    months.append((now.year, now.month, calendar.monthrange(now.year, now.month)[1]))
+    prev_year, prev_month = now.year, now.month
+    for x in range(how_many-1):
+        prev_year, prev_month = minus_month(prev_year, prev_month)
+        months.append((prev_year, prev_month, calendar.monthrange(prev_year, prev_month)[1]))
+    return months
+
+
 class Commit(DateAuditModel):
     
     branch = models.ForeignKey(PackageBranch, related_name="commits")
@@ -268,3 +287,57 @@ class Commit(DateAuditModel):
     @classmethod
     def active_commits(cls):
         return Commit.objects.filter(branch__active=True).order_by("-committed_date")
+    
+    @classmethod
+    def commit_counts_by_month_by_person(cls):
+        people = Person.objects.exclude(github_id__isnull=False)
+        all_commits = []
+        prev_six_months = final_days()
+        for person in people:
+            data = {
+                "author": person,
+                "commits": []
+            }
+            for month in prev_six_months:
+                begin = datetime.datetime(month[0], month[1], 1)
+                end = datetime.datetime(month[0], month[1], month[2])
+                data["commits"].append({
+                    "month": begin,
+                    "count": Commit.objects.filter(
+                        author=person,
+                        authored_date__gte=begin,
+                        authored_date__lte=end
+                    ).aggregate(total=Count("id")).get("total", 0)
+                })
+            data["commits"].reverse()
+            if sum([x["count"] for x in data["commits"]]) > 0:
+                all_commits.append(data)
+        return all_commits
+    
+    @classmethod
+    def commit_counts_by_month_by_package(cls):
+        packages = Package.objects.all()
+        all_commits = []
+        prev_six_months = final_days()
+        for pkg in packages:
+            data = {
+                "package": pkg,
+                "commits": []
+            }
+            for branch in pkg.branches.filter(active=True):
+                for month in prev_six_months:
+                    begin = datetime.datetime(month[0], month[1], 1)
+                    end = datetime.datetime(month[0], month[1], month[2])
+                    data["commits"].append({
+                        "month": begin,
+                        "count": Commit.objects.filter(
+                            branch=branch,
+                            authored_date__gte=begin,
+                            authored_date__lte=end
+                        ).aggregate(total=Count("id")).get("total", 0)
+                    })
+            data["commits"].reverse()
+            if sum([x["count"] for x in data["commits"]]) > 0:
+                all_commits.append(data)
+        return all_commits
+
