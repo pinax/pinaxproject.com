@@ -224,6 +224,11 @@ class PullRequest(DateAuditModel):
     updated_at = models.DateTimeField(null=True, blank=True)
     
     @property
+    def how_long_open(self):
+        if not self.merged_at or not self.closed_at:
+            return datetime.datetime.now() - self.created_at
+    
+    @property
     def how_long_to_merge(self):
         if self.merged_at:
             return self.merged_at - self.created_at
