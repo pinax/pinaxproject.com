@@ -1249,3 +1249,17 @@ body#package-detail ul.urls {
 div.stats {
   float: right;
 }
+
+body#package-detail table {
+  width: 100%;
+}
+
+body#package-detail table th {
+  background-color: #DDD;
+  font-weight: bold;
+  text-align: left;
+}
+
+body#package-detail table td {
+  
+}

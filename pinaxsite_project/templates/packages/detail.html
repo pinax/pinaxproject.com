@@ -40,26 +40,81 @@
         </ul>
         <br class="clear space" />
         
-        {% if package.open_pull_requests.exists %}
-            <h3>Pull Requests</h3>
-            {% for pull in package.open_pull_requests %}
-                <div class="pull-request">
-                    <div class="title">{{ pull.title }}</div>
-                    <div class="body">{{ pull.body }}</div>
-                    <div class="created">{{ pull.created_at }}</div>
-                    <div class="merged">{{ pull.merged_at }}</div>
-                    <div class="closed">{{ pull.closed_at }}</div>
-                    <div class="how-long-merge">{{ pull.how_long_to_merge }}</div>
-                    <div class="how-long-close">{{ pull.how_long_to_close }}</div>
-                </div>
-            {% endfor %}
-        {% endif %}
-        
         {% for branch in package.active_branches %}
             <h3>Commits</h3>
-            {% for commit in branch.commits.all %}
-                {% include "packages/_commit.html" %}
-            {% endfor %}
+            
+            <h4>{{ branch.branch_name }}</h4>
+            
+            <div id="branch-{{ branch.pk }}-chart" class="chart"></div>
+            
+            {% comment %}
+            <table>
+                <thead>
+                    <th>Month</th>
+                    <th>Commits</th>
+                </thead>
+                <tbody>
+                    {% for total in branch.commit_counts_by_month %}
+                    <tr>
+                        <td>{{ total.month|date:"F Y" }}</td>
+                        <td>{{ total.total }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endcomment %}
         {% endfor %}
+        
+        
+        {% if package.open_pull_requests.exists %}
+            <h3>Pull Requests</h3>
+            <table>
+                <tr>
+                    <th>Number</th>
+                    <th>Title</th>
+                    <th>Age</th>
+                </tr>
+            {% for pull in package.open_pull_requests %}
+                <tr class="pull-request">
+                    <td class="number">
+                        {{ pull.number }}
+                    </td>
+                    <td class="title">
+                        <a href="{{ pull.html_url }}">
+                            {{ pull.title }}
+                        </a>
+                    </td>
+                    <td class="age" title="{{ pull.get_state_display }}">
+                        {{ pull.how_long_open.days }} days
+                    </td>
+                </tr>
+            {% endfor %}
+            </table>
+        {% endif %}
     </div>
+{% endblock %}
+
+{% block extra_body %}
+{{ block.super }}
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+        {% for branch in package.active_branches %}
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Months');
+            data.addColumn('number', 'Commits');
+            data.addRows({{ branch.commit_counts_by_month|length }});
+            {% for total in branch.commit_counts_by_month %}
+                data.setValue({{ forloop.counter0 }}, 0, '{{ total.month|date:"F Y" }}');
+                data.setValue({{ forloop.counter0 }}, 1, {{ total.total }});
+            {% endfor %}
+            var chart = new google.visualization.ColumnChart(document.getElementById('branch-{{ branch.pk }}-chart'));
+            chart.draw(data, {width: 550, height: 360, title: 'Monthly Commits',
+                              hAxis: {title: '', titleTextStyle: {color: 'red'}}
+                             });
+        {% endfor %}
+    }
+</script>
 {% endblock %}
