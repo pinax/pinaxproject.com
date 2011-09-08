@@ -1260,6 +1260,6 @@ body#package-detail table th {
   text-align: left;
 }
 
-body#package-detail table td {
-  
+body#package-detail table td.age {
+  white-space: nowrap;
 }
