@@ -2,6 +2,7 @@ import datetime
 import json
 
 from django.db import models
+from django.db.models import Count
 
 import requests
 
@@ -186,6 +187,18 @@ class PackageBranch(DateAuditModel):
     @classmethod
     def active_branches(cls):
         return cls.objects.filter(active=True)
+    
+    def commit_counts_by_month(self):
+        if not hasattr(self, "_commit_counts_by_month"):
+            self._commit_counts_by_month = self.commits.extra(
+                select={
+                    "month": "DATE_TRUNC('month', \"packages_commit\".\"committed_date\")"
+                }
+            ).values("month").annotate(total=Count("id")).order_by("-month")[:6]
+            x = list(self._commit_counts_by_month)
+            x.reverse()
+            self._commit_counts_by_month = x
+        return self._commit_counts_by_month
 
 
 class Person(DateAuditModel):
