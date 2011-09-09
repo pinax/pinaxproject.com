@@ -3,6 +3,7 @@ from django.core.management.base import NoArgsCommand
 from dateutil import parser
 
 from packages.models import Commit, Person, Package, PullRequest
+from packages.models import CommitsByAuthorByMonth, CommitsByPackageByMonth
 
 
 def parse(date_str):
@@ -88,4 +89,26 @@ class Command(NoArgsCommand):
                         break
                     count += 1
                 print "     Total Commits: %s" % count
+            
+        print "Loading Denorms..."
+        CommitsByAuthorByMonth.objects.all().delete()
+        for commit in Commit.commit_counts_by_month_by_person(how_many=24):
+            author = commit["author"]
+            for x in commit["commits"]:
+                CommitsByAuthorByMonth.objects.create(
+                    author = author,
+                    month = x["month"],
+                    commit_count = x["count"]
+                )
+        
+        CommitsByPackageByMonth.objects.all().delete()
+        for commit in Commit.commit_counts_by_month_by_package(how_many=24):
+            package = commit["package"]
+            for x in commit["commits"]:
+                CommitsByPackageByMonth.objects.create(
+                    package = package,
+                    month = x["month"],
+                    commit_count = x["count"]
+                )
+        print "Complete."
 

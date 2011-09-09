@@ -1,10 +1,13 @@
+import datetime
+
 from math import log
 
 from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
-from packages.models import Package, Commit, PullRequest
+from packages.models import Package, Commit, PullRequest, final_months
+from packages.models import CommitsByPackageByMonth, CommitsByAuthorByMonth
 
 
 class AppList(ListView):
@@ -71,50 +74,21 @@ class DashboardView(TemplateView):
     
     template_name = "packages/dashboard.html"
     
-    def get_img_url(self, commits, label="author"):
-        url = "https://chart.googleapis.com/chart?chs=470x400&cht=s&"
-        months = "|".join([
-            x["month"].strftime("%b") for x in commits[0]["commits"]
-        ])
-        obj = "|".join([x[label].name for x in commits])
-        chxl = "chxl=0:||%s||1:||%s|&" % (months, obj)
-        
-        max_commits = max([
-            max([x["count"] for x in d["commits"]])
-            for d in commits
-        ])
-        
-        url += chxl
-        
-        first = ["0"]
-        second = ["0"]
-        third = ["0"]
-        for i, obj in enumerate(commits):
-            for j, commit in enumerate(obj["commits"]):
-                first.append(str(j))
-                second.append(str(i))
-                third.append(
-                    str(
-                        normalize(commit["count"], max_commits)
-                    )
-                )
-        chd = "t:%s|%s|%s" % (",".join(first), ",".join(second), ",".join(third))
-        
-        url += "chd=%s&" % chd
-        
-        chds = "-1,6,-1,%s,0,17" % len(commits)
-        chm = "o,333333,1,-1,25"
-        chxt = "x,y"
-        
-        url += "chds=%s&chm=%s&chxt=%s&" % (chds, chm, chxt)
-        url += "chf=bg,s,efefef"
-        return url
-    
     def get_context_data(self, **kwargs):
         context = super(DashboardView, self).get_context_data(**kwargs)
-        commits = Commit.commit_counts_by_month_by_person()
-        context["commits"] = commits
-        context["punchcard_url"] = self.get_img_url(commits)
-        more_commits = Commit.commit_counts_by_month_by_package()
-        context["project_punchcard_url"] = self.get_img_url(more_commits, label="package")
+        
+        six_months = [
+            datetime.datetime(year=x[0], month=x[1], day=1)
+            for x in final_months(6)
+        ]
+        
+        context["months"] = six_months
+        
+        context["author_commits"] = CommitsByAuthorByMonth.objects.filter(
+            month__gte=six_months[0]
+        ).order_by("author__name", "-month")
+        context["package_commits"] = CommitsByPackageByMonth.objects.filter(
+            month__gte=six_months[0]
+        ).order_by("package__name", "-month")
+        
         return context

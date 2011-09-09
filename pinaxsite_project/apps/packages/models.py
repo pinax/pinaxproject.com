@@ -262,7 +262,7 @@ def minus_month(year, month):
         return year - 1, 12
 
 
-def final_days(how_many=6):
+def final_months(how_many=6):
     now = datetime.datetime.now()
     months = []
     months.append((now.year, now.month, calendar.monthrange(now.year, now.month)[1]))
@@ -271,6 +271,20 @@ def final_days(how_many=6):
         prev_year, prev_month = minus_month(prev_year, prev_month)
         months.append((prev_year, prev_month, calendar.monthrange(prev_year, prev_month)[1]))
     return months
+
+
+class CommitsByAuthorByMonth(DateAuditModel):
+    
+    author = models.ForeignKey(Person, related_name="monthly_authored_commits")
+    month = models.DateField()
+    commit_count = models.IntegerField()
+
+
+class CommitsByPackageByMonth(DateAuditModel):
+    
+    package = models.ForeignKey(Package, related_name="monthly_commits")
+    month = models.DateField()
+    commit_count = models.IntegerField()
 
 
 class Commit(DateAuditModel):
@@ -289,16 +303,16 @@ class Commit(DateAuditModel):
         return Commit.objects.filter(branch__active=True).order_by("-committed_date")
     
     @classmethod
-    def commit_counts_by_month_by_person(cls):
+    def commit_counts_by_month_by_person(cls, how_many=6):
         people = Person.objects.exclude(github_id__isnull=False)
         all_commits = []
-        prev_six_months = final_days()
+        prev_months = final_months(how_many)
         for person in people:
             data = {
                 "author": person,
                 "commits": []
             }
-            for month in prev_six_months:
+            for month in prev_months:
                 begin = datetime.datetime(month[0], month[1], 1)
                 end = datetime.datetime(month[0], month[1], month[2])
                 data["commits"].append({
@@ -315,17 +329,17 @@ class Commit(DateAuditModel):
         return all_commits
     
     @classmethod
-    def commit_counts_by_month_by_package(cls):
+    def commit_counts_by_month_by_package(cls, how_many=6):
         packages = Package.objects.all()
         all_commits = []
-        prev_six_months = final_days()
+        prev_months = final_months(how_many)
         for pkg in packages:
             data = {
                 "package": pkg,
                 "commits": []
             }
             for branch in pkg.branches.filter(active=True):
-                for month in prev_six_months:
+                for month in prev_months:
                     begin = datetime.datetime(month[0], month[1], 1)
                     end = datetime.datetime(month[0], month[1], month[2])
                     data["commits"].append({
