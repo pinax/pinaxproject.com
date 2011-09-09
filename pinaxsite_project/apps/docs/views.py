@@ -8,15 +8,20 @@ from django.http import Http404, HttpResponse, HttpResponsePermanentRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.utils import simplejson as json
+from django.views.static import serve
 
 
-def documentation_index(request):
-    ctx = {
+def version_context():
+    return {
         "versions": [
             ("0.7", "0.7"),
             ("dev", "Development")
         ]
     }
+
+
+def documentation_index(request):
+    ctx = version_context()
     ctx = RequestContext(request, ctx)
     return render_to_response("docs/index.html", ctx)
 
@@ -39,6 +44,7 @@ def documentation_detail(request, version, slug=None):
             "version": version,
             "real_version": real_version,
         }
+        ctx.update(version_context())
         ctx = RequestContext(request, ctx)
         return render_to_response("docs/%s_index.html" % version, ctx)
     
@@ -54,6 +60,7 @@ def documentation_detail(request, version, slug=None):
         "version": version,
         "real_version": real_version,
     }
+    ctx.update(version_context())
     ctx = RequestContext(request, ctx)
     return render_to_response("docs/detail.html", ctx)
 
@@ -72,3 +79,18 @@ def fetch_doc(branch, slug):
         return parts
     else:
         raise Http404("no doc")
+
+
+def documentation_static(request, version, slug):
+    # this view is really the only way at the moment to serve images from
+    # Sphinx in Gondor
+    try:
+        branch = {"0.7": "0.7.X", "dev": "master"}[version]
+    except KeyError:
+        raise Http404("no version")
+    branch_path = os.path.join(settings.DOCS_ROOT, "output-%s" % branch)
+    root = slug.split("/")[0]
+    return serve(
+        request, slug.replace(root, ""),
+        document_root=os.path.join(branch_path, root)
+    )
