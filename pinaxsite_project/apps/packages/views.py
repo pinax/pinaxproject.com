@@ -69,33 +69,32 @@ class DashboardView(TemplateView):
     template_name = "packages/dashboard.html"
     
     def punchcard_url(self, commits, months):
+        commits.sort()  # List of (total_count, name, month, commit_count)
+        
+        name_labels = []
+        for commit in commits:
+            if commit[1] not in name_labels:
+                name_labels.append(commit[1])
+        
         url = "https://chart.googleapis.com/chart"
-        url += "?chs=550x%s&cht=s&" % (30 * len(commits))
+        url += "?chs=550x%s&cht=s&" % (30 * len(name_labels))
         m = "|".join([x.strftime("%b") for x in months])
         obj = "|".join([
-            x.name for x,y in commits.iteritems()
+            y.name for y in name_labels
         ])
         chxl = "chxl=0:||%s||1:||%s|&" % (m, obj)
         
         url += chxl
         
-        first = ["0"]
-        second = ["0"]
-        third = ["0"]
-        for i, key in enumerate(commits):
-            for j, commit in enumerate(commits[key]["commits"]):
-                first.append(str(j))
-                second.append(str(i))
-                third.append(str(commit["count"]))
         chd = "t:%s|%s|%s" % (
-            ",".join(first),
-            ",".join(second),
-            ",".join(third)
+            ",".join([str(x) for x in range(len(months))] * (len(name_labels))),
+            ",".join([",".join([str(x)] * len(months)) for x in range(len(name_labels))]),
+            ",".join([str(x[3]) for x in commits])
         )
         
         url += "chd=%s&" % chd
         
-        chds = "-1,%s,-1,%s,0,17" % (len(months), len(commits))
+        chds = "-1,%s,-1,%s,0,17" % (len(months), len(name_labels))
         chm = "o,333333,1,-1,22"
         chxt = "x,y"
         
@@ -122,35 +121,55 @@ class DashboardView(TemplateView):
         author_commits = {}
         for commit in author_commits_qs.all():
             if author_commits.get(commit.author) is None:
-                author_commits[commit.author] = {"commits": []}
-            author_commits[commit.author]["commits"].append({
+                author_commits[commit.author] = []
+            author_commits[commit.author].append({
                 "month": commit.month,
                 "count": commit.commit_count
             })
+        
         for author in author_commits.keys():
-            if sum([x["count"] for x in author_commits[author]["commits"]]) == 0:
+            summation = sum([x["count"] for x in author_commits[author]])
+            if summation == 0:
                 author_commits.pop(author) # don't show inactives
+            else:
+                for i, c in enumerate(author_commits[author]):
+                    author_commits[author][i]["total_count"] = summation
+        
+        authors = []
+        for author, value in author_commits.iteritems():
+            for i, v in enumerate(value):
+                authors.append(
+                    (value[i]["total_count"], author, value[i]["month"], value[i]["count"])
+                )
         
         package_commits_qs = CommitsByPackageByMonth.objects.filter(
             month__gte=six_months[0]
-        ).order_by("package__name", "-month").select_related()
+        ).order_by("package__pk", "-month").select_related()
         
         package_commits = {}
         for commit in package_commits_qs.all():
             if package_commits.get(commit.package) is None:
-                package_commits[commit.package] = {"commits": []}
-            package_commits[commit.package]["commits"].append({
+                package_commits[commit.package] = []
+            package_commits[commit.package].append({
                 "month": commit.month,
                 "count": commit.commit_count
             })
         for package in package_commits.keys():
-            if sum([x["count"] for x in package_commits[package]["commits"]]) == 0:
+            summation = sum([x["count"] for x in package_commits[package]])
+            if summation == 0:
                 package_commits.pop(package) # don't show inactives
+            else:
+                for i, c in enumerate(package_commits[package]):
+                    package_commits[package][i]["total_count"] = summation
         
-        context["author_commits"] = author_commits
-        context["package_commits"] = package_commits
+        packages = []
+        for package, value in package_commits.iteritems():
+            for i, c in enumerate(package_commits[package]):
+                packages.append(
+                  (value[i]["total_count"], package, value[i]["month"], value[i]["count"])
+                )
         
-        context["author_punchcard_url"] = self.punchcard_url(author_commits, six_months)
-        context["package_punchcard_url"] = self.punchcard_url(package_commits, six_months)
+        context["author_punchcard_url"] = self.punchcard_url(authors, six_months)
+        context["package_punchcard_url"] = self.punchcard_url(packages, six_months)
         
         return context
