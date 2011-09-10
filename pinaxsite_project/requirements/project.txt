@@ -16,5 +16,5 @@ template_utils==0.4p2
 nashvegas==0.6.3
 httplib2==0.6.0
 
-requests==0.6.0
+slumber==0.3.1
 python-dateutil==1.5

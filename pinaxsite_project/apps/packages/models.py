@@ -1,13 +1,12 @@
 import calendar
 import datetime
-import json
 
 from django.db import models
 from django.db.models import Count
 
-import requests
-
 from biblion.models import Post
+
+from packages.github import GitHubApi, GitHubV2Api
 
 
 class DateAuditModel(models.Model):
@@ -94,8 +93,7 @@ class Package(DateAuditModel):
         return None
     
     def update_stats(self):
-        url = "https://api.github.com/repos/%s" % self.repo()
-        data = json.loads(requests.get(url).content)
+        data = GitHubApi().repos(self.repo()).get()
         if data.get("forks"):
             self.forks = data.get("forks")
         if data.get("watchers"):
@@ -113,34 +111,31 @@ class Package(DateAuditModel):
         pull_requests = []
         if self.repo():
             page = 1
-            url = "https://api.github.com/repos/%s/pulls" % self.repo()
-            data = json.loads(requests.get(url).content)
+            pulls = GitHubApi().repos(self.repo()).pulls
+            data = pulls.get()
+            
             while len(data) > 0:
                 pull_requests.extend(data)
                 page += 1
-                next_url = url + "?page=%s" % page
-                data = json.loads(requests.get(next_url).content)
+                data = pulls.get(page=page)
             
             page = 1
-            url = "https://api.github.com/repos/%s/pulls?state=closed" % self.repo()
-            data = json.loads(requests.get(url).content)
+            data = pulls.get(state="closed")
+            
             while len(data) > 0:
                 pull_requests.extend(data)
                 page += 1
-                next_url = url + "&page=%s" % page
-                data = json.loads(requests.get(next_url).content)
+                data = pulls.get(state="closed", page=page)
         return pull_requests
     
     def save(self, *args, **kwargs):
         if not self.description:
             if self.repo():
-                info = json.loads(
-                    requests.get("http://github.com/api/v2/json/repos/show/%s" % self.repo()
-                ).content)
-                if info.get("repository"):
-                    self.description = info["repository"]["description"]
+                data = GitHubV2Api().repos("show/%s" % self.repo()).get()
+                if data.get("repository"):
+                    self.description = data["repository"]["description"]
                 else:
-                    self.description = info["error"]
+                    self.description = data["error"]
         super(Package, self).save(*args, **kwargs)
         if self.branches.count() == 0:
             self.branches.create(branch_name="master")
@@ -171,16 +166,16 @@ class PackageBranch(DateAuditModel):
     active = models.BooleanField(default=True)
     
     def fetch_commits(self):
-        if self.package.repo(): # @@@ ?page=N until no more results to fetch all commits
+        if self.package.repo():
             page = 1
-            url = "https://github.com/api/v2/json/commits/list/%s/%s" % (self.package.repo(), self.branch_name)
-            data = json.loads(requests.get(url).content)
+            commits = GitHubV2Api().commits("list/%s/%s" % (self.package.repo(), self.branch_name))
+            data = commits.get()
+            
             while data.get("error") != "Not Found":
                 for commit in data["commits"]:
                     yield commit
                 page += 1
-                next_url = url + "?page=%s" % page
-                data = json.loads(requests.get(next_url).content)
+                data = commits.get(page=page)
     
     @classmethod
     def active_branches(cls):
