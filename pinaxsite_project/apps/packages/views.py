@@ -11,28 +11,28 @@ from packages.models import CommitsByPackageByMonth, CommitsByAuthorByMonth
 class AppList(ListView):
     
     template_name = "packages/list.html"
-    queryset = Package.apps().order_by("name")
+    queryset = Package.apps().order_by("name").select_related()
     context_object_name = "packages"
 
 
 class StarterProjectList(ListView):
     
     template_name = "packages/list.html"
-    queryset = Package.starter_projects().order_by("name")
+    queryset = Package.starter_projects().order_by("name").select_related()
     context_object_name = "packages"
 
 
 class ThemeList(ListView):
     
     template_name = "packages/list.html"
-    queryset = Package.themes().order_by("name")
+    queryset = Package.themes().order_by("name").select_related()
     context_object_name = "packages"
 
 
 class PackageList(ListView):
     
     template_name = "packages/list.html"
-    queryset = Package.objects.all().order_by("name")
+    queryset = Package.objects.all().order_by("name").select_related()
     context_object_name = "packages"
 
 
@@ -60,7 +60,7 @@ class PullRequestList(ListView):
     template_name = "packages/pull_requests.html"
     queryset = PullRequest.objects.filter(
         state=PullRequest.STATE_OPEN
-    ).order_by("created_at")
+    ).order_by("created_at").select_related()
     context_object_name = "pull_requests"
 
 
