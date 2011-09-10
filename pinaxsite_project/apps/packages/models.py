@@ -232,7 +232,7 @@ class PullRequest(DateAuditModel):
     package = models.ForeignKey(Package, related_name="pull_requests")
     user = models.ForeignKey(Person, related_name="pull_requests")
     number = models.IntegerField()
-    state = models.IntegerField(choices=STATE_CHOICES)
+    state = models.IntegerField(choices=STATE_CHOICES, default=STATE_OPEN)
     title = models.CharField(max_length=255, null=True, blank=True)
     body = models.TextField(null=True, blank=True)
     url = models.CharField(max_length=96)

@@ -39,14 +39,14 @@ class Command(NoArgsCommand):
                 
                 pull_request, created = PullRequest.objects.get_or_create(
                     package=package,
-                    number=pull["number"]
+                    number=pull["number"],
+                    user=user,
+                    created_at = parse(pull["created_at"])
                 )
                 if created:
                     pull_request.number = pull["number"]
                     pull_request.state = state
                     pull_request.package = package
-                    pull_request.user = user
-                    pull_request.created_at = parse(pull["created_at"])
                     pull_request.html_url = pull["html_url"]
                     pull_request.diff_url = pull["diff_url"]
                     pull_request.url = pull["url"]
