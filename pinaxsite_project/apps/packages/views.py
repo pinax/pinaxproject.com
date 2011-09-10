@@ -69,7 +69,8 @@ class DashboardView(TemplateView):
     template_name = "packages/dashboard.html"
     
     def punchcard_url(self, commits, months):
-        url = "https://chart.googleapis.com/chart?chs=550x%s&cht=s&" % (30 * len(commits))
+        url = "https://chart.googleapis.com/chart"
+        url += "?chs=550x%s&cht=s&" % (30 * len(commits))
         m = "|".join([x.strftime("%b") for x in months])
         obj = "|".join([
             x.name for x,y in commits.iteritems()
@@ -86,7 +87,11 @@ class DashboardView(TemplateView):
                 first.append(str(j))
                 second.append(str(i))
                 third.append(str(commit["count"]))
-        chd = "t:%s|%s|%s" % (",".join(first), ",".join(second), ",".join(third))
+        chd = "t:%s|%s|%s" % (
+            ",".join(first),
+            ",".join(second),
+            ",".join(third)
+        )
         
         url += "chd=%s&" % chd
         
