@@ -9,30 +9,12 @@
         <h1>Activity by Contributors</h1>
         <p>The following is the number of commits by person for
         the previous 6 months.</p>
-        <table class="author-data">
-            <tbody>
-                {% regroup author_commits by author as author_list %}
-                {% for a in author_list %}
-                    <th>{{ a.grouper.name }}</th>
-                    {% for item in a.list %}
-                        <td>{{ item.commit_count }}</td>
-                    {% endfor %}
-                {% endfor %}
-            </tbody>
-            <tfoot>
-                <td></td>
-                {% for x in months %}
-                    <th>{{ x.month|date:"F Y" }}</th>
-                {% endfor %}
-            </tfoot>
-        </table>
-        <div id="author-punchcard"></div>
-        
+        <img src="{{ author_punchcard_url }}" />
         <br />
         
         <h1>Activity by Project</h1>
         <p>The following is the number of commits by project for
         the previous 6 months.</p>
-        <div id="package-punchcard"></div>
+        <img src="{{ package_punchcard_url }}" />
     </div>
 {% endblock %}
