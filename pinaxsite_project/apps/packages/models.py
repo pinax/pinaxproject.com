@@ -82,10 +82,7 @@ class Package(DateAuditModel):
     watchers = models.IntegerField(null=True, blank=True)
     size = models.IntegerField(null=True, blank=True)
     
-    def last_commit(self):
-        return Commit.objects.filter(
-            branch__package=self
-        ).latest("committed_date")
+    latest_commit = models.ForeignKey("Commit", null=True, blank=True)
     
     def repo(self):
         if "://github.com" in self.repo_url:

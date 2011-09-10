@@ -110,5 +110,15 @@ class Command(NoArgsCommand):
                     month = x["month"],
                     commit_count = x["count"]
                 )
+        
+        for package in Package.objects.all():
+            try:
+                package.latest_commit = Commit.objects.filter(
+                   branch__package=package
+                ).latest("committed_date")
+                package.save()
+            except Commit.DoesNotExist:
+                pass
+        
         print "Complete."
 

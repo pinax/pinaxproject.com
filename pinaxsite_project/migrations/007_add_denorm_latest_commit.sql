@@ -1,0 +1,1 @@
+ALTER TABLE "packages_package" ADD COLUMN "latest_commit_id" integer REFERENCES "packages_commit" ("id") DEFERRABLE INITIALLY DEFERRED;
