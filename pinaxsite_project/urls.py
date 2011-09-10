@@ -29,7 +29,7 @@ urlpatterns = patterns("",
     
     url(r"^admin/", include(admin.site.urls)),
     
-    url(r"^packages/", include("packages.urls")),
+    url(r"^ecosystem/", include("packages.urls")),
     
     # temporary urls
     url(r"^docs/$", direct_to_template, {"template": "docs/index.html"}, name="index"),
