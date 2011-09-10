@@ -5,7 +5,7 @@
 {% block body_class %}{{ package.get_package_type_display.lower }}{% endblock %}
 
 {% block packages_content %}
-    <div class="package">
+    <div class="container">
         <h2>
             {{ package.name }}
             <span class="{{ package.get_package_type_display.lower }}">

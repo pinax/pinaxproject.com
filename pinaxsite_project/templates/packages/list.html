@@ -5,7 +5,7 @@
 
 {% block packages_content %}
     {% for obj in packages %}
-        <div class="package {{ obj.get_package_type_display.lower }}">
+        <div class="container {{ obj.get_package_type_display.lower }}">
             <h2>
                 <a href="{% url packages_detail obj.pk %}">
                     {{ obj.name }}

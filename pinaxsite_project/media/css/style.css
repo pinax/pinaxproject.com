@@ -1159,11 +1159,10 @@ body#commits div.sha,
 body#package-detail div.sha {
   margin-top: 5px;
 }
+
+.container,
 body#commits .commit,
-body#package-list .package,
-body#pull-requests .package,
-body#package-detail .commit,
-body#package-detail .package {
+body#package-detail .commit {
   margin-bottom: 30px;
   border: 1px solid #999;
   background-color: white;
@@ -1172,17 +1171,14 @@ body#package-detail .package {
   border-radius: 8px;
 }
 
+.container h2,
 body#commits .commit h2,
-body#package-list .package h2,
-body#pull-requests .package h2,
-body#package-detail .commit h2,
-body#package-detail .package h2 {
+body#package-detail .commit h2 {
   font-size: 18pt;
   margin-bottom: 6px;
 }
 
-body#package-list .package h2 span,
-body#package-detail .package h2 span,
+.container h2 span,
 body#package-detail span.branch,
 body#commits span.branch {
   font-size: 12px;
@@ -1234,9 +1230,7 @@ body#package-detail span.branch {
   padding: 0px 6px;
 }
 
-body#package-list div.package,
-body#pull-requests div.package,
-body#package-detail div.package {
+.container {
   clear: both;
   margin-bottom: 20px;
 }
@@ -1272,4 +1266,13 @@ body#pull-requests table td.age,
 body#pull-requests table td.package-name {
   white-space: nowrap;
   padding: 3px 6px 3px 0px;
+}
+
+.container h2.top-buffer {
+  margin-top: 20px;
+}
+
+body#dashboard .container img {
+  border: 1px solid #BBB;
+  margin: 0 auto;
 }
