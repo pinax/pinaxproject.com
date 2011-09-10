@@ -1257,6 +1257,7 @@ div.stats {
 body#package-detail table,
 body#pull-requests table {
   width: 100%;
+  margin-top: 20px;
 }
 
 body#package-detail table th,
@@ -1270,4 +1271,5 @@ body#package-detail table td.age,
 body#pull-requests table td.age,
 body#pull-requests table td.package-name {
   white-space: nowrap;
+  padding: 3px 6px 3px 0px;
 }
