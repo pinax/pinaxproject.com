@@ -6,6 +6,8 @@ from django.db.models import Count
 
 from biblion.models import Post
 
+import slumber
+
 from packages.github import GitHubApi, GitHubV2Api
 
 
@@ -169,13 +171,25 @@ class PackageBranch(DateAuditModel):
         if self.package.repo():
             page = 1
             commits = GitHubV2Api().commits("list/%s/%s" % (self.package.repo(), self.branch_name))
-            data = commits.get()
             
-            while data.get("error") != "Not Found":
+            try:
+                data = commits.get()
+            except slumber.exceptions.HttpClientError, e:
+                if e.response.status == 404:
+                    data = None
+                else:
+                    raise
+            
+            while data is not None:
                 for commit in data["commits"]:
                     yield commit
                 page += 1
-                data = commits.get(page=page)
+                try:
+                    data = commits.get(page=page)
+                except slumber.exceptions.HttpClientError, e:
+                    if e.response.status == 404:
+                        break
+                    raise
     
     @classmethod
     def active_branches(cls):

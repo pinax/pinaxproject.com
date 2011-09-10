@@ -66,35 +66,33 @@ class Command(NoArgsCommand):
                 print " (%s)" % branch.branch_name
                 print "     Getting Commits..."
                 count = 0
-                try:
-                    for commit in branch.fetch_commits():
-                        author, _ = Person.objects.get_or_create(
-                            name=commit["author"]["name"],
-                            login=commit["author"]["login"],
-                            email=commit["author"]["email"]
-                        )
-                        committer, _ = Person.objects.get_or_create(
-                            name=commit["committer"]["name"],
-                            login=commit["committer"]["login"],
-                            email=commit["committer"]["email"]
-                        )
-                        _, created = Commit.objects.get_or_create(
-                            branch=branch,
-                            author=author,
-                            committer=committer,
-                            url=commit["url"],
-                            sha=commit["id"],
-                            committed_date=parse(commit["committed_date"]),
-                            authored_date=parse(commit["authored_date"]),
-                            message=commit["message"]
-                        )
-                        if not created:
-                            break
-                        count += 1
-                    print "     Total Commits: %s" % count
-                except slumber.exceptions.HttpClientError:
-                    print "     Couldn't find repo/branch"
-            
+                
+                for commit in branch.fetch_commits():
+                    author, _ = Person.objects.get_or_create(
+                        name=commit["author"]["name"],
+                        login=commit["author"]["login"],
+                        email=commit["author"]["email"]
+                    )
+                    committer, _ = Person.objects.get_or_create(
+                        name=commit["committer"]["name"],
+                        login=commit["committer"]["login"],
+                        email=commit["committer"]["email"]
+                    )
+                    _, created = Commit.objects.get_or_create(
+                        branch=branch,
+                        author=author,
+                        committer=committer,
+                        url=commit["url"],
+                        sha=commit["id"],
+                        committed_date=parse(commit["committed_date"]),
+                        authored_date=parse(commit["authored_date"]),
+                        message=commit["message"]
+                    )
+                    if not created:
+                        break
+                    count += 1
+                print "     Total Commits: %s" % count
+        
         print "Loading Denorms..."
         CommitsByAuthorByMonth.objects.all().delete()
         for commit in Commit.commit_counts_by_month_by_person(how_many=24):
