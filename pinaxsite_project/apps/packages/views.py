@@ -49,7 +49,9 @@ class CommitsView(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super(CommitsView, self).get_context_data(**kwargs)
-        context["commits"] = Commit.active_commits()
+        context["commits"] = Commit.objects.filter(
+            branch__active=True
+        ).order_by("-committed_date").select_related()[:25]
         return context
 
 

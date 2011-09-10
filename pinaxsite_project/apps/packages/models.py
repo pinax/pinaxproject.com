@@ -299,10 +299,6 @@ class Commit(DateAuditModel):
     message = models.TextField()
     
     @classmethod
-    def active_commits(cls):
-        return Commit.objects.filter(branch__active=True).order_by("-committed_date")
-    
-    @classmethod
     def commit_counts_by_month_by_person(cls, how_many=6):
         people = Person.objects.exclude(github_id__isnull=False)
         all_commits = []
