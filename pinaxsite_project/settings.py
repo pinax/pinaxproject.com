@@ -98,6 +98,7 @@ MIDDLEWARE_CLASSES = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.doc.XViewMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "pinaxsite_project.urls"
@@ -142,6 +143,7 @@ INSTALLED_APPS = [
     "template_utils",
     "uni_form",
     "nashvegas",
+    "debug_toolbar",
     
     # local
     "downloads",
