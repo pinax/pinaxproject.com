@@ -1,0 +1,22 @@
+<div class="commit">
+    <h3>
+        <a href="{% url packages_detail commit.branch.package.pk %}">
+            {{ commit.branch.package }}
+        </a>
+        
+        <span class="date">{{ commit.committed_date }}</span>
+    </h3>
+    
+    <div class="message">{{ commit.message }}</div>
+    
+    <div class="sha">
+        <a href="https://github.com{{ commit.url }}"
+           title="Committed by {{ commit.author.name }}">
+            {{ commit.sha }}
+        </a>
+        
+        <span class="branch">
+            {{ commit.branch.branch_name }}
+        </span>
+    </div>
+</div>

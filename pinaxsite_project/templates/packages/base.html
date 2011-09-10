@@ -1,0 +1,51 @@
+{% extends "site_base.html" %}
+
+{% block head_title %}{% endblock %}
+{% block body_id %}{% endblock %}
+
+{% block main_content %}
+    <div class="col-wrapper">
+        <section class="col1">
+            {% block packages_content %}{% endblock %}
+        </section>
+        <aside class="col2">
+            {% block side_bar %}
+                <h2>Links</h2>
+                <ul>
+                    <li>
+                        <a href="{% url packages_dashboard %}">
+                            Activity Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url packages_pull_requests %}">
+                            Open Pull Requests
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url packages_commits %}">
+                            Combined Activity Log
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url packages_app_list %}">
+                            Apps
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url packages_starter_projects_list %}">
+                            Starter Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url packages_theme_list %}">
+                            Themes
+                        </a>
+                    </li>
+                </ul>
+
+            {% endblock %}
+        </aside>
+    </div>
+    <div class="clear"></div>
+{% endblock %}

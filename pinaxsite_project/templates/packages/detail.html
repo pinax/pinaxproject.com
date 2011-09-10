@@ -1,0 +1,116 @@
+{% extends "packages/base.html" %}
+
+{% block head_title %}{{ obj.name }}{% endblock %}
+{% block body_id %}package-detail{% endblock %}
+{% block body_class %}{{ package.get_package_type_display.lower }}{% endblock %}
+
+{% block packages_content %}
+    <div class="container">
+        <h2>
+            {{ package.name }}
+            <span class="{{ package.get_package_type_display.lower }}">
+                {{ package.get_package_type_display }}
+            </span>
+        </h2>
+        
+        {% if package.description %}
+            <div class="description">
+                {{ package.description }}
+            </div>
+        {% endif %}
+        
+        {% with package as obj %}
+            {% include "packages/_stats.html" %}
+        {% endwith %}
+        
+        <ul class="urls">
+            <li class="repo_url">
+                <a href="{{ package.repo_url }}">github</a>
+            </li>
+            {% if package.docs_url %}
+                <li class="docs_url">
+                    <a href="{{ package.docs_url }}">docs</a>
+                </li>
+            {% endif %}
+            {% if package.blog_post %}
+                <li class="blog_post">
+                    <a href="{{ package.blog_post.get_absolute_url }}">blog post</a>
+                </li>
+            {% endif %}
+        </ul>
+        <br class="clear space" />
+        
+        {% for branch in package.active_branches %}
+            <h3>Commits</h3>
+            
+            <h4>{{ branch.branch_name }}</h4>
+            
+            <div id="branch-{{ branch.pk }}-chart" class="chart"></div>
+            
+            {% comment %}
+            <table>
+                <thead>
+                    <th>Month</th>
+                    <th>Commits</th>
+                </thead>
+                <tbody>
+                    {% for total in branch.commit_counts_by_month %}
+                    <tr>
+                        <td>{{ total.month|date:"F Y" }}</td>
+                        <td>{{ total.total }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endcomment %}
+        {% endfor %}
+        
+        
+        {% if package.open_pull_requests.exists %}
+            <h3>Pull Requests</h3>
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Age</th>
+                </tr>
+            {% for pull in package.open_pull_requests %}
+                <tr class="pull-request">
+                    <td class="title">
+                        <a href="{{ pull.html_url }}">
+                            {{ pull.title }}
+                        </a>
+                    </td>
+                    <td class="age" title="{{ pull.get_state_display }}">
+                        {{ pull.how_long_open.days }} days
+                    </td>
+                </tr>
+            {% endfor %}
+            </table>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block extra_body %}
+{{ block.super }}
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+        {% for branch in package.active_branches %}
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Months');
+            data.addColumn('number', 'Commits');
+            data.addRows({{ branch.commit_counts_by_month|length }});
+            {% for total in branch.commit_counts_by_month %}
+                data.setValue({{ forloop.counter0 }}, 0, '{{ total.month|date:"F Y" }}');
+                data.setValue({{ forloop.counter0 }}, 1, {{ total.total }});
+            {% endfor %}
+            var chart = new google.visualization.ColumnChart(document.getElementById('branch-{{ branch.pk }}-chart'));
+            chart.draw(data, {width: 550, height: 360, title: 'Monthly Commits',
+                              hAxis: {title: '', titleTextStyle: {color: 'red'}}
+                             });
+        {% endfor %}
+    }
+</script>
+{% endblock %}

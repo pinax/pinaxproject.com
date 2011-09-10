@@ -1,0 +1,1087 @@
+[
+    {
+        "pk": 37, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "simple email confirmation for the Django web framework", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:50:38", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 22, 
+            "name": "django-email-confirmation", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:28", 
+            "cpc_tag": null, 
+            "forks": 6, 
+            "repo_url": "https://github.com/pinax/django-email-confirmation", 
+            "size": 288
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "user notification management for the Django web framework", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:50:41", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 44, 
+            "name": "django-notification", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:28", 
+            "cpc_tag": null, 
+            "forks": 14, 
+            "repo_url": "https://github.com/pinax/django-notification", 
+            "size": 824
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "the eldarion.com blog app intended to be suitable for site-level company and project blogs", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:50:44", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 115, 
+            "name": "biblion", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:22", 
+            "cpc_tag": null, 
+            "forks": 24, 
+            "repo_url": "https://github.com/eldarion/biblion", 
+            "size": 156
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "a question and answer app ala StackOverflow", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:51:07", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 25, 
+            "name": "aiteo", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:22", 
+            "cpc_tag": null, 
+            "forks": 5, 
+            "repo_url": "https://github.com/eldarion/aiteo", 
+            "size": 964
+        }
+    }, 
+    {
+        "pk": 41, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "A simple wiki app written in Python using the Django framework. Sample installation is on http://wakawaka.mahner.org/WikiIndex (login: admin/admin)", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:51:10", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 20, 
+            "name": "django-wakawaka", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:29", 
+            "cpc_tag": null, 
+            "forks": 6, 
+            "repo_url": "https://github.com/pinax/django-wakawaka", 
+            "size": 124
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "centralized OAuth access to OAuth providers in Django", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:51:15", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 83, 
+            "name": "django-oauth-access", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:22", 
+            "cpc_tag": null, 
+            "forks": 29, 
+            "repo_url": "https://github.com/eldarion/django-oauth-access", 
+            "size": 128
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "user notification management for the Django web framework", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:51:18", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 4, 
+            "name": "django-notification", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:25", 
+            "cpc_tag": null, 
+            "forks": null, 
+            "repo_url": "https://github.com/eldarion/django-notification", 
+            "size": 268
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "friendship, contact and invitation management for the Django web framework", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:51:21", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 8, 
+            "name": "django-friends", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:28", 
+            "cpc_tag": null, 
+            "forks": 4, 
+            "repo_url": "https://github.com/pinax/django-friends", 
+            "size": 184
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": "", 
+            "package_type": 1, 
+            "description": "a Django-based platform for rapidly developing websites", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:51:24", 
+            "package_name": "", 
+            "docs_url": "", 
+            "watchers": 1363, 
+            "name": "pinax", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:26", 
+            "cpc_tag": "", 
+            "forks": 235, 
+            "repo_url": "https://github.com/pinax/pinax", 
+            "size": 560
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "Django Shop on Pinax", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:51:29", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 3, 
+            "name": "pinax-shop", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:29", 
+            "cpc_tag": null, 
+            "forks": 1, 
+            "repo_url": "https://github.com/pinax/pinax-shop", 
+            "size": null
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "templated mail campaigns based on customizable queries", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:51:32", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 5, 
+            "name": "mailout", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:25", 
+            "cpc_tag": null, 
+            "forks": 2, 
+            "repo_url": "https://github.com/eldarion/mailout", 
+            "size": 92
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "a Django reusable app provides the ability to \"watch\" any object in your system.", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:51:36", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 4, 
+            "name": "django-observer", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:29", 
+            "cpc_tag": null, 
+            "forks": 2, 
+            "repo_url": "https://github.com/pinax/django-observer", 
+            "size": 92
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "an extensible forum app for Django and Pinax", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:51:40", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 24, 
+            "name": "agora", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:23", 
+            "cpc_tag": null, 
+            "forks": 5, 
+            "repo_url": "https://github.com/eldarion/agora", 
+            "size": 388
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "a badges app for Django", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:51:44", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 116, 
+            "name": "brabeion", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:23", 
+            "cpc_tag": null, 
+            "forks": 18, 
+            "repo_url": "https://github.com/eldarion/brabeion", 
+            "size": 128
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "a reusable Django points, positions and levels application", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:51:48", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 5, 
+            "name": "agon", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:23", 
+            "cpc_tag": null, 
+            "forks": 4, 
+            "repo_url": "https://github.com/eldarion/agon", 
+            "size": 116
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "flaggable comments for django", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:51:51", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 4, 
+            "name": "dialogos", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:24", 
+            "cpc_tag": null, 
+            "forks": 2, 
+            "repo_url": "https://github.com/eldarion/dialogos", 
+            "size": 1400
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:51:55", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 18, 
+            "name": "mimesis", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:24", 
+            "cpc_tag": null, 
+            "forks": 5, 
+            "repo_url": "https://github.com/eldarion/mimesis", 
+            "size": 424
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "Permissions manager and backend for Django 1.2, supporting object permissions and application-specific permissions.", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:52:12", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 2, 
+            "name": "django-rubberstamp", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:24", 
+            "cpc_tag": null, 
+            "forks": null, 
+            "repo_url": "https://github.com/eldarion/django-rubberstamp", 
+            "size": 180
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "a user to user join invitation app", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:52:23", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 13, 
+            "name": "kaleo", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:25", 
+            "cpc_tag": null, 
+            "forks": 1, 
+            "repo_url": "https://github.com/eldarion/kaleo", 
+            "size": 108
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "a likes app", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:52:40", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 1, 
+            "name": "phileo", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:26", 
+            "cpc_tag": null, 
+            "forks": 1, 
+            "repo_url": "https://github.com/eldarion/phileo", 
+            "size": 104
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "contact importing (originally from django-friends, broken out and enhanced)", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:52:55", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 43, 
+            "name": "django-contacts-import", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:21", 
+            "cpc_tag": null, 
+            "forks": 10, 
+            "repo_url": "https://github.com/eldarion/django-contacts-import", 
+            "size": 1804
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "collection of Pinax apps for conferences", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:53:02", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 15, 
+            "name": "symposion", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:29", 
+            "cpc_tag": null, 
+            "forks": 9, 
+            "repo_url": "https://github.com/pinax/symposion", 
+            "size": 156
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:53:06", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 5, 
+            "name": "atom-format", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:26", 
+            "cpc_tag": null, 
+            "forks": 2, 
+            "repo_url": "https://github.com/pinax/atom-format", 
+            "size": 244
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "a site-wide announcement reusable app for Django", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:50:26", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 19, 
+            "name": "django-announcements", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:27", 
+            "cpc_tag": null, 
+            "forks": 1, 
+            "repo_url": "https://github.com/pinax/django-announcements", 
+            "size": 844
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "flagging of inapproriate/spam content", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:50:30", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 43, 
+            "name": "django-flag", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:27", 
+            "cpc_tag": null, 
+            "forks": 14, 
+            "repo_url": "https://github.com/pinax/django-flag", 
+            "size": 112
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "A theme for Pinax based on Twitter's Bootstrap", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:50:33", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 6, 
+            "name": "pinax-theme-bootstrap", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:30", 
+            "cpc_tag": null, 
+            "forks": 2, 
+            "repo_url": "https://github.com/pinax/pinax-theme-bootstrap", 
+            "size": 140
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "mail queuing and management for the Django web framework", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:50:48", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 20, 
+            "name": "django-mailer", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:28", 
+            "cpc_tag": null, 
+            "forks": 5, 
+            "repo_url": "https://github.com/pinax/django-mailer", 
+            "size": 928
+        }
+    }, 
+    {
+        "pk": 46, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": "", 
+            "package_type": 1, 
+            "description": "A Django reusable app to deal with timezone localization for users.", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:50:51", 
+            "package_name": "", 
+            "docs_url": "", 
+            "watchers": 146, 
+            "name": "django-timezones", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 22:00:21", 
+            "cpc_tag": "", 
+            "forks": 44, 
+            "repo_url": "https://github.com/brosner/django-timezones", 
+            "size": 192
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "an extensible profile app designed to replace the profiles apps in Pinax", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:50:56", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 68, 
+            "name": "idios", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:22", 
+            "cpc_tag": null, 
+            "forks": 19, 
+            "repo_url": "https://github.com/eldarion/idios", 
+            "size": 188
+        }
+    }, 
+    {
+        "pk": 47, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": "", 
+            "package_type": 1, 
+            "description": "Another database migration script runner for Django projects.", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:51:02", 
+            "package_name": "", 
+            "docs_url": "", 
+            "watchers": 75, 
+            "name": "nashvegas", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 22:00:45", 
+            "cpc_tag": "", 
+            "forks": 14, 
+            "repo_url": "https://github.com/paltman/nashvegas", 
+            "size": 1828
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "packages.package", 
+        "fields": {
+            "status": null, 
+            "comment": null, 
+            "package_type": 1, 
+            "description": "generic way of getting database driven regions on webpages for Django", 
+            "pinax_external": false, 
+            "date_modified": "2011-09-09 06:52:00", 
+            "package_name": null, 
+            "docs_url": null, 
+            "watchers": 6, 
+            "name": "django-boxes", 
+            "package_uses": [], 
+            "blog_post": null, 
+            "maturity_level": null, 
+            "date_created": "2011-09-07 21:52:24", 
+            "cpc_tag": null, 
+            "forks": 3, 
+            "repo_url": "https://github.com/eldarion/django-boxes", 
+            "size": 108
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:22", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 7
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:22", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 8
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:22", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 9
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:22", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 10
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:23", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 11
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:23", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 12
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:23", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 13
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:23", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 14
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:24", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 16
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:24", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 18
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:24", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 19
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:25", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 20
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:25", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 21
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:25", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 23
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:25", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 24
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:26", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 26
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:26", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 27
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:26", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 29
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:27", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 31
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:27", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 32
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:28", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 36
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:28", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 37
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:28", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 38
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:29", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 39
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:29", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 41
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:29", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 42
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:29", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 43
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:30", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 44
+        }
+    }, 
+    {
+        "pk": 46, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 21:52:30", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 45
+        }
+    }, 
+    {
+        "pk": 47, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 22:00:23", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 46
+        }
+    }, 
+    {
+        "pk": 48, 
+        "model": "packages.packagebranch", 
+        "fields": {
+            "active": true, 
+            "date_created": "2011-09-07 22:00:46", 
+            "date_modified": null, 
+            "branch_name": "master", 
+            "package": 47
+        }
+    }
+]

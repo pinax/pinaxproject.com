@@ -28,8 +28,8 @@ MANAGERS = ADMINS
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3", # Add "postgresql_psycopg2", "postgresql", "mysql", "sqlite3" or "oracle".
-        "NAME": "dev.db",                       # Or path to database file if using sqlite3.
+        "ENGINE": "django.db.backends.postgresql_psycopg2", # Add "postgresql_psycopg2", "postgresql", "mysql", "sqlite3" or "oracle".
+        "NAME": "pinaxproject.com",                       # Or path to database file if using sqlite3.
         "USER": "",                             # Not used with sqlite3.
         "PASSWORD": "",                         # Not used with sqlite3.
         "HOST": "",                             # Set to empty string for localhost. Not used with sqlite3.
@@ -98,6 +98,7 @@ MIDDLEWARE_CLASSES = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.doc.XViewMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "pinaxsite_project.urls"
@@ -142,6 +143,7 @@ INSTALLED_APPS = [
     "template_utils",
     "uni_form",
     "nashvegas",
+    "debug_toolbar",
     
     # local
     "downloads",
@@ -149,6 +151,7 @@ INSTALLED_APPS = [
     "quotes",
     "biblion_extras",
     "docs",
+    "packages"
 ]
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"

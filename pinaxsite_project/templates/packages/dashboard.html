@@ -1,0 +1,19 @@
+{% extends "packages/base.html" %}
+
+{% block head_title %}Activity Dashboard{% endblock %}
+{% block body_id %}dashboard{% endblock %}
+{% block body_class %}packages{% endblock %}
+
+{% block packages_content %}
+    <div class="container">
+        <h2>Activity by Contributors</h2>
+        <p>The following is the number of commits by person for
+        the previous 6 months.</p>
+        <img src="{{ author_punchcard_url }}" />
+        
+        <h2 class="top-buffer">Activity by Project</h2>
+        <p>The following is the number of commits by project for
+        the previous 6 months.</p>
+        <img src="{{ package_punchcard_url }}" />
+    </div>
+{% endblock %}

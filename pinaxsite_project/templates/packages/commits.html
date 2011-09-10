@@ -1,0 +1,10 @@
+{% extends "packages/base.html" %}
+
+{% block head_title %}Commits{% endblock %}
+{% block body_id %}commits{% endblock %}
+
+{% block packages_content %}
+    {% for commit in commits %}
+        {% include "packages/_commit.html" %}
+    {% endfor %}
+{% endblock %}

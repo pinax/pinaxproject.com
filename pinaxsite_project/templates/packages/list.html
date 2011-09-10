@@ -1,0 +1,48 @@
+{% extends "packages/base.html" %}
+
+{% block head_title %}Package List{% endblock %}
+{% block body_id %}package-list{% endblock %}
+
+{% block packages_content %}
+    {% for obj in packages %}
+        <div class="container {{ obj.get_package_type_display.lower }}">
+            <h2>
+                <a href="{% url packages_detail obj.pk %}">
+                    {{ obj.name }}
+                </a>
+                <span class="{{ obj.get_package_type_display.lower }}">
+                    {{ obj.get_package_type_display }}
+                </span>
+                
+                <span class="latest">
+                    Last Updated on {{ obj.latest_commit.committed_date }}
+                </span>
+                
+            </h2>
+            {% if obj.description %}
+                <div class="description">
+                    {{ obj.description }}
+                </div>
+            {% endif %}
+            
+            {% include "packages/_stats.html" %}
+            <ul class="urls">
+                <li class="repo_url">
+                    <a href="{{ obj.repo_url }}">github</a>
+                </li>
+                {% if obj.docs_url %}|
+                    <li class="docs_url">
+                        <a href="{{ obj.docs_url }}">docs</a>
+                    </li>
+                {% endif %}
+                {% if obj.blog_post %}|
+                    <li class="blog_post">
+                        <a href="{{ obj.blog_post.get_absolute_url }}">blog post</a>
+                    </li>
+                {% endif %}
+            </ul>
+            
+            <br class="clear" />
+        </div>
+    {% endfor %}
+{% endblock %}
