@@ -1160,7 +1160,8 @@ body#package-detail div.sha {
   margin-top: 5px;
 }
 
-.container,
+body#package-detail .container,
+body#package-list .container,
 body#commits .commit,
 body#package-detail .commit {
   margin-bottom: 30px;
@@ -1171,14 +1172,16 @@ body#package-detail .commit {
   border-radius: 8px;
 }
 
-.container h2,
+body#package-detail .container h2,
+body#package-list .container,
 body#commits .commit h2,
 body#package-detail .commit h2 {
   font-size: 18pt;
   margin-bottom: 6px;
 }
 
-.container h2 span,
+body#package-detail .container h2 span,
+body#package-list .container h2 span,
 body#package-detail span.branch,
 body#commits span.branch {
   font-size: 12px;
@@ -1230,7 +1233,8 @@ body#package-detail span.branch {
   padding: 0px 6px;
 }
 
-.container {
+body#package-detail .container,
+body#package-list .container, {
   clear: both;
   margin-bottom: 20px;
 }
@@ -1268,7 +1272,8 @@ body#pull-requests table td.package-name {
   padding: 3px 6px 3px 0px;
 }
 
-.container h2.top-buffer {
+body#package-detail .container h2.top-buffer,
+body#package-list .container h2.top-buffer {
   margin-top: 20px;
 }
 
