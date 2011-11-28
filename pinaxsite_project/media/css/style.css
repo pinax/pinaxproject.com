@@ -1147,16 +1147,11 @@ span.eqno {
     }
 }
 
-
-body#commits h3,
-body#package-list h3,
-body#package-detail h3,
-body#pull-requests h3 {
+body.ecosystem h3 {
   margin-bottom: 5px;
 }
 
-body#commits div.sha,
-body#package-detail div.sha {
+body.ecosystem div.sha {
   margin-top: 5px;
 }
 
@@ -1172,10 +1167,7 @@ body#package-detail .commit {
   border-radius: 8px;
 }
 
-body#package-detail .container h2,
-body#package-list .container,
-body#commits .commit h2,
-body#package-detail .commit h2 {
+body.ecosystem .container h2 {
   font-size: 18pt;
   margin-bottom: 6px;
 }
@@ -1194,8 +1186,7 @@ body#commits span.branch {
   text-shadow: none;
   background: #333;
 }
-body#commits div.commit h3 span.date,
-body#package-detail div.commit h3 span.date {
+body.ecosystem div.commit h3 span.date {
   font-size: 12px;
   float: right;
 }
@@ -1217,8 +1208,7 @@ body#package-detail.app h2 span {
 
 body#package-list ul.urls li,
 body#package-detail ul.urls li {
-  float: left;
-  margin-right: 5px;
+  display: inline;
 }
 
 body#package-list h2 span.latest {
