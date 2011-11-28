@@ -150,6 +150,7 @@ INSTALLED_APPS = [
     "uni_form",
     "nashvegas",
     "debug_toolbar",
+    "metron",
     
     # local
     "downloads",
@@ -184,6 +185,14 @@ BIBLION_SECTIONS = [
 EVENT_TYPES = [
 ]
 
+METRON_SETTINGS = {
+    "google": {
+        1: "UA-2401894-10",
+    },
+    "gauges": {
+        1: "4ed411e2f5a1f53746000004",
+    }
+}
 
 
 DEBUG_TOOLBAR_CONFIG = {
