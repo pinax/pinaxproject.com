@@ -19,23 +19,18 @@
             
             <h3>Option 1. Get the latest stable release</h3>
             
-            {% latest_stable_release as release %}
-            {% if release %}
-                <div class="featured-release">
-                    {% include "downloads/_release.html" %}
-                </div>
-            {% else %}
-                <p>There is currently no stable release.</p>
-            {% endif %}
+            <div>
+                <p>The stable release of Pinax is <strong>0.9a2</strong>. To download the stable release:</p>
+                <pre>pip install Pinax</pre>
+                <p>See <a href="http://pinax.readthedocs.org/en/latest/gettingstarted.html">Getting Started</a> for more documentation installation.</p>
+            </div>
             
             <h3>Option 2. Get the latest development release</h3>
             
             <div>
-                <p>The latest development release is <strong>0.9a1</strong>.&nbsp;To install the development version:</p>
+                <p>To install the development version:</p>
                 
-                <pre>pip install Pinax</pre>
-                
-                <p>See <a href="/docs/dev/gettingstarted/">Getting Started</a> for more documentation about the development release.</p>
+                <pre>pip install Pinax==dev</pre>
             </div>
             
             {% comment %}
