@@ -66,19 +66,19 @@
             </article>
 
             <article class="box right2 columns">
-                <h2><a href="{% url downloads_home %}">Download</a></h2>
+                <h2><a href="{% url download_index %}">Download</a></h2>
                 <hr />
 
                 {% latest_stable_release as release %}
                 {% if release %}
                     <div class="column-content">
                         <p class="main">
-                            <a href="{% url downloads_home %}" id="btn-release">
+                            <a href="{% url download_index %}" id="btn-release">
                                 Latest stable release: {{ release.version }}
                             </a>
                         </p>
                     </div>
-                    <p><a href="{% url downloads_home %}" class="more">more downloads &rarr;</a></p>
+                    <p><a href="{% url download_index %}" class="more">more downloads &rarr;</a></p>
                 {% else %}
                     <p class="main">
                         There are currently no stable releases.

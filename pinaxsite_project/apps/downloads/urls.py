@@ -1,10 +1,6 @@
-from django.conf.urls.defaults import *
-from django.views.generic.simple import direct_to_template
-
+from django.conf.urls.defaults import patterns, url
 
 
 urlpatterns = patterns("",
-    url(r"^$", direct_to_template, {
-        "template": "downloads/home.html",
-    }, name="downloads_home"),
+    url(r"^$", "downloads.views.download_index", name="download_index"),
 )
