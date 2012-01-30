@@ -1,65 +1,36 @@
+{% extends "less_base.html" %}
+
 {% load i18n %}
-{% load metron_tags %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <link href="{{ STATIC_URL }}img/favicon.ico" rel="shortcut icon" />
-        <title>{% block head_title_base %}Pinax : {% block head_title %}{% endblock %}{% endblock %}</title>
+
+{% block head_title_base %}Pinax : {% block head_title %}{% endblock %}{% endblock %}</title>
+
+{% block extra_head_base %}
+    <link rel="alternate" type="application/atom+xml" title="Pinax Blog" href="{% url blog_feed_combined %}" />
+    <style type="text/css">
+        body {
+            background: #ebebeb url({{ STATIC_URL }}img/bg.png) repeat;
+            color: #444;
+        }
+        .hero-unit {
+            background: url({{ STATIC_URL }}img/row-bg-grey.png);
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+{% endblock %}
+
+{% block nav %}
+    {% include "_nav.html" %}
+{% endblock %}
+
+{% block account_bar %}{% endblock %}
         
-        <link rel="alternate" type="application/atom+xml" title="Pinax Blog" href="{% url blog_feed_combined %}" />
-        
-        <!--  hack to make IE able to apply CSS to elements that it doesn't usually know about. See http://code.google.com/p/html5shim/ -->
-        <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
-        {% block extra_head %}{% endblock %}
-    </head>
-    
-    <body class="{% block body_class %}default{% endblock %}" id="{% block body_id %}default{% endblock %}">
-        <div class="wrapper">
-            
-            {% include "_nav.html" %}
-            
-            <header>
-                <div id="header-content">
-                    {% block header_content %}
-                        <h1><a href="/"><img src="{{ STATIC_URL }}img/pinax_logo.png" alt="Pinax" /></a></h1>
-                    {% endblock %}
-                </div>
-            </header>
-            
-            {% if messages %}
-                <ul id="messages">
-                    {% for message in messages %}
-                    <li id="message_{{ forloop.counter }}"{% if message.tags %} class="{{ message.tags }}"{% endif %}>
-                        <a href="#"><small>{% trans "clear" %}</small></a>
-                        {{ message }}
-                    </li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-            
-            <div id="main_content">
-                {% block main_content %}{% endblock %}
-            </div>
-            <div class="push"></div>
-        </div>
-        <footer>
-            <p>This site was built using Pinax and is hosted on <a href="https://gondor.io/">Gondor</a>.</p>
-            <p class="legal">
-                &copy; 2008&ndash;2011 James Tauber and contributors.
-                Pinax is a trademark of James Tauber.
-                Django is a registered trademark of the Django Software Foundation.
-            </p>
-        </footer>
-        
-        <script src="{% block jquery_src %}//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js{% endblock %}" type="text/javascript"></script>
-        <script src="{{ STATIC_URL }}pinax/js/base.js" type="text/javascript"></script>
-        {% analytics %}
-        {% block extra_body %}{% endblock %}
-    </body>
-</html>
+{% block footer %}
+    <p>
+        This site was built using Pinax and is hosted on <a href="https://gondor.io/">Gondor</a>.
+    </p>
+    <p class="legal">
+        &copy; 2008&ndash;2012 James Tauber and contributors.
+        Pinax is a trademark of James Tauber.
+        Django is a registered trademark of the Django Software Foundation.
+    </p>
+{% endblock %}

@@ -37,6 +37,69 @@
 </div>
 {% endblock %}
 
+{% block body_base %}
+    <div class="container">
+        {% include "_messages.html" %}
+        <div class="hero-unit">
+            <h1><a href="/"><img src="{{ STATIC_URL }}img/pinax_logo_lg.png" alt="Pinax" /></a></h1>
+            <p>
+                Pinax is an open-source platform built on the
+                <a href="http://djangoproject.com">Django Web Framework</a>.
+            </p>
+
+            <p>
+                By integrating numerous reusable Django apps and providing starter
+                projects and infrastructure tools, Pinax takes care of the things
+                that many sites have in common so you can focus on what makes your
+                site different.
+            </p>
+        </div>
+        
+        <div class="row">
+            <div class="span4">
+                <h2>Announcements</h2>
+                <div class="column-content">
+                    {% latest_section_post "announcements" as post %}
+                    {% include "biblion/_minipost2.html" %}
+                </div>
+                <p><a href="{% url blog_section "announcements" %}" class="btn">more announcements &rarr;</a></p>
+            </div>
+            <div class="span4">
+                <h2>Featured Post</h2>
+
+                {% featured_post as post %}
+                {% if post %}
+                    <div class="column-content">
+                        {% include "biblion/_minipost.html" %}
+                    </div>
+                    <p><a href="{{ post.get_absolute_url }}" class="more">read this post &rarr;</a></p>
+                {% else %}
+                    <p>No featured post.</p>
+                {% endif %}
+            </div>
+            <div class="span4">
+                <h2>Download</h2>
+
+                {% latest_stable_release as release %}
+                {% if release %}
+                    <div class="column-content">
+                        <p class="main">
+                            <a href="{% url download_index %}" id="btn-release">
+                                Latest stable release: {{ release.version }}
+                            </a>
+                        </p>
+                    </div>
+                    <p><a href="{% url download_index %}" class="more">more downloads &rarr;</a></p>
+                {% else %}
+                    <p class="main">
+                        There are currently no stable releases.
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block main_content %}
     <section class="row-grey">
         <div class="row-content">

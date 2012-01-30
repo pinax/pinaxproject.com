@@ -7,9 +7,6 @@ import pinax
 PINAX_ROOT = os.path.abspath(os.path.dirname(pinax.__file__))
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
-# tells Pinax to use the default theme
-PINAX_THEME = "default"
-
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -74,7 +71,6 @@ STATIC_URL = "/site_media/static/"
 # Additional directories which hold static files
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, "media"),
-    os.path.join(PINAX_ROOT, "media", PINAX_THEME),
 ]
 
 STATICFILES_FINDERS = [
@@ -135,6 +131,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.humanize",
     "django.contrib.webdesign",
+
+    "pinax.templatetags",
+
+    # theme
+    "pinax_theme_bootstrap",
     
     # admin
     "django.contrib.admin",

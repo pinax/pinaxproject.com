@@ -1,12 +1,9 @@
 {# global nav #}
 
-<nav>
-    <ul class="nav">
-        <li><a href="{% url download_index %}" id="download-nav" class="first">Downloads</a></li>
-        <li><a href="http://pinax.readthedocs.org/" id="documentation-nav">Documentation</a></li>
-        <li><a href="http://code.pinaxproject.com/" id="development-nav">Development</a></li>
-        <li><a href="{% url packages_list %}" id="ecosystem-nav">Ecosystem</a></li>
-        <li><a href="{% url blog %}" id="blog-nav">Blog</a></li>
-    </ul>
-    <div class="clear"></div>
-</nav>
+<ul class="nav">
+    <li id="tab_downloads"><a href="{% url download_index %}">Downloads</a></li>
+    <li id="tab_documentation"><a href="http://pinax.readthedocs.org/">Documentation</a></li>
+    <li id="tab_development"><a href="http://code.pinaxproject.com/">Development</a></li>
+    <li id="tab_ecosystem"><a href="{% url packages_list %}">Ecosystem</a></li>
+    <li id="tab_blog"><a href="{% url blog %}">Blog</a></li>
+</ul>
