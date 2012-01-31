@@ -4,6 +4,9 @@ body {
 h1, h2, h3 {
   font-weight: normal;
 }
+.navbar .nav {
+  float: right;
+}
 /*** homepage ***/
 section#banner {
   background: url(../img/bg.png) repeat 0 0;
@@ -88,6 +91,40 @@ section#banner {
 div.post_dateline, p.post_dateline {
   margin-bottom: 8px;
 }
-.h-center {
+.h-center, .center {
   text-align: center;
+}
+.follow {
+  text-align: center;
+  font-size: 16px;
+  line-height: 64px;
+}
+.follow img {
+  margin-top: 20px;
+}
+.twitter-follow-button {
+  float: right;
+  width: 145px !important;
+  margin-top: 9px;
+}
+.content-block {
+  margin: 0 0 15px 0;
+  background-color: #ffffff;
+  border: 3px solid #eee;
+  /*  border: 3px solid rgba(0, 0, 0, 0.1);
+*/
+  *border: 3px solid #eee;
+  /* IE6-7 */
+
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  /*  -webkit-box-shadow: 0 5px 4px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 5px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.05);*/
+
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 20px;
 }

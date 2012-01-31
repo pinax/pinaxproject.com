@@ -73,7 +73,10 @@
             </div>
         </div>
         <div class="row">
-            <div class="span12"><h2 class="h-center">Pinax Features</h2></div>
+            <div class="span12">
+                <hr />
+                <h2 class="h-center">Pinax Features</h2>
+            </div>
         </div>
         <div class="row">
             <div class="span3">
@@ -133,55 +136,10 @@
                 <div class="more-coming"><i><a href="{% url packages_list %}">and more...</a></i></div>
             </div>
         </div>
-<!--         <div class="row">
-            <div class="span4">
-                <article>
-                    <p>Pinax provides:</p>
-                    <ul>
-                        <li><b>standard project layout</b> for consistency and easy deployment</li>
-                        <li><b>starter projects</b> that can be used as the basis for any Django website as well as some tailored to community sites, company sites, intranets and sites in closed beta </li>
-                        <li><b>reusable apps</b> providing both back-end functionality and user-facing components</li>
-                        <li><b>default templates</b> to enable quick prototyping</li>
-                    </ul>
-                </article>
-            </div>
-            <div class="span4">
-                <article>
-                    <p>...including apps for:</p>
-                    <ul>
-                        <li>account management
-                            <ul>
-                                <li>openid</li>
-                                <li>e-mail verification</li>
-                                <li>password management</li>
-                            </ul>
-                        </li>
-                        <li>profiles</li>
-                        <li>notifications</li>
-                        <li>activity streams</li>
-                        <li>private betas / waiting lists</li>
-                    </ul>
-                </article>
-            </div>
-            <div class="span4">
-                <article>
-                    <p>&nbsp;</p>
-                    <ul>
-                        <li>badges</li>
-                        <li>tagging</li>
-                        <li>wikis</li>
-                        <li>forums</li>
-                        <li>blogs</li>
-                        <li>task tracking</li>
-                        <li>friend and follower relations</li>
-                    </ul>
-                    <div class="more-coming"><i><a href="{% url packages_list %}">and more...</a></i></div>
-                </article>
-            </div>
-        </div> -->
         <div class="row">
+            <div class="span12"><hr /></div>
             <div class="span8">
-                <article class="box left3 pinax-blog">
+                <article class="content-block">
                     <h2><a href="{% url blog %}">The Pinax Blog</a></h2>
                     {% latest_blog_posts as posts %}
                     {% for post in posts %}
@@ -190,7 +148,7 @@
                         <p>No blog posts.</p>
                     {% endfor %}
 
-                    <p><a href="{% url blog %}" class="more">more blog posts &rarr;</a></p>
+                    <p><a href="{% url blog %}" class="btn small">more blog posts &rarr;</a></p>
                 </article>
             </div>
             <div class="span4">
@@ -255,8 +213,29 @@
         </div>
         <div class="row">
             <article class="span12">
+                <hr />
                 <h2 class="h-center"><a href="{% url sites_home %}">Sites Built with Pinax</a></h2>
-                {% featured_site as site %}
+                <p class="center">Check out <a href="{% url sites_home %}" class="more">other sites built on Pinax &rarr;</a></p>
+            </article>
+            <div class="span4">
+                <a href="http://gondor.io">
+                    <img src="{{ STATIC_URL }}img/screenshots/gondor.png" />
+                </a>
+            </div>
+            <div class="span4">
+                <a href="http://pycon.us">
+                    <img src="{{ STATIC_URL }}img/screenshots/pycon.png" />
+                </a>
+            </div>
+            <div class="span4">
+                <a href="http://quisition.com">
+                    <img src="{{ STATIC_URL }}img/screenshots/quisition.png" />
+                </a>
+            </div>
+
+
+
+<!--                 {% featured_site as site %}
                 <div class="featured-site-box">
                     <a href="{{ site.url }}">
                         <img src="{{ MEDIA_URL }}{{ site.image }}" alt="{{ site.name }}" width="100px" />
@@ -276,16 +255,16 @@
                     <p><a href="{% url sites_home %}" class="more">more sites built on Pinax &rarr;</a></p>
                 {% else %}
                     <p>Coming Soon!</p>
-                {% endif %}
-            </article>
+                {% endif %} -->
         </div>
-    </div>
-
-    <div id="extra-line">
-        <div class="content">
-            <img src="{{ STATIC_URL }}img/twitter_standing.png" width="48" height="48" alt="Twitter" />
-            Get latest news and updates on Pinax. <a href="http://twitter.com/pinaxproject/">Follow us on Twitter.</a>
-        </div>
+<!--         <div class="row">
+            <div class="span12">
+                <div class="follow">
+                    <img src="{{ STATIC_URL }}img/twitter.png" width="32" height="32" alt="Twitter" />
+                    Get latest news and updates on Pinax. <a href="http://twitter.com/pinaxproject/">Follow us on Twitter.</a>
+                </div>
+            </div>
+        </div> -->
     </div>
 {% endblock %}
 
