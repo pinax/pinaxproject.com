@@ -6,15 +6,7 @@
 
 {% block extra_head_base %}
     <link rel="alternate" type="application/atom+xml" title="Pinax Blog" href="{% url blog_feed_combined %}" />
-    <style type="text/css">
-        body {
-            background: #ebebeb url({{ STATIC_URL }}img/bg.png) repeat;
-            color: #444;
-        }
-        .hero-unit {
-            background: url({{ STATIC_URL }}img/row-bg-grey.png);
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/site.css" />
     {% block extra_head %}{% endblock %}
 {% endblock %}
 

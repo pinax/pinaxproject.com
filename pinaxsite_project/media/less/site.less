@@ -1,0 +1,111 @@
+@import "../bootstrap/less/variables.less";
+
+body {
+	color:#404040;
+}
+
+h1, h2, h3 {
+	font-weight:normal;
+}
+
+/*** homepage ***/
+section#banner {
+	background: url(../img/bg.png) repeat 0 0;
+	margin:-40px 0 20px;
+	padding-top:30px;
+}
+
+.hero-unit {
+    color:@white;
+    text-align:center;
+    text-shadow:0 1px 1px rgba(0,0,0,0.4);
+    padding-top:0;
+    padding-bottom:15px;
+    background:none;
+		max-width:940px;
+		margin:0 auto 30px;
+
+    h2 {
+	    color:@white;
+    	font-size:38px;
+    	font-weight:normal;
+    	line-height:46px;
+    	margin:0 auto 20px;
+    	max-width:580px;
+
+    	a {
+    		color:@white;
+    	}
+
+    	a:hover {
+    		color:#c1dbe3;
+    		text-decoration:none;
+    	}
+    }
+
+    p {
+    	margin:0 auto 20px;
+    	font-size:18px;
+	    text-shadow:0 1px 1px rgba(0,0,0,0.1);
+	    max-width:800px;
+    }
+}
+
+.download-info {
+		overflow:hidden;
+
+	 .btn {
+		font-size:20px;
+		margin:10px 12px 5px;
+
+		span {
+			display:block;
+			text-transform:uppercase;
+			font-size:11px;
+			margin-top:6px;
+		}
+	}
+}
+
+.btn.download {
+  background-color: #95ccdd;
+  background-image: -moz-linear-gradient(top, #95ccdd, #77b1c3);
+  background-image: -ms-linear-gradient(top, #95ccdd, #77b1c3);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#95ccdd), to(#77b1c3));
+  background-image: -webkit-linear-gradient(top, #95ccdd, #77b1c3);
+  background-image: -o-linear-gradient(top, #95ccdd, #77b1c3);
+  background-image: linear-gradient(top, #95ccdd, #77b1c3);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#95ccdd', endColorstr='#77b1c3', GradientType=0);
+  border-color: #77b1c3 #77b1c3 #802420;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  text-shadow:0 1px 0 #c1dbe3;
+}
+
+.btn.download:hover,
+.btn.download:active,
+.btn.download.active,
+.btn.download.disabled,
+.btn.download[disabled] {
+  background-color: #77b1c3;
+}
+
+.btn.download:active, .btn.download.active {
+  background-color: #77b1c3 \9;
+}
+
+.post_dateline {
+	color:#777;
+	font-size:12px;
+	font-style:italic;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+div.post_dateline, p.post_dateline {
+	margin-bottom:8px;
+}
+
+.h-center {
+	text-align:center;
+}
