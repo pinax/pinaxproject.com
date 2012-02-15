@@ -48,9 +48,9 @@
         </div>
     </section>
         
-    <div class="container">
+    <div class="container main-content">
         <div class="row">
-            <div class="span8">
+            <div class="span8 mod">
                 <h2>Featured Post</h2>
 
                 {% featured_post as post %}
@@ -58,89 +58,87 @@
                     <div class="column-content">
                         {% include "biblion/_minipost.html" %}
                     </div>
-                    <p><a href="{{ post.get_absolute_url }}" class="btn small">read this post &rarr;</a></p>
+                    <p><a href="{{ post.get_absolute_url }}" class="page-link">read this post</a></p>
                 {% else %}
                     <p>No featured post.</p>
                 {% endif %}
             </div>
-            <div class="span4">
+            <div class="span4 mod">
                 <h2>Announcements</h2>
                 <div class="column-content">
                     {% latest_section_post "announcements" as post %}
                     {% include "biblion/_minipost2.html" %}
                 </div>
-                <p><a href="{% url blog_section "announcements" %}" class="btn small">more announcements &rarr;</a></p>
+                <p><a href="{% url blog_section "announcements" %}" class="page-link">more announcements</a></p>
             </div>
         </div>
         <div class="row">
             <div class="span12">
                 <hr />
-                <h2 class="h-center">Pinax Features</h2>
+                <h2>Pinax Features</h2>
             </div>
-        </div>
-        <div class="row">
-            <div class="span3">
-                <h4>Standard Project Layout</h4>
-                <p>for consistency and easy deployment</p>
-            </div>
-            <div class="span3">
-                <h4>Starter Projects</h4>
-                <p>that can be used as the basis for any Django website as well as some tailored to community sites, company sites, intranets and sites in closed beta</p>
-            </div>
-            <div class="span3">
-                <h4>Reusable Apps</h4>
-                <p>providing both back-end functionality and user-facing components</p>
-            </div>
-            <div class="span3">
-                <h4>Default Templates</h4>
-                <p>to enable quick prototyping</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="span12"><h3 class="h-center">...Including Apps for:</h3></div>
-        </div>
-        <div class="row">
-            <div class="span3">
-                <ul>
-                    <li>account management
-                        <ul>
-                            <li>openid</li>
-                            <li>e-mail verification</li>
-                            <li>password management</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="span3">
-                <ul>
-                    <li>profiles</li>
-                    <li>notifications</li>
-                    <li>activity streams</li>
-                    <li>private betas / waiting lists</li>
-                </ul>   
-            </div>
-            <div class="span3">
-                <ul>
-                    <li>badges</li>
-                    <li>tagging</li>
-                    <li>wikis</li>
-                    <li>forums</li>
-                </ul>   
-            </div>
-            <div class="span3">
-                <ul>
-                    <li>blogs</li>
-                    <li>task tracking</li>
-                    <li>friend and follower relations</li>
-                </ul>
-                <div class="more-coming"><i><a href="{% url packages_list %}">and more...</a></i></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="span12"><hr /></div>
             <div class="span8">
-                <article class="content-block">
-                    <h2><a href="{% url blog %}">The Pinax Blog</a></h2>
+                <div class="row">
+                    <div class="span4">
+                        <div class="feature-box">
+                            <span class="icn layout"></span>
+                            <h4>Standard Project Layout</h4>
+                            <p>for consistency and easy deployment</p>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <div class="feature-box">
+                            <span class="icn starter"></span>
+                            <h4>Starter Projects</h4>
+                            <p>that can be used as the basis for any Django website as well as some tailored to community sites, company sites, intranets and sites in closed beta</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span4">
+                        <div class="feature-box">
+                            <span class="icn apps"></span>
+                            <h4>Reusable Apps</h4>
+                            <p>providing both back-end functionality and user-facing components</p>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <div class="feature-box">
+                            <span class="icn template"></span>
+                            <h4>Default Templates</h4>
+                            <p>to enable quick prototyping</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span4">
+                <article class="box last">
+                    <h3>Including Apps for:</h3>
+                    <ul>
+                        <li>account management (openid, e-mail verification, password management)</li>
+                        <li>profiles</li>
+                        <li>notifications</li>
+                        <li>activity streams</li>
+                        <li>private betas / waiting lists</li>
+                        <li>badges</li>
+                        <li>tagging</li>
+                        <li>wikis</li>
+                        <li>forums</li>
+                        <li>blogs</li>
+                        <li>task tracking</li>
+                        <li>friend and follower relations</li>
+                    </ul>
+                    <p><a href="{% url packages_list %}" class="page-link">and more</a></p>
+                </article>
+            </div>
+        </div>
+        <div class="row blog-section">
+            <div class="span12">
+                <hr />
+                <h2><a href="{% url blog %}">The Pinax Blog</a></h2>
+            </div>
+            <div class="span8">
+                <article class="content-block mod">
                     {% latest_blog_posts as posts %}
                     {% for post in posts %}
                         {% include "biblion/_minipost.html" %}
@@ -148,12 +146,12 @@
                         <p>No blog posts.</p>
                     {% endfor %}
 
-                    <p><a href="{% url blog %}" class="btn small">more blog posts &rarr;</a></p>
+                    <p><a href="{% url blog %}" class="page-link mod">more blog posts</a></p>
                 </article>
             </div>
             <div class="span4">
-                <article class="dev-info">
-                    <h2>Developer Information</h2>
+                <article class="box">
+                    <h3>Developer Information</h3>
                     <p>
                         Pinax is available under an MIT license. The source code is
                         available from <a href="http://github.com/pinax/pinax">GitHub</a>.
@@ -172,16 +170,18 @@
                         mailing list on Google Groups.
                     </p>
                 </article>
-                <article>
-                    <h2>Events</h2>
+                <article class="box">
+                    <h3>Events</h3>
                     <div class="column-content">
                         <div class="featured-event-box">
                             <a href="http://djangocon.us/">
                                 <img src="http://djangocon.us/site_media/static/img/logo.png" width="100" alt="" />
                             </a>
-                            <div><a href="http://djangocon.us/"><b>DjangoCon 2011 (including Pinax talk and&nbsp;sprint)</b></a></div>
-                            <div class="clear"></div>
-                            <div><span>6th&ndash;10th September 2011, Portland, Oregon</span></div>
+                            <h4><a href="http://djangocon.us/">DjangoCon 2011 <span>(including Pinax talk and&nbsp;sprint)</span></a></h4>
+                            <div class="event-details">
+                                6th&ndash;10th September 2011<br />
+                                Portland, Oregon
+                            </div>
                         </div>
                         <ul id="event-list">
                             <li><a href="http://us.pycon.org/2012/">PyCon 2012 (including Pinax sprint)</a>
@@ -191,19 +191,18 @@
                     </div>
                 </article>
 
-                <article class="box">
-                    <h2><a href="{% url quotes_home %}">Quotes about Pinax</a></h2>
+                <article class="box mod last">
+                    <h3><a href="{% url quotes_home %}">Quotes about Pinax</a></h3>
 
                     {% featured_quote as quote %}
                     {% if quote %}
                         <div class="column-content">
                             <div class="quote">
-                                <span class="marks">&ldquo;</span>{{ quote.text }}<span class="marks">&rdquo;</span>
-                                <br />
-                                <span class="attribution">&mdash; {{ quote.author }}<span>
+                                <blockquote>{{ quote.text }}</blockquote>
+                                <div class="balloon"></div>
+                                <div class="attribution">{{ quote.author }}</div>
                             </div>
                         </div>
-                        <p><a href="{% url quotes_home %}" class="more">more quotes about Pinax &rarr;</a></p>
                     {% else %}
                         <p>No featured quote.</p>
                     {% endif %}
