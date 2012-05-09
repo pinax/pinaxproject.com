@@ -7,7 +7,7 @@
 {% block extra_head_base %}
     <link rel="alternate" type="application/atom+xml" title="Pinax Blog" href="{% url blog_feed_combined %}" />
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/site.css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive-min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.css" type="text/css" media="screen" />
     {% block extra_head %}{% endblock %}
 {% endblock %}
 
@@ -18,9 +18,8 @@
 {% endblock %}
 
 {% block account_bar %}{% endblock %}
-
+        
 {% block footer %}
-
     <p>
         This site was built using Pinax and is hosted on <a href="https://gondor.io/">Gondor</a>.
     </p>
