@@ -155,12 +155,17 @@ body.home .main-content h3.reg {
     color:@textColor;
     text-transform:none;
     font-size:14px;
-    margin:10px 0;
+    margin:10px 0 20px;
+  }
+
+  span {
+    border:5px solid #EFEFEC;
+    padding:1px;
+    display:block;
   }
 
   img {
-    border:5px solid #EFEFEC;
-    padding:1px;
+    width:100%;
   }
 }
 
@@ -171,7 +176,7 @@ body.home .main-content h3.reg {
     color:@linkColorHover;
   }
 
-  img {
+  span {
     border:5px solid #e8e8e8;
   }
 }
@@ -251,7 +256,7 @@ section#banner {
   .banner-btm {
     background: url(../img/banner_btm.png) repeat-x 0 0;
     width:100%;
-    height:19px;
+    height:13px;
   }
 }
 
@@ -304,7 +309,7 @@ section#banner {
       padding-top:14px;
       text-shadow:0 1px 0 rgba(255,255,255,0.4);
       color:@textColor;
-      margin:0 5px;
+      margin:0 5px 10px;
 
       span {
         display:block;
@@ -403,18 +408,22 @@ div.post_dateline, p.post_dateline {
 
 .features {
   float:left;
-  width: 600px;
+  width: 620px;
+  margin-left:-20px;
+}
+
+.span-cust {
+  width: 290px;
+  float:left;
 }
 
 .feature-box {
   background:#fff;
   .border-radius(8px);
   padding:20px;
-  width: 250px;
   height:144px;
-  margin:0 0 25px 20px;
+  margin:0 0 25px 0;
   text-align:center;
-  float:left;
 
   h4 {
     font-size:16px;
@@ -491,6 +500,126 @@ ul.event-list {
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {}
+@media (max-width: 480px) {
+  .hero-unit {
+    h1 img {
+      width:60%;
+    }
 
-@media (min-width: 1200px) {}
+    h2 {
+      font-size:24px;
+      line-height:33px;
+    }
+  }
+
+  .download-info {
+    .btn-download, .btn-source {
+      width:170px;
+      height:40px;
+      font-size:15px;
+      padding-top:7px;
+
+      span {
+        display:block;
+        text-transform:none;
+        font-size:11px;
+        margin-top:0;
+      }
+    }
+
+    .btn-download {
+      background: url(../img/btn_primary_sm.png) no-repeat 0 0;
+    }
+
+    .btn-source {
+      background: url(../img/btn_sec_sm.png) no-repeat 0 0;
+    }
+
+    .btn-download:hover,
+    .btn-download:active,
+    .btn-source:hover,
+    .btn-source:active {
+      background-position: 0 -48px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  section#banner { margin:-18px -20px 20px -20px; }
+  .navbar .nav  li a { background:none; }
+  .twitter-follow-button { display:none; }
+  .hero-unit {
+      padding-left:20px;
+      padding-right:20px;
+
+    h2 {
+      font-size:30px;
+      line-height:40px;
+    }
+
+    p {
+      font-size:15px;
+      line-height:26px;
+    }
+  }
+
+  .stripe {
+    padding-right:0;
+  }
+
+  .features {
+    width:100%;
+    float:none;
+  }
+
+  .span-cust {
+    margin-left: 20px !important;
+
+    .feature-box {
+      height:auto;
+    }
+  }
+
+  .apps-box {
+    width:auto;
+    height:auto;
+    margin:0 20px 20px 0;
+    padding-bottom:30px;
+    float:none;
+    clear:both;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .features {
+    width: 460px;
+  }
+
+  .span-cust {
+    width: 210px;
+
+    .feature-box {
+      height:170px;
+    }
+  }
+
+  .apps-box {
+    width:184px;
+    height:405px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .features {
+    width: 770px;
+  }
+
+  .span-cust {
+    width: 350px;
+  }
+
+  .apps-box {
+    width:320px;
+  }
+}
