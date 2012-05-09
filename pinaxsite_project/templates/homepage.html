@@ -33,89 +33,92 @@
                 <div class="download-info">
                     {% latest_stable_release as release %}
                     {% if release %}
-                        <a href="{% url download_index %}" class="btn large download">
+                        <a href="{% url download_index %}" class="btn-download">
                             Download Pinax
                             <span>Latest stable release: {{ release.version }}</span>
                         </a>
                     {% endif %}
 
-                    <a href="#" class="btn large">
+                    <a href="#" class="btn-source">
                         View Source Code
                         <span>Project on Github</span>
                     </a>
                 </div>
             </div>
         </div>
+        <div class="circle"></div>
+        <div class="banner-btm"></div>
     </section>
         
     <div class="container main-content">
         <div class="row">
             <div class="span8 mod">
-                <h2>Featured Post</h2>
+                <h2 class="reg"><span>Featured Post</span></h2>
 
                 {% featured_post as post %}
                 {% if post %}
                     <div class="column-content">
                         {% include "biblion/_minipost.html" %}
+                        <p><a href="{{ post.get_absolute_url }}" class="page-link">read this post</a></p>
                     </div>
-                    <p><a href="{{ post.get_absolute_url }}" class="page-link">read this post</a></p>
                 {% else %}
                     <p>No featured post.</p>
                 {% endif %}
             </div>
             <div class="span4 mod">
-                <h2>Announcements</h2>
+                <h3 class="reg"><span>Announcements</span></h3>
                 <div class="column-content">
                     {% latest_section_post "announcements" as post %}
                     {% include "biblion/_minipost2.html" %}
+                    <p><a href="{% url blog_section "announcements" %}" class="page-link">more announcements</a></p>
                 </div>
-                <p><a href="{% url blog_section "announcements" %}" class="page-link">more announcements</a></p>
             </div>
         </div>
+    </div>
+    <div class="container main-content">
         <div class="row">
             <div class="span12">
-                <hr />
-                <h2>Pinax Features</h2>
+                <h2 class="spacer"><span>Pinax Features</span></h2>
             </div>
-            <div class="span8">
+            <div class="span12">
+            <div class="stripe">
+            
+            <div class="features">
                 <div class="row">
-                    <div class="span4">
                         <div class="feature-box">
                             <span class="icn layout"></span>
                             <h4>Standard Project Layout</h4>
                             <p>for consistency and easy deployment</p>
                         </div>
-                    </div>
-                    <div class="span4">
                         <div class="feature-box">
                             <span class="icn starter"></span>
                             <h4>Starter Projects</h4>
-                            <p>that can be used as the basis for any Django website as well as some tailored to community sites, company sites, intranets and sites in closed beta</p>
+                            <p>basis for any Django website, community sites, company sites, intranets and sites in closed beta</p>
                         </div>
-                    </div>
                 </div>
                 <div class="row">
-                    <div class="span4">
                         <div class="feature-box">
                             <span class="icn apps"></span>
                             <h4>Reusable Apps</h4>
                             <p>providing both back-end functionality and user-facing components</p>
                         </div>
-                    </div>
-                    <div class="span4">
                         <div class="feature-box">
                             <span class="icn template"></span>
                             <h4>Default Templates</h4>
                             <p>to enable quick prototyping</p>
                         </div>
-                    </div>
                 </div>
             </div>
-            <div class="span4">
-                <article class="box last">
-                    <h3>Including Apps for:</h3>
+                <article class="apps-box last">
+                    <h4>Including Apps for:</h4>
                     <ul>
-                        <li>account management (openid, e-mail verification, password management)</li>
+                        <li>account management
+                            <ul>
+                                <li>openid</li>
+                                <li>e-mail verification</li>
+                                <li>password management</li>
+                            </ul>
+                            </li>
                         <li>profiles</li>
                         <li>notifications</li>
                         <li>activity streams</li>
@@ -131,14 +134,20 @@
                     <p><a href="{% url packages_list %}" class="page-link">and more</a></p>
                 </article>
             </div>
+            </div>
+        </div>
+    </div>
+    <div class="container main-content">
+        <div class="row">
+            <div class="span12">
+                <div class="spacer"></div>
+            </div>
         </div>
         <div class="row blog-section">
-            <div class="span12">
-                <hr />
-                <h2><a href="{% url blog %}">The Pinax Blog</a></h2>
-            </div>
             <div class="span8">
-                <article class="content-block mod">
+                <article class="mod">
+                    <h2 class="reg"><a href="{% url blog %}">The Pinax Blog</a></h2>
+                    <div  class="highlight-box">
                     {% latest_blog_posts as posts %}
                     {% for post in posts %}
                         {% include "biblion/_minipost.html" %}
@@ -147,52 +156,56 @@
                     {% endfor %}
 
                     <p><a href="{% url blog %}" class="page-link mod">more blog posts</a></p>
+                    </div>
                 </article>
             </div>
             <div class="span4">
                 <article class="box">
-                    <h3>Developer Information</h3>
-                    <p>
-                        Pinax is available under an MIT license. The source code is
-                        available from <a href="http://github.com/pinax/pinax">GitHub</a>.
-                    </p>
+                    <h3 class="reg"><span>Developer Information</span></h3>
+                    <div class="side-box">
+                        <p>
+                            Pinax is available under an MIT license. The source code is
+                            available from <a href="http://github.com/pinax/pinax">GitHub</a>.
+                        </p>
 
-                    <p>
-                        Tickets and Wiki are at
-                        <a href="http://code.pinaxproject.com">code.pinaxproject.com</a>
-                    </p>
+                        <p>
+                            Tickets and Wiki are at
+                            <a href="http://code.pinaxproject.com">code.pinaxproject.com</a>
+                        </p>
 
-                    <p>
-                        Most discussion about Pinax takes place on the IRC channel
-                        <a href="irc://irc.freenode.net/pinax">#pinax</a>
-                        on Freenode or the
-                        <a href="http://groups.google.com/group/pinax-users">pinax-users</a>
-                        mailing list on Google Groups.
-                    </p>
+                        <p>
+                            Most discussion about Pinax takes place on the IRC channel
+                            <a href="irc://irc.freenode.net/pinax">#pinax</a>
+                            on Freenode or the
+                            <a href="http://groups.google.com/group/pinax-users">pinax-users</a>
+                            mailing list on Google Groups.
+                        </p>
+                    </div>
                 </article>
                 <article class="box">
-                    <h3>Events</h3>
-                    <div class="column-content">
-                        <div class="featured-event-box">
-                            <a href="http://djangocon.us/">
-                                <img src="http://djangocon.us/site_media/static/img/logo.png" width="100" alt="" />
-                            </a>
-                            <h4><a href="http://djangocon.us/">DjangoCon 2011 <span>(including Pinax talk and&nbsp;sprint)</span></a></h4>
-                            <div class="event-details">
-                                6th&ndash;10th September 2011<br />
-                                Portland, Oregon
-                            </div>
-                        </div>
-                        <ul id="event-list">
-                            <li><a href="http://us.pycon.org/2012/">PyCon 2012 (including Pinax sprint)</a>
-                                <span>7th&ndash;15th March 2011, Santa Clara, CA</span>
+                    <h3 class="reg"><span>Events</span></h3>
+                    <div class="column-content side-box">
+                        <ul class="event-list">
+                            <li>
+                                <a href="http://us.pycon.org/2012/">
+                                    <span class="title">DjangoCon 2011</span>
+                                    <span class="note">(including Pinax talk and&nbsp;sprint)</span>
+                                </a>
+                                <span class="date">6th&ndash;10th September 2011 in Portland, Oregon</span>
+                            </li>
+                            <li class="last">
+                                <a href="http://us.pycon.org/2012/">
+                                    <span class="title">PyCon 2012</span>
+                                    <span>(including Pinax sprint)</span>
+                                </a>
+                                <span class="date">7th&ndash;15th March 2011 in Santa Clara, CA</span>
                             </li>
                         </ul>
                     </div>
                 </article>
 
                 <article class="box mod last">
-                    <h3><a href="{% url quotes_home %}">Quotes about Pinax</a></h3>
+                    <h3 class="reg"><a href="{% url quotes_home %}">Quotes about Pinax</a></h3>
 
                     {% featured_quote as quote %}
                     {% if quote %}
@@ -212,23 +225,25 @@
         </div>
         <div class="row">
             <article class="span12">
-                <hr />
-                <h2 class="h-center"><a href="{% url sites_home %}">Sites Built with Pinax</a></h2>
-                <p class="center">Check out <a href="{% url sites_home %}" class="more">other sites built on Pinax &rarr;</a></p>
+                <h2 class="h-center spacer"><a href="{% url sites_home %}">Sites Built with Pinax</a></h2>
+                <p class="page-link center">Check out <a href="{% url sites_home %}" class="more">other sites built on Pinax</a></p>
             </article>
             <div class="span4">
-                <a href="http://gondor.io">
+                <a href="http://gondor.io" class="site-box">
                     <img src="{{ STATIC_URL }}img/screenshots/gondor.png" />
+                    <h6>Gondor</h6>
                 </a>
             </div>
             <div class="span4">
-                <a href="http://pycon.us">
+                <a href="http://pycon.us" class="site-box">
                     <img src="{{ STATIC_URL }}img/screenshots/pycon.png" />
+                    <h6>PyCon 2012</h6>
                 </a>
             </div>
             <div class="span4">
-                <a href="http://quisition.com">
+                <a href="http://quisition.com" class="site-box">
                     <img src="{{ STATIC_URL }}img/screenshots/quisition.png" />
+                    <h6>Quisition</h6>
                 </a>
             </div>
 
