@@ -1,5 +1,7 @@
 Setting up documentation
 ========================
+.. image:: http://slack.pinaxproject.com/badge.svg
+   :target: http://slack.pinaxproject.com/
 
 Create a directory somewhere on your filesystem which will be the
 ``DOCS_ROOT``. Set the setting ``DOCS_ROOT`` to its path in your
