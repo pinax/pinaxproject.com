@@ -1,7 +1,20 @@
-Setting up documentation
-========================
 .. image:: http://slack.pinaxproject.com/badge.svg
    :target: http://slack.pinaxproject.com/
+
+This is the site running at pinaxproject.com http://pinaxproject.com
+
+Pinax is an open-source platform built on the Django Web Framework. It is an ecosystem of reusable Django apps, themes, and starter project templates. 
+This collection can be found at http://pinaxproject.com.
+
+In order to foster a kind, inclusive, and harassment-free community, the Pinax Project has a code of conduct, which can be found here  http://pinaxproject.com/pinax/code_of_conduct/.
+
+The Pinax documentation is available at http://pinaxproject.com/pinax/.
+
+For updates and news regarding the Pinax Project, please follow us on Twitter at @pinaxproject and check out our blog http://blog.pinaxproject.com.
+
+Setting up documentation
+-------------------------
+
 
 Create a directory somewhere on your filesystem which will be the
 ``DOCS_ROOT``. Set the setting ``DOCS_ROOT`` to its path in your
